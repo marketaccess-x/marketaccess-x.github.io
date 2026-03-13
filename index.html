@@ -75,11 +75,16 @@
         .nav-logo-mark {
             width: 36px;
             height: 36px;
-            background: #e4eaf2;
             border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
+        }
+        .nav-logo-mark img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
         }
         .nav-logo-text {
             display: flex;
@@ -156,7 +161,6 @@
             object-fit: cover;
             object-position: center;
         }
-        /* Fallback gradient shown until/if video fails */
         .hero-video-wrap::before {
             content: '';
             position: absolute;
@@ -164,7 +168,6 @@
             background: linear-gradient(135deg, #1c2f4a 0%, #1a3a5c 40%, #0f2035 100%);
             z-index: -1;
         }
-        /* Overlay to darken video and blend bottom with page */
         .hero-overlay {
             position: absolute;
             inset: 0;
@@ -633,7 +636,6 @@
             font-weight: 500;
             color: var(--accent);
         }
-        /* Coming soon overlay for stub articles */
         .article-card.stub {
             position: relative;
         }
@@ -884,17 +886,7 @@
     <nav id="nav">
         <a href="/" class="nav-logo">
             <div class="nav-logo-mark">
-                <svg viewBox="0 0 36 36" width="36" height="36">
-                    <circle cx="18" cy="18" r="14" fill="#e4eaf2"/>
-                    <circle cx="18" cy="18" r="14" fill="none" stroke="#2a6e9e" stroke-width="1.3"/>
-                    <ellipse cx="18" cy="18" rx="14" ry="3.5" fill="none" stroke="#2a6e9e" stroke-width="0.8" opacity="0.7"/>
-                    <ellipse cx="18" cy="12" rx="11" ry="2.8" fill="none" stroke="#2a6e9e" stroke-width="0.7" opacity="0.55"/>
-                    <ellipse cx="18" cy="18" rx="5" ry="14" fill="none" stroke="#2a6e9e" stroke-width="0.8" opacity="0.6"/>
-                    <line x1="18" y1="4" x2="18" y2="32" stroke="#2a6e9e" stroke-width="0.8" opacity="0.6"/>
-                    <path d="M7 12 Q18 5 29 12" fill="none" stroke="#1a4f75" stroke-width="2" stroke-linecap="round"/>
-                    <circle cx="7" cy="12" r="2.2" fill="#1a4f75"/>
-                    <circle cx="29" cy="12" r="2.2" fill="#1a4f75"/>
-                </svg>
+                <img src="assets/Symbol.png" alt="Market Access X logo" width="32" height="32">
             </div>
             <div class="nav-logo-text">
                 <strong>Market Access X</strong>
@@ -906,18 +898,13 @@
             <li><a href="#strategic-analysis">Strategic Analysis</a></li>
             <li><a href="#market-insights">Market Insights</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="/cdn-cgi/l/email-protection#d4b7bbbaa0b5b7a094b9b5a6bfb1a0b5b7b7b1a7a7f9acfab7bbb9" class="nav-cta">Get in Touch</a></li>
+            <li><a href="mailto:contact@marketaccess-x.com" class="nav-cta">Get in Touch</a></li>
         </ul>
     </nav>
 
     <!-- ════ HERO ════ -->
     <section class="hero">
         <div class="hero-video-wrap">
-            <!--
-                Drop your video file into the /assets/ folder as hero.mp4
-                Recommended: encode at 1280×720 or 1920×1080, H.264, ~5–10MB
-                Add a poster= attribute pointing to a still frame for instant display
-            -->
             <video autoplay muted loop playsinline poster="assets/hero-poster.jpg">
                 <source src="assets/hero.mp4" type="video/mp4">
             </video>
@@ -1072,7 +1059,6 @@
         </div>
 
         <div class="articles-grid">
-            <!-- Featured article — replace href with actual article path -->
             <article class="article-card featured reveal">
                 <div class="article-card-thumb" style="aspect-ratio: 16/7;">
                     <div class="thumb-geo"></div>
@@ -1090,7 +1076,6 @@
                 </div>
             </article>
 
-            <!-- Stub article 2 -->
             <article class="article-card stub reveal reveal-delay-1">
                 <div class="stub-overlay"><span class="stub-badge">Coming Soon</span></div>
                 <div class="article-card-thumb">
@@ -1108,7 +1093,6 @@
                 </div>
             </article>
 
-            <!-- Stub article 3 -->
             <article class="article-card stub reveal reveal-delay-2">
                 <div class="stub-overlay"><span class="stub-badge">Coming Soon</span></div>
                 <div class="article-card-thumb">
@@ -1181,17 +1165,7 @@
             <div class="footer-brand">
                 <div class="nav-logo">
                     <div class="nav-logo-mark">
-                        <svg viewBox="0 0 36 36" width="36" height="36">
-                            <circle cx="18" cy="18" r="14" fill="#e4eaf2"/>
-                            <circle cx="18" cy="18" r="14" fill="none" stroke="#2a6e9e" stroke-width="1.3"/>
-                            <ellipse cx="18" cy="18" rx="14" ry="3.5" fill="none" stroke="#2a6e9e" stroke-width="0.8" opacity="0.7"/>
-                            <ellipse cx="18" cy="12" rx="11" ry="2.8" fill="none" stroke="#2a6e9e" stroke-width="0.7" opacity="0.55"/>
-                            <ellipse cx="18" cy="18" rx="5" ry="14" fill="none" stroke="#2a6e9e" stroke-width="0.8" opacity="0.6"/>
-                            <line x1="18" y1="4" x2="18" y2="32" stroke="#2a6e9e" stroke-width="0.8" opacity="0.6"/>
-                            <path d="M7 12 Q18 5 29 12" fill="none" stroke="#1a4f75" stroke-width="2" stroke-linecap="round"/>
-                            <circle cx="7" cy="12" r="2.2" fill="#1a4f75"/>
-                            <circle cx="29" cy="12" r="2.2" fill="#1a4f75"/>
-                        </svg>
+                        <img src="assets/Symbol.png" alt="Market Access X logo" width="32" height="32">
                     </div>
                     <div class="nav-logo-text">
                         <strong style="color:white;">Market Access X</strong>
@@ -1220,21 +1194,21 @@
                 <h4>Platform</h4>
                 <ul>
                     <li><a href="#about">About</a></li>
-                    <li><a href="/cdn-cgi/l/email-protection#d3b0bcbda7b2b0a793beb2a1b8b6a7b2b0b0b6a0a0feabfdb0bcbe">Contact</a></li>
+                    <li><a href="mailto:contact@marketaccess-x.com">Contact</a></li>
                     <li><a href="legal.html">Legal &amp; Privacy</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <span>© 2025 Market Access X. All rights reserved.</span>
+            <span>© 2026 Market Access X. All rights reserved.</span>
             <div style="display:flex; gap:20px;">
                 <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="/cdn-cgi/l/email-protection#71121e1f05101205311c10031a14051012121402025c095f121e1c"><span class="__cf_email__" data-cfemail="6b0804051f0a081f2b060a19000e1f0a08080e1818461345080406">[email&#160;protected]</span></a>
+                <a href="mailto:contact@marketaccess-x.com">contact@marketaccess-x.com</a>
             </div>
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // ── Nav scroll shadow ──
         const nav = document.getElementById('nav');
         window.addEventListener('scroll', () => {
@@ -1255,4 +1229,15 @@
 
         // ── Newsletter stub ──
         function handleSubscribe(e) {
-            e.preventDefau
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const input = e.target.querySelector('input');
+            btn.textContent = 'Subscribed ✓';
+            btn.style.background = '#27735a';
+            input.value = '';
+            input.disabled = true;
+            btn.disabled = true;
+        }
+    </script>
+</body>
+</html>
