@@ -1251,4 +1251,15 @@
 
         // ── Newsletter stub ──
         function handleSubscribe(e) {
-            e.preventDefau
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const input = e.target.querySelector('input');
+            btn.textContent = 'Subscribed ✓';
+            btn.style.background = '#27735a';
+            input.value = '';
+            input.disabled = true;
+            btn.disabled = true;
+        }
+    </script>
+</body>
+</html>
