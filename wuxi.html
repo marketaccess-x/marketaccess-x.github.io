@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WuXi AppTec: A Global Firm Navigating Historical Ruptures | Market Access X</title>
+    <meta name="description" content="WuXi AppTec shows how global firms can maintain agency when regulatory corridors narrow, by repositioning toward markets that remain open.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg:          #f2f4f8;
+            --bg-dark:     #1c2333;
+            --text:        #2c3444;
+            --text-mid:    #4a5568;
+            --text-light:  #7a8599;
+            --accent:      #2a6e9e;
+            --accent-dark: #1a4f75;
+            --border:      rgba(44, 52, 68, 0.1);
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body:    'DM Sans', system-ui, sans-serif;
+            --font-mono:    'DM Mono', monospace;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.6; }
+        a { color: inherit; text-decoration: none; }
+        img { display: block; max-width: 100%; }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 48px; height: 64px;
+            background: rgba(242, 244, 248, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-logo { display: flex; align-items: center; gap: 2px; }
+        .nav-logo-mark { width: 52px; height: 52px; border-radius: 6px; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 0; }
+        .nav-logo-mark img { width: 52px; height: 52px; object-fit: contain; }
+        .nav-logo-text { display: flex; flex-direction: column; line-height: 1.6; }
+        .nav-logo-text strong { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--text); }
+        .nav-logo-text span { font-size: 10px; color: var(--text-light); letter-spacing: 0.08em; text-transform: uppercase; }
+        .nav-back { font-size: 13px; font-weight: 500; color: var(--text-mid); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+        .nav-back:hover { color: var(--accent); }
+
+        .article-hero { margin-top: 64px; height: 480px; position: relative; overflow: hidden; }
+        .article-hero img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+        .article-hero-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to bottom, rgba(15,22,38,0.2) 0%, rgba(15,22,38,0.75) 100%);
+        }
+        .article-hero-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 48px; max-width: 860px; }
+        .article-eyebrow {
+            font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em;
+            text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 14px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .article-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--accent); }
+        .article-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 500; line-height: 1.15; color: white;
+        }
+
+        .article-wrap { max-width: 720px; margin: 0 auto; padding: 64px 24px 100px; }
+        .article-meta {
+            display: flex; align-items: center; gap: 20px;
+            margin-bottom: 48px; padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+        .article-meta-date { font-family: var(--font-mono); font-size: 12px; color: var(--text-light); }
+        .article-meta-tag {
+            font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
+            text-transform: uppercase; padding: 3px 10px; border-radius: 3px;
+            background: rgba(42,110,158,0.08); color: var(--accent);
+            border: 1px solid rgba(42,110,158,0.2);
+        }
+        .article-deck {
+            font-family: var(--font-display); font-size: 1.2rem; font-weight: 400;
+            font-style: italic; color: var(--text-mid); line-height: 1.6;
+            margin-bottom: 40px; padding-left: 20px;
+            border-left: 3px solid var(--accent);
+        }
+        .article-body p { font-size: 17px; line-height: 1.8; color: var(--text-mid); margin-bottom: 24px; }
+        .article-body p strong { color: var(--text); font-weight: 600; }
+        .article-body blockquote {
+            margin: 36px 0; padding: 20px 28px;
+            border-left: 3px solid var(--accent);
+            background: rgba(42,110,158,0.04);
+            border-radius: 0 6px 6px 0;
+        }
+        .article-body blockquote p {
+            font-family: var(--font-display); font-size: 1.1rem;
+            font-style: italic; color: var(--text); margin-bottom: 0;
+        }
+
+        .article-footer-nav {
+            max-width: 720px; margin: 0 auto; padding: 32px 24px 64px;
+            border-top: 1px solid var(--border);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .article-footer-nav a {
+            font-size: 13px; font-weight: 500; color: var(--accent);
+            display: flex; align-items: center; gap: 6px; transition: gap 0.2s;
+        }
+        .article-footer-nav a:hover { gap: 10px; }
+
+        footer {
+            background: var(--bg-dark); padding: 36px 48px;
+            text-align: center; color: rgba(255,255,255,0.35); font-size: 12px;
+        }
+        footer a { color: rgba(255,255,255,0.35); margin: 0 12px; }
+        footer a:hover { color: rgba(255,255,255,0.7); }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 20px; }
+            .article-hero { height: 340px; }
+            .article-hero-content { padding: 24px; }
+            .article-wrap { padding: 40px 20px 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html" class="nav-logo">
+            <div class="nav-logo-mark">
+                <img src="../assets/Symbol.png" alt="Market Access X logo">
+            </div>
+            <div class="nav-logo-text">
+                <strong>Market Access X</strong>
+                <span>Where insight meets opportunity</span>
+            </div>
+        </a>
+        <a href="../index.html#market-insights" class="nav-back">← Back to Market Insights</a>
+    </nav>
+
+    <div class="article-hero">
+        <img src="../assets/Wuxi_Hero.jpg" alt="Pharmaceutical manufacturing facility">
+        <div class="article-hero-overlay"></div>
+        <div class="article-hero-content">
+            <div class="article-eyebrow">Pharmaceuticals · BIOSECURE Act · 12 February 2026</div>
+            <h1>WuXi AppTec: A Global Firm Navigating Historical Ruptures</h1>
+        </div>
+    </div>
+
+    <div class="article-wrap">
+        <div class="article-meta">
+            <span class="article-meta-date">12 February 2026</span>
+            <span class="article-meta-tag">Pharmaceuticals</span>
+            <span class="article-meta-tag">BIOSECURE Act</span>
+            <span class="article-meta-tag">Strategic Repositioning</span>
+        </div>
+
+        <div class="article-deck">WuXi AppTec shows how global firms can maintain agency when regulatory corridors narrow — by repositioning toward markets that remain open.</div>
+
+        <div class="article-body">
+            <p>WuXi AppTec spent two decades building itself into one of the most deeply embedded contract research and manufacturing organizations in global pharma. From its founding in Shanghai in 2000, the company worked relentlessly to acquire capabilities in the United States and Europe, integrated drug development services from discovery through commercial-scale production, and by 2024 counted over 6,000 clients worldwide, with more than 60 per cent of its revenue derived from American customers alone.</p>
+
+            <p>Then the regulatory environment shifted — and not only in Washington and Brussels, but in Beijing too. Beijing was the first to move. Starting in 2015, China's Ministry of Science and Technology penalized WuXi for unauthorized exports of human genetic material, suspending the subsidiary's international research activities until remedial measures had been successfully implemented. The 2019 Human Genetic Resources Regulation and 2020 Biosecurity Law then formalized what had been ad hoc enforcement into a permanent regime requiring approvals for any cross-border sharing of biological data with foreign partners. In response, WuXi was forced to spin off its genomics arm, WuXi NextCODE.</p>
+
+            <p>Europe moved next. From 2017, the EU began tightening FDI screening frameworks in direct response to a wave of Chinese acquisitions of strategic European firms — a process that accelerated sharply during COVID as fears of fire-sale purchases mounted. WuXi's earlier acquisitions of UK and European capabilities, once markers of global ambition, became liabilities.</p>
+
+            <p>Next it was Washington's turn. The BIOSECURE Act, signed into law in December 2025 as part of the National Defense Authorization Act, bars US executive agencies from contracting with entities that use biotechnology equipment or services from designated companies of concern — effectively forcing any firm that depends on federal contracts, grants, or loans to sever ties with designated providers. Although the enacted law no longer names WuXi directly, the company is widely expected to be among the first designated, a move that would cut it off from the supply chains feeding the world's largest pharmaceutical market.</p>
+
+            <blockquote><p>Companies are not passive bystanders in geopolitical upheaval. They can and do act with real agency — repositioning assets, cultivating new partnerships, and seeking out jurisdictions whose regulatory postures are themselves in flux.</p></blockquote>
+
+            <p>But WuXi has not simply absorbed these blows. The company has responded by divesting assets that have become regulatory liabilities in the United States and United Kingdom, while simultaneously doubling down on jurisdictions where the regulatory corridor remains open or is actively widening. In Europe, WuXi's co-CEO has described the continent as the company's "next major strategic growth frontier," maintaining operations in Munich and Switzerland and deepening partnerships with European biotech firms and academic institutions.</p>
+
+            <p>Further afield, WuXi has announced plans for a major new facility in Saudi Arabia, where production can be labelled as made in the Kingdom — creating a degree of separation from Beijing that allows the company to continue serving global clients without triggering the regulatory tripwires that have closed off the American market.</p>
+
+            <p><strong>WuXi's trajectory illustrates a broader truth that is too often lost in the prevailing narrative of great power rivalry and technological decoupling.</strong> The geopolitical landscape that constrained WuXi's freedom of action in 2024 is not the same landscape it will face in 2027. Regulatory environments are not static, and neither are the firms that must operate within them.</p>
+        </div>
+    </div>
+
+    <div class="article-footer-nav">
+        <a href="anthropic.html">← Previous: Anthropic and the Weaponization of Supply Chain Risk</a>
+        <a href="lynas.html">Next: Lynas Rare Earths →</a>
+    </div>
+
+    <footer>
+        <span>© 2026 Market Access X.</span>
+        <a href="../index.html">Home</a>
+        <a href="../index.html#market-insights">Market Insights</a>
+        <a href="mailto:contact@marketaccess-x.com">Contact</a>
+    </footer>
+
+</body>
+</html>

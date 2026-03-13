@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anthropic Falls Victim to the Weaponization of Supply Chain Risk | Market Access X</title>
+    <meta name="description" content="Anthropic's unprecedented designation as a supply chain risk is legally dubious and sets a dangerous precedent for US companies.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg:          #f2f4f8;
+            --bg-dark:     #1c2333;
+            --text:        #2c3444;
+            --text-mid:    #4a5568;
+            --text-light:  #7a8599;
+            --accent:      #2a6e9e;
+            --accent-dark: #1a4f75;
+            --border:      rgba(44, 52, 68, 0.1);
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body:    'DM Sans', system-ui, sans-serif;
+            --font-mono:    'DM Mono', monospace;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.6; }
+        a { color: inherit; text-decoration: none; }
+        img { display: block; max-width: 100%; }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 48px; height: 64px;
+            background: rgba(242, 244, 248, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-logo { display: flex; align-items: center; gap: 2px; }
+        .nav-logo-mark { width: 52px; height: 52px; border-radius: 6px; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 0; }
+        .nav-logo-mark img { width: 52px; height: 52px; object-fit: contain; }
+        .nav-logo-text { display: flex; flex-direction: column; line-height: 1.6; }
+        .nav-logo-text strong { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--text); }
+        .nav-logo-text span { font-size: 10px; color: var(--text-light); letter-spacing: 0.08em; text-transform: uppercase; }
+        .nav-back { font-size: 13px; font-weight: 500; color: var(--text-mid); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+        .nav-back:hover { color: var(--accent); }
+
+        .article-hero {
+            margin-top: 64px; height: 480px;
+            position: relative; overflow: hidden;
+        }
+        .article-hero img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+        .article-hero-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to bottom, rgba(15,22,38,0.2) 0%, rgba(15,22,38,0.75) 100%);
+        }
+        .article-hero-content {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            padding: 48px; max-width: 860px;
+        }
+        .article-eyebrow {
+            font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em;
+            text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 14px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .article-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--accent); }
+        .article-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 500; line-height: 1.15; color: white;
+        }
+
+        .article-wrap { max-width: 720px; margin: 0 auto; padding: 64px 24px 100px; }
+        .article-meta {
+            display: flex; align-items: center; gap: 20px;
+            margin-bottom: 48px; padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+        .article-meta-date { font-family: var(--font-mono); font-size: 12px; color: var(--text-light); }
+        .article-meta-tag {
+            font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
+            text-transform: uppercase; padding: 3px 10px; border-radius: 3px;
+            background: rgba(42,110,158,0.08); color: var(--accent);
+            border: 1px solid rgba(42,110,158,0.2);
+        }
+        .article-deck {
+            font-family: var(--font-display); font-size: 1.2rem; font-weight: 400;
+            font-style: italic; color: var(--text-mid); line-height: 1.6;
+            margin-bottom: 40px; padding-left: 20px;
+            border-left: 3px solid var(--accent);
+        }
+        .article-body p { font-size: 17px; line-height: 1.8; color: var(--text-mid); margin-bottom: 24px; }
+        .article-body p strong { color: var(--text); font-weight: 600; }
+        .article-body blockquote {
+            margin: 36px 0; padding: 20px 28px;
+            border-left: 3px solid var(--accent);
+            background: rgba(42,110,158,0.04);
+            border-radius: 0 6px 6px 0;
+        }
+        .article-body blockquote p {
+            font-family: var(--font-display); font-size: 1.1rem;
+            font-style: italic; color: var(--text); margin-bottom: 0;
+        }
+
+        .article-footer-nav {
+            max-width: 720px; margin: 0 auto;
+            padding: 32px 24px 64px;
+            border-top: 1px solid var(--border);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .article-footer-nav a {
+            font-size: 13px; font-weight: 500; color: var(--accent);
+            display: flex; align-items: center; gap: 6px; transition: gap 0.2s;
+        }
+        .article-footer-nav a:hover { gap: 10px; }
+
+        footer {
+            background: var(--bg-dark); padding: 36px 48px;
+            text-align: center; color: rgba(255,255,255,0.35); font-size: 12px;
+        }
+        footer a { color: rgba(255,255,255,0.35); margin: 0 12px; }
+        footer a:hover { color: rgba(255,255,255,0.7); }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 20px; }
+            .article-hero { height: 340px; }
+            .article-hero-content { padding: 24px; }
+            .article-wrap { padding: 40px 20px 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html" class="nav-logo">
+            <div class="nav-logo-mark">
+                <img src="../assets/Symbol.png" alt="Market Access X logo">
+            </div>
+            <div class="nav-logo-text">
+                <strong>Market Access X</strong>
+                <span>Where insight meets opportunity</span>
+            </div>
+        </a>
+        <a href="../index.html#market-insights" class="nav-back">← Back to Market Insights</a>
+    </nav>
+
+    <div class="article-hero">
+        <img src="../assets/Anthropic_Hero.webp" alt="Dario Amodei at World Economic Forum">
+        <div class="article-hero-overlay"></div>
+        <div class="article-hero-content">
+            <div class="article-eyebrow">AI Policy · Supply Chain Risk · 29 February 2026</div>
+            <h1>Anthropic Falls Victim to the Weaponization of Supply Chain Risk</h1>
+        </div>
+    </div>
+
+    <div class="article-wrap">
+        <div class="article-meta">
+            <span class="article-meta-date">29 February 2026</span>
+            <span class="article-meta-tag">AI Policy</span>
+            <span class="article-meta-tag">Supply Chain Risk</span>
+            <span class="article-meta-tag">Trade Law</span>
+        </div>
+
+        <div class="article-deck">Anthropic's unprecedented designation as a supply chain risk is legally dubious and sets a dangerous precedent for US companies with their own government.</div>
+
+        <div class="article-body">
+            <p>On February 28, 2026, Defense Secretary Pete Hegseth declared Anthropic a "supply chain risk to national security" — marking the first time in American history this designation has been applied to a domestic company. The move came after Anthropic refused to remove two guardrails from its Claude model, namely prohibitions on mass domestic surveillance of Americans, and deployment in fully autonomous weapons systems. President Trump simultaneously directed all federal agencies to cease using Anthropic's technology.</p>
+
+            <p>The immediate trigger was a commercial contract dispute dressed up in national security language. But the choice of instrument matters enormously. The supply chain risk designation under 10 USC 3252 is a tool historically reserved for foreign adversaries, aimed at hardware and software embedded in critical infrastructure by entities whose loyalties are deemed to lie elsewhere. Applying it to a domestic AI company because it declined to agree to contract terms is a qualitative departure from prior practice — and its downstream effects extend well beyond Anthropic's balance sheet.</p>
+
+            <p>The commercial logic of the designation is straightforward but its reach is deliberately ambiguous. Any company doing business with the Pentagon now faces a binary choice: demonstrate it has no commercial relationship with Anthropic, or risk its government contracts. For Fortune 500 companies with Pentagon exposure — of which there are thousands — the calculus is simple. Claude becomes radioactive not because it poses a security risk, but because association with it creates legal and reputational exposure. That chilling effect is the real instrument of leverage, and it operates regardless of whether the designation survives legal challenge.</p>
+
+            <blockquote><p>Legal soundness is beside the point in the short run. General counsels across corporate America will make the conservative choices that minimize risk exposure — and that is precisely the intent.</p></blockquote>
+
+            <p>Anthropic itself has a strong counter-argument. Under the plain language of the statute, the designation can only restrict Claude's use within Pentagon contracts, meaning it cannot legally extend to contractors' commercial relationships with Anthropic for other purposes. The Pentagon appears to know this, which is why the broader ban was announced by Hegseth on social media rather than through formal regulatory channels. But it will take years to resolve in court, and in the meantime, the damage accrues.</p>
+
+            <p>The deeper problem is what this episode signals for any company that negotiates with the US government over the terms on which its technology can be used. The national security exception in trade law has always been understood to be a last resort, subject to a basic requirement of good faith. What happened to Anthropic suggests that requirement is now optional. A designation historically reserved for adversaries, applied retributively to a domestic company for asserting its contractual position, will degrade the credibility of the instrument precisely when the United States most needs it to be credible — including in disputes with suppliers who actually do have ties to foreign governments.</p>
+
+            <p><strong>The irony is sharp.</strong> In the week the administration declared the AI race with China equivalent to the space race, it moved to neutralize one of its own most capable competitors. The costs of that contradiction are still being counted.</p>
+        </div>
+    </div>
+
+    <div class="article-footer-nav">
+        <a href="hormuz.html">← Previous: Hormuz Shows Us Again How Choke Points Degrade Once Used</a>
+        <a href="wuxi.html">Next: WuXi AppTec →</a>
+    </div>
+
+    <footer>
+        <span>© 2026 Market Access X.</span>
+        <a href="../index.html">Home</a>
+        <a href="../index.html#market-insights">Market Insights</a>
+        <a href="mailto:contact@marketaccess-x.com">Contact</a>
+    </footer>
+
+</body>
+</html>

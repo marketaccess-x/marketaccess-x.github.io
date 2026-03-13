@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hormuz Shows Us Again How Choke Points Degrade Once Used | Market Access X</title>
+    <meta name="description" content="Iran's attempt to close the Strait of Hormuz lasted 48 hours, but it provides another valuable lesson in the time-limited efficacy of exploiting choke points.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg:          #f2f4f8;
+            --bg-dark:     #1c2333;
+            --text:        #2c3444;
+            --text-mid:    #4a5568;
+            --text-light:  #7a8599;
+            --accent:      #2a6e9e;
+            --accent-dark: #1a4f75;
+            --border:      rgba(44, 52, 68, 0.1);
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body:    'DM Sans', system-ui, sans-serif;
+            --font-mono:    'DM Mono', monospace;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.6; }
+        a { color: inherit; text-decoration: none; }
+        img { display: block; max-width: 100%; }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 48px; height: 64px;
+            background: rgba(242, 244, 248, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-logo { display: flex; align-items: center; gap: 2px; }
+        .nav-logo-mark { width: 52px; height: 52px; border-radius: 6px; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 0; }
+        .nav-logo-mark img { width: 52px; height: 52px; object-fit: contain; }
+        .nav-logo-text { display: flex; flex-direction: column; line-height: 1.6; }
+        .nav-logo-text strong { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--text); }
+        .nav-logo-text span { font-size: 10px; color: var(--text-light); letter-spacing: 0.08em; text-transform: uppercase; }
+        .nav-back { font-size: 13px; font-weight: 500; color: var(--text-mid); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+        .nav-back:hover { color: var(--accent); }
+
+        /* HERO */
+        .article-hero {
+            margin-top: 64px;
+            height: 480px;
+            position: relative;
+            overflow: hidden;
+        }
+        .article-hero img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .article-hero-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to bottom, rgba(15,22,38,0.2) 0%, rgba(15,22,38,0.75) 100%);
+        }
+        .article-hero-content {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            padding: 48px;
+            max-width: 860px;
+        }
+        .article-eyebrow {
+            font-family: var(--font-mono);
+            font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+            color: rgba(255,255,255,0.65); margin-bottom: 14px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .article-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--accent); }
+        .article-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 500; line-height: 1.15; color: white;
+        }
+
+        /* ARTICLE BODY */
+        .article-wrap {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 64px 24px 100px;
+        }
+        .article-meta {
+            display: flex; align-items: center; gap: 20px;
+            margin-bottom: 48px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+        .article-meta-date {
+            font-family: var(--font-mono); font-size: 12px; color: var(--text-light);
+        }
+        .article-meta-tag {
+            font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
+            text-transform: uppercase; padding: 3px 10px; border-radius: 3px;
+            background: rgba(42,110,158,0.08); color: var(--accent);
+            border: 1px solid rgba(42,110,158,0.2);
+        }
+        .article-deck {
+            font-family: var(--font-display);
+            font-size: 1.2rem; font-weight: 400; font-style: italic;
+            color: var(--text-mid); line-height: 1.6;
+            margin-bottom: 40px;
+            padding-left: 20px;
+            border-left: 3px solid var(--accent);
+        }
+        .article-body p {
+            font-size: 17px; line-height: 1.8; color: var(--text-mid);
+            margin-bottom: 24px;
+        }
+        .article-body p strong { color: var(--text); font-weight: 600; }
+        .article-body blockquote {
+            margin: 36px 0; padding: 20px 28px;
+            border-left: 3px solid var(--accent);
+            background: rgba(42,110,158,0.04);
+            border-radius: 0 6px 6px 0;
+        }
+        .article-body blockquote p {
+            font-family: var(--font-display);
+            font-size: 1.1rem; font-style: italic;
+            color: var(--text); margin-bottom: 0;
+        }
+
+        /* FOOTER */
+        .article-footer-nav {
+            max-width: 720px; margin: 0 auto;
+            padding: 32px 24px 64px;
+            border-top: 1px solid var(--border);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .article-footer-nav a {
+            font-size: 13px; font-weight: 500; color: var(--accent);
+            display: flex; align-items: center; gap: 6px;
+            transition: gap 0.2s;
+        }
+        .article-footer-nav a:hover { gap: 10px; }
+
+        footer {
+            background: var(--bg-dark); padding: 36px 48px;
+            text-align: center; color: rgba(255,255,255,0.35); font-size: 12px;
+        }
+        footer a { color: rgba(255,255,255,0.35); margin: 0 12px; }
+        footer a:hover { color: rgba(255,255,255,0.7); }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 20px; }
+            .article-hero { height: 340px; }
+            .article-hero-content { padding: 24px; }
+            .article-wrap { padding: 40px 20px 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html" class="nav-logo">
+            <div class="nav-logo-mark">
+                <img src="../assets/Symbol.png" alt="Market Access X logo">
+            </div>
+            <div class="nav-logo-text">
+                <strong>Market Access X</strong>
+                <span>Where insight meets opportunity</span>
+            </div>
+        </a>
+        <a href="../index.html#market-insights" class="nav-back">← Back to Market Insights</a>
+    </nav>
+
+    <div class="article-hero">
+        <img src="../assets/Hormuz_Hero.jpg" alt="Strait of Hormuz satellite view">
+        <div class="article-hero-overlay"></div>
+        <div class="article-hero-content">
+            <div class="article-eyebrow">Chokepoints · Trade Routes · 02 March 2026</div>
+            <h1>Hormuz Shows Us Again How Choke Points Degrade Once Used</h1>
+        </div>
+    </div>
+
+    <div class="article-wrap">
+        <div class="article-meta">
+            <span class="article-meta-date">02 March 2026</span>
+            <span class="article-meta-tag">Chokepoints</span>
+            <span class="article-meta-tag">Trade Routes</span>
+            <span class="article-meta-tag">Geopolitics</span>
+        </div>
+
+        <div class="article-deck">Iran's attempt to close the Strait of Hormuz lasted 48 hours, but it provides another valuable lesson in the time-limited efficacy of exploiting choke points.</div>
+
+        <div class="article-body">
+            <p>Last weekend, Iran's Revolutionary Guard Corps broadcast a message to vessels in the Persian Gulf: no ship was permitted to transit the Strait of Hormuz. Within 48 hours, a senior Iranian official quietly reversed course, declaring the waterway open "until further notice." The threat that analysts had spent decades dreading came and went before most cargo had time to reroute.</p>
+
+            <p>History offers a consistent pattern. When Britain's naval blockade cut Germany off from natural rubber in the First World War, German chemists developed Buna synthetic rubber, thereby permanently reducing global dependence on the commodity Britain sought to weaponize. When the Napoleonic wars severed France's access to Caribbean cane sugar, French agronomists scaled beet sugar production from near-zero to meaningful domestic supply within a decade.</p>
+
+            <blockquote><p>The chokepoint, once deployed, becomes the starting gun for the countdown to its own obsolescence.</p></blockquote>
+
+            <p>The mechanism is straightforward: coercion via supply restriction creates price signals powerful enough to trigger substitution investment that would otherwise never be commercially viable. The more dramatic the restriction, the larger the capital flows toward alternatives.</p>
+
+            <p>This is precisely what is now playing out in semiconductors and rare earth magnets. China's export controls on gallium, germanium, and rare earth processing have not yet broken Western dependence — but they have catalyzed billions in diversification investment that will progressively erode the leverage. The chokepoint was used; the countdown clock is now running.</p>
+
+            <p>But this leads to the more interesting analytical question as to what determines how fast the leverage degrades? Broadly, there are three factors: technological readiness of substitutes, capital mobilization speed, and political urgency among the targeted parties. Britain's naval blockade took a decade to generate synthetic rubber. Iran's Hormuz gambit took 48 hours to collapse, because the United States Navy was already deployed en masse nearby as part of a broader effort to orchestrate regime change in Iran.</p>
+
+            <p>Iran arguably still has the ability to disrupt shipping through the Strait of Hormuz. Mines, shore-based missiles, and fast-boat harassment likely remain real options. But it has demonstrated the ceiling of that leverage under direct military pressure, and markets have taken note. The existential threat that added to the many anxieties faced by oil traders for forty years was tested — and proved wanting.</p>
+
+            <p><strong>Supply chain chokepoints exert their greatest power in the imagination.</strong> Governments and strategists who understand this deploy them sparingly, or not at all. Those who reach for them under pressure, as Iran did last weekend, tend to discover that execution destroys the very asset they were trying to wield.</p>
+        </div>
+    </div>
+
+    <div class="article-footer-nav">
+        <a href="../index.html#market-insights">← All articles</a>
+        <a href="anthropic.html">Next: Anthropic and the Weaponization of Supply Chain Risk →</a>
+    </div>
+
+    <footer>
+        <span>© 2026 Market Access X.</span>
+        <a href="../index.html">Home</a>
+        <a href="../index.html#market-insights">Market Insights</a>
+        <a href="mailto:contact@marketaccess-x.com">Contact</a>
+    </footer>
+
+</body>
+</html>
