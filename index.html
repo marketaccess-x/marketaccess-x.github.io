@@ -449,12 +449,13 @@
             width: 10px; height: 10px;
             border-radius: 50%;
         }
-        .map-preview iframe {
+        .map-preview img {
             width: 100%;
             height: 440px;
             border: none;
             display: block;
-            background: #0d1526;
+            object-fit: cover;
+            object-position: top center;
         }
         .map-preview-footer {
             padding: 12px 20px;
@@ -899,7 +900,7 @@
             <li><a href="#strategic-analysis">Strategic Analysis</a></li>
             <li><a href="#market-insights">Market Insights</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="mailto:contact@marketaccess-x.com" class="nav-cta">Get in Touch</a></li>
+            <li><a href="/cdn-cgi/l/email-protection#23404c4d57424057634e42514846574240404650500e5b0d404c4e" class="nav-cta">Get in Touch</a></li>
         </ul>
     </nav>
 
@@ -1007,12 +1008,12 @@
                             <span style="background:#27c93f;"></span>
                         </div>
                     </div>
-                    <iframe
-                        src="https://marketaccess-x.github.io/rare-earth-supply-chain/"
-                        title="Rare Earth Elements Supply Chain Map"
-                        loading="lazy"
-                        sandbox="allow-scripts allow-same-origin">
-                    </iframe>
+                    <a href="https://marketaccess-x.github.io/rare-earth-supply-chain/" target="_blank" rel="noopener">
+                        <img
+                            src="ree-preview.png"
+                            alt="Rare Earth Elements Supply Chain Map — interactive globe showing mining, processing and end-use flows"
+                            loading="lazy">
+                    </a>
                     <div class="map-preview-footer">
                         <span>Interactive — drag to rotate, scroll to zoom</span>
                         <a href="https://marketaccess-x.github.io/rare-earth-supply-chain/" target="_blank" rel="noopener">
@@ -1195,7 +1196,7 @@
                 <h4>Platform</h4>
                 <ul>
                     <li><a href="#about">About</a></li>
-                    <li><a href="mailto:contact@marketaccess-x.com">Contact</a></li>
+                    <li><a href="/cdn-cgi/l/email-protection#4625292832272532062b27342d23322725252335356b3e6825292b">Contact</a></li>
                     <li><a href="legal.html">Legal &amp; Privacy</a></li>
                 </ul>
             </div>
@@ -1204,12 +1205,12 @@
             <span>© 2026 Market Access X. All rights reserved.</span>
             <div style="display:flex; gap:20px;">
                 <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="mailto:contact@marketaccess-x.com">contact@marketaccess-x.com</a>
+                <a href="/cdn-cgi/l/email-protection#e4878b8a90858790a48985968f8190858787819797c99cca878b89"><span class="__cf_email__" data-cfemail="a7c4c8c9d3c6c4d3e7cac6d5ccc2d3c6c4c4c2d4d48adf89c4c8ca">[email&#160;protected]</span></a>
             </div>
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // ── Nav scroll shadow ──
         const nav = document.getElementById('nav');
         window.addEventListener('scroll', () => {
@@ -1230,15 +1231,4 @@
 
         // ── Newsletter stub ──
         function handleSubscribe(e) {
-            e.preventDefault();
-            const btn = e.target.querySelector('button');
-            const input = e.target.querySelector('input');
-            btn.textContent = 'Subscribed ✓';
-            btn.style.background = '#27735a';
-            input.value = '';
-            input.disabled = true;
-            btn.disabled = true;
-        }
-    </script>
-</body>
-</html>
+            e.preventDefau
