@@ -745,26 +745,21 @@
 .newsletter-strip .ml-embedded label {
     color: rgba(255,255,255,0.75) !important;
 }
-.newsletter-strip .ml-embedded .ml-form-fieldRow input {
+.newsletter-strip input[type="email"] {
     background: rgba(255,255,255,0.12) !important;
-    border: 1px solid rgba(255,255,255,0.2) !important;
+    border: 1px solid rgba(255,255,255,0.25) !important;
     color: white !important;
     border-radius: 4px !important;
+}
+.newsletter-strip input[type="email"]::placeholder {
+    color: rgba(255,255,255,0.6) !important;
+    opacity: 1 !important;
 }
 .newsletter-strip .ml-embedded .ml-form-embedSubmit button {
     background: var(--bg-dark) !important;
     color: white !important;
     font-family: 'DM Sans', system-ui, sans-serif !important;
     border-radius: 4px !important;
-}
-.newsletter-strip .ml-embedded input[type="email"] {
-    background: rgba(255,255,255,0.12) !important;
-    border: 1px solid rgba(255,255,255,0.25) !important;
-    color: white !important;
-}
-.newsletter-strip .ml-embedded .ml-form-fieldRow input[type="email"]::placeholder {
-    color: rgba(255,255,255,0.6) !important;
-}
 }
         /* ─── FOOTER ─── */
         footer {
