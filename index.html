@@ -720,58 +720,43 @@
             line-height: 1.6;
         }
 
-        /* ─── NEWSLETTER ─── */
-        .newsletter-strip {
-            background: var(--accent);
-            padding: 60px 48px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-        }
-        .newsletter-text h3 {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 500;
-            color: white;
-            margin-bottom: 8px;
-        }
-        .newsletter-text p {
-            font-size: 14px;
-            color: rgba(255,255,255,0.7);
-        }
-        .newsletter-form {
-            display: flex;
-            gap: 0;
-            flex-shrink: 0;
-        }
-        .newsletter-form input {
-            padding: 12px 18px;
-            border: none;
-            border-radius: 4px 0 0 4px;
-            font-family: var(--font-body);
-            font-size: 14px;
-            width: 280px;
-            outline: none;
-            background: rgba(255,255,255,0.12);
-            color: white;
-        }
-        .newsletter-form input::placeholder { color: rgba(255,255,255,0.5); }
-        .newsletter-form button {
-            padding: 12px 22px;
-            background: var(--bg-dark);
-            color: white;
-            border: none;
-            border-radius: 0 4px 4px 0;
-            font-family: var(--font-body);
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            letter-spacing: 0.03em;
-            transition: background 0.2s;
-            white-space: nowrap;
-        }
-        .newsletter-form button:hover { background: #111; }
+/* ─── NEWSLETTER ─── */
+.newsletter-strip {
+    background: var(--accent);
+    padding: 60px 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.newsletter-strip .ml-embedded {
+    width: 100%;
+    max-width: 560px;
+}
+.newsletter-strip .ml-embedded .ml-form-embedWrapper {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+.newsletter-strip .ml-embedded h4 {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    color: white !important;
+}
+.newsletter-strip .ml-embedded p,
+.newsletter-strip .ml-embedded label {
+    color: rgba(255,255,255,0.75) !important;
+}
+.newsletter-strip .ml-embedded .ml-form-fieldRow input {
+    background: rgba(255,255,255,0.12) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    color: white !important;
+    border-radius: 4px !important;
+}
+.newsletter-strip .ml-embedded .ml-form-embedSubmit button {
+    background: var(--bg-dark) !important;
+    color: white !important;
+    font-family: 'DM Sans', system-ui, sans-serif !important;
+    border-radius: 4px !important;
+}
 
         /* ─── FOOTER ─── */
         footer {
@@ -1144,13 +1129,7 @@
 
 <!-- ════ NEWSLETTER ════ -->
 <div class="newsletter-strip">
-    <div class="newsletter-text">
-        <h3>Stay ahead of the next policy shift</h3>
-        <p>New supply chain atlases, strategic analyses, and market intelligence — direct to your inbox.</p>
-    </div>
-    <div class="newsletter-form">
-        <div class="ml-embedded" data-form="2iGnLO"></div>
-    </div>
+    <div class="ml-embedded" data-form="2iGnLO"></div>
 </div>
 
     <!-- ════ FOOTER ════ -->
