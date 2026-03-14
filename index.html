@@ -745,13 +745,16 @@
 .newsletter-strip .ml-embedded label {
     color: rgba(255,255,255,0.75) !important;
 }
-.newsletter-strip input[type="email"] {
+.newsletter-strip input[type="email"],
+.newsletter-strip .ml-form-fieldRow input,
+.newsletter-strip .ml-form-fieldRow input[type="email"] {
     background: rgba(255,255,255,0.12) !important;
     border: 1px solid rgba(255,255,255,0.25) !important;
     color: white !important;
     border-radius: 4px !important;
 }
-.newsletter-strip input[type="email"]::placeholder {
+.newsletter-strip input[type="email"]::placeholder,
+.newsletter-strip .ml-form-fieldRow input::placeholder {
     color: rgba(255,255,255,0.6) !important;
     opacity: 1 !important;
 }
