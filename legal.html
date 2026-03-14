@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal & Privacy | Market Access X</title>
+    <meta name="description" content="Legal notice, terms of use, and privacy policy for Market Access X.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg:          #f2f4f8;
+            --bg-dark:     #1c2333;
+            --text:        #2c3444;
+            --text-mid:    #4a5568;
+            --text-light:  #7a8599;
+            --accent:      #2a6e9e;
+            --border:      rgba(44, 52, 68, 0.1);
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body:    'DM Sans', system-ui, sans-serif;
+            --font-mono:    'DM Mono', monospace;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.6; }
+        a { color: inherit; text-decoration: none; }
+        img { display: block; max-width: 100%; }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 48px; height: 64px;
+            background: rgba(242, 244, 248, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-logo { display: flex; align-items: center; gap: 2px; }
+        .nav-logo-mark { width: 52px; height: 52px; border-radius: 6px; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 0; }
+        .nav-logo-mark img { width: 52px; height: 52px; object-fit: contain; }
+        .nav-logo-text { display: flex; flex-direction: column; line-height: 1.6; }
+        .nav-logo-text strong { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--text); }
+        .nav-logo-text span { font-size: 10px; color: var(--text-light); letter-spacing: 0.08em; text-transform: uppercase; }
+        .nav-back { font-size: 13px; font-weight: 500; color: var(--text-mid); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+        .nav-back:hover { color: var(--accent); }
+
+        .page-header {
+            margin-top: 64px;
+            background: var(--bg-dark);
+            padding: 64px 48px;
+        }
+        .page-header h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 500;
+            color: white;
+            margin-bottom: 12px;
+        }
+        .page-header p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.45);
+            font-family: var(--font-mono);
+            letter-spacing: 0.05em;
+        }
+
+        .legal-wrap {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 72px 24px 100px;
+        }
+
+        .legal-section {
+            margin-bottom: 56px;
+        }
+
+        .legal-section h2 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .legal-section h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text);
+            margin-top: 24px;
+            margin-bottom: 8px;
+        }
+
+        .legal-section p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--text-mid);
+            margin-bottom: 14px;
+        }
+
+        .legal-section ul {
+            margin: 12px 0 14px 20px;
+        }
+
+        .legal-section ul li {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--text-mid);
+            margin-bottom: 6px;
+        }
+
+        .legal-section a {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        .last-updated {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-light);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 56px;
+            display: block;
+        }
+
+        footer {
+            background: var(--bg-dark);
+            padding: 36px 48px;
+            text-align: center;
+            color: rgba(255,255,255,0.35);
+            font-size: 12px;
+        }
+        footer a { color: rgba(255,255,255,0.35); margin: 0 12px; transition: color 0.2s; }
+        footer a:hover { color: rgba(255,255,255,0.7); }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 20px; }
+            .page-header { padding: 48px 20px; }
+            .legal-wrap { padding: 48px 20px 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="nav-logo">
+            <div class="nav-logo-mark">
+                <img src="assets/Symbol.png" alt="Market Access X logo">
+            </div>
+            <div class="nav-logo-text">
+                <strong>Market Access X</strong>
+                <span>Where insight meets opportunity</span>
+            </div>
+        </a>
+        <a href="index.html" class="nav-back">← Back to Home</a>
+    </nav>
+
+    <div class="page-header">
+        <h1>Legal & Privacy</h1>
+        <p>Last updated: March 2026</p>
+    </div>
+
+    <div class="legal-wrap">
+        <span class="last-updated">Effective date: March 2026</span>
+
+        <!-- TERMS OF USE -->
+        <div class="legal-section">
+            <h2>Terms of Use</h2>
+
+            <h3>1. Acceptance of Terms</h3>
+            <p>By accessing and using marketaccess-x.com (the "Site"), you accept and agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use the Site.</p>
+
+            <h3>2. Nature of Content</h3>
+            <p>Market Access X provides trade policy and supply chain intelligence for informational purposes only. All analysis, commentary, and visualizations published on this Site represent the views of Market Access X and are intended to inform, not to constitute legal, financial, or investment advice. You should not act on any content from this Site without seeking independent professional advice appropriate to your specific circumstances.</p>
+
+            <h3>3. Intellectual Property</h3>
+            <p>All content on this Site — including articles, analysis, visualizations, graphics, and code — is the intellectual property of Market Access X unless otherwise stated. You may not reproduce, distribute, or republish any content from this Site without prior written permission, except for brief quotations with attribution.</p>
+
+            <h3>4. Third-Party Links</h3>
+            <p>This Site may contain links to third-party websites and tools. Market Access X is not responsible for the content, accuracy, or practices of any third-party sites. Links do not constitute endorsement.</p>
+
+            <h3>5. Limitation of Liability</h3>
+            <p>Market Access X makes no warranties regarding the accuracy, completeness, or timeliness of any content on this Site. To the fullest extent permitted by law, Market Access X shall not be liable for any direct, indirect, or consequential losses arising from your use of or reliance on this Site.</p>
+
+            <h3>6. Changes to Terms</h3>
+            <p>Market Access X reserves the right to update these Terms of Use at any time. Continued use of the Site following any changes constitutes acceptance of the revised terms.</p>
+        </div>
+
+        <!-- PRIVACY POLICY -->
+        <div class="legal-section">
+            <h2>Privacy Policy</h2>
+
+            <h3>1. Information We Collect</h3>
+            <p>Market Access X may collect the following information:</p>
+            <ul>
+                <li>Email addresses submitted via the newsletter subscription form</li>
+                <li>Information you voluntarily provide when booking a call or making contact</li>
+                <li>Anonymized usage data collected via standard web analytics</li>
+            </ul>
+
+            <h3>2. How We Use Your Information</h3>
+            <p>Information you provide is used solely to:</p>
+            <ul>
+                <li>Send you Market Access X publications and updates you have subscribed to</li>
+                <li>Respond to enquiries and facilitate meetings you have requested</li>
+                <li>Improve the content and functionality of this Site</li>
+            </ul>
+            <p>We do not sell, rent, or share your personal information with third parties for marketing purposes.</p>
+
+            <h3>3. Cookies</h3>
+            <p>This Site may use cookies to improve your browsing experience and collect anonymized analytics data. You can disable cookies in your browser settings, though this may affect some Site functionality.</p>
+
+            <h3>4. Data Retention</h3>
+            <p>We retain your information only for as long as necessary to fulfil the purposes for which it was collected, or as required by applicable law. You may request deletion of your data at any time by contacting us.</p>
+
+            <h3>5. Your Rights</h3>
+            <p>Depending on your jurisdiction, you may have rights to access, correct, or delete personal data we hold about you. To exercise any of these rights, please contact us at <a href="mailto:contact@marketaccess-x.com">contact@marketaccess-x.com</a>.</p>
+
+            <h3>6. Security</h3>
+            <p>We take reasonable measures to protect information submitted to us. However, no method of transmission over the internet is completely secure, and we cannot guarantee absolute security.</p>
+
+            <h3>7. Changes to This Policy</h3>
+            <p>We may update this Privacy Policy from time to time. The effective date at the top of this page will reflect the most recent revision.</p>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="legal-section">
+            <h2>Contact</h2>
+            <p>For any questions regarding these terms or your privacy, please contact us at <a href="mailto:contact@marketaccess-x.com">contact@marketaccess-x.com</a>.</p>
+        </div>
+    </div>
+
+    <footer>
+        <span>© 2026 Market Access X. All rights reserved.</span>
+        <a href="index.html">Home</a>
+        <a href="index.html#market-insights">Market Insights</a>
+        <a href="mailto:contact@marketaccess-x.com">Contact</a>
+    </footer>
+
+</body>
+</html>
