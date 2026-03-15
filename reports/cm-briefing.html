@@ -19,7 +19,6 @@
             --accent-pale: #d4e6f3;
             --accent-dark: #1a4f75;
             --border:      rgba(44, 52, 68, 0.1);
-            --border-mid:  rgba(44, 52, 68, 0.18);
             --green:       #27735a;
             --font-display: 'Playfair Display', Georgia, serif;
             --font-body:    'DM Sans', system-ui, sans-serif;
@@ -48,17 +47,16 @@
         .nav-back { font-size: 13px; font-weight: 500; color: var(--text-mid); transition: color 0.2s; }
         .nav-back:hover { color: var(--accent); }
 
-        /* HERO */
         .report-hero {
             margin-top: 64px;
             background: var(--bg-dark);
-            padding: 72px 48px;
+            padding: 64px 48px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            gap: 60px;
             align-items: center;
+            min-height: 520px;
         }
-        .report-hero-left {}
         .report-eyebrow {
             font-family: var(--font-mono);
             font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
@@ -74,11 +72,11 @@
         }
         .report-subtitle {
             font-family: var(--font-display);
-            font-size: 1.1rem; font-style: italic;
-            color: rgba(255,255,255,0.55); margin-bottom: 28px; line-height: 1.5;
+            font-size: 1.05rem; font-style: italic;
+            color: rgba(255,255,255,0.55); margin-bottom: 24px; line-height: 1.5;
         }
         .report-meta {
-            display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 36px;
+            display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 28px;
         }
         .report-meta-item {
             font-family: var(--font-mono); font-size: 11px;
@@ -88,117 +86,85 @@
         .report-meta-item span { color: rgba(255,255,255,0.75); }
         .report-price {
             font-family: var(--font-display);
-            font-size: 2.2rem; font-weight: 400; color: white;
-            margin-bottom: 20px;
+            font-size: 2rem; font-weight: 400; color: white;
+            margin-bottom: 16px;
         }
         .report-price sup { font-size: 1rem; vertical-align: super; }
         .buy-btn {
             display: inline-flex; align-items: center; gap: 10px;
-            padding: 16px 32px;
-            background: var(--accent);
+            padding: 15px 32px; background: var(--accent);
             color: white; border-radius: 4px;
-            font-family: var(--font-body);
-            font-size: 15px; font-weight: 600;
-            letter-spacing: 0.02em;
-            transition: background 0.2s, transform 0.15s;
-            margin-bottom: 14px;
-            width: 100%;
-            justify-content: center;
+            font-family: var(--font-body); font-size: 15px; font-weight: 600;
+            letter-spacing: 0.02em; transition: background 0.2s, transform 0.15s;
+            margin-bottom: 12px; width: 100%; justify-content: center;
         }
         .buy-btn:hover { background: var(--accent-dark); transform: translateY(-1px); }
-        .buy-note {
-            font-size: 12px; color: rgba(255,255,255,0.35);
-            text-align: center; line-height: 1.6;
+        .buy-note { font-size: 12px; color: rgba(255,255,255,0.35); text-align: center; line-height: 1.6; }
+        .buy-note a { color: rgba(255,255,255,0.5); }
+
+        .hero-graphic {
+            border-radius: 8px; overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.08);
+            height: 380px;
         }
-.hero-graphic {
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.08);
-    height: 100%;
-    min-height: 400px;
-}
-.hero-graphic img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-}
+        .hero-graphic img {
+            width: 100%; height: 100%;
+            object-fit: cover; object-position: center 60%;
+            display: block;
+        }
+
+        .report-body {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 72px 48px 100px;
+        }
 
         .report-section { margin-bottom: 56px; }
         .report-section h2 {
             font-family: var(--font-display);
-            font-size: 1.5rem; font-weight: 500;
-            color: var(--text); margin-bottom: 20px;
-            padding-bottom: 12px;
+            font-size: 1.5rem; font-weight: 500; color: var(--text);
+            margin-bottom: 20px; padding-bottom: 12px;
             border-bottom: 1px solid var(--border);
         }
-        .report-section p {
-            font-size: 16px; line-height: 1.8;
-            color: var(--text-mid); margin-bottom: 16px;
-        }
+        .report-section p { font-size: 16px; line-height: 1.8; color: var(--text-mid); margin-bottom: 16px; }
         .report-section p strong { color: var(--text); font-weight: 600; }
 
-        /* Key findings preview */
-        .findings-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-top: 8px;
-        }
-        .finding-card {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 20px 24px;
-        }
-        .finding-num {
-            font-family: var(--font-mono);
-            font-size: 11px; letter-spacing: 0.08em;
-            text-transform: uppercase; color: var(--accent);
-            margin-bottom: 8px;
-        }
-        .finding-card p {
-            font-size: 14px; line-height: 1.65;
-            color: var(--text-mid); margin-bottom: 0;
-        }
-
-        /* Stats row */
         .stats-row {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            margin: 32px 0;
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 16px; margin: 32px 0;
         }
         .stat-card {
-            background: var(--bg-dark);
-            border-radius: 8px;
-            padding: 24px;
-            text-align: center;
+            background: var(--bg-dark); border-radius: 8px;
+            padding: 24px; text-align: center;
         }
         .stat-num {
-            font-family: var(--font-display);
-            font-size: 2.2rem; font-weight: 400;
-            color: #7ab8db; line-height: 1;
-            margin-bottom: 8px;
+            font-family: var(--font-display); font-size: 2.2rem; font-weight: 400;
+            color: #7ab8db; line-height: 1; margin-bottom: 8px;
         }
-        .stat-label {
-            font-size: 12px; color: rgba(255,255,255,0.45);
-            line-height: 1.5;
-        }
+        .stat-label { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.5; }
 
-        /* What you get */
+        .findings-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 16px; margin-top: 8px;
+        }
+        .finding-card {
+            background: white; border: 1px solid var(--border);
+            border-radius: 8px; padding: 20px 24px;
+        }
+        .finding-num {
+            font-family: var(--font-mono); font-size: 11px;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            color: var(--accent); margin-bottom: 8px;
+        }
+        .finding-card p { font-size: 14px; line-height: 1.65; color: var(--text-mid); margin-bottom: 0; }
+
         .what-you-get {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 32px 36px;
-            margin-top: 8px;
+            background: white; border: 1px solid var(--border);
+            border-radius: 8px; padding: 32px 36px; margin-top: 8px;
         }
         .get-item {
             display: flex; gap: 16px; align-items: flex-start;
-            padding: 14px 0;
-            border-bottom: 1px solid var(--border);
+            padding: 14px 0; border-bottom: 1px solid var(--border);
         }
         .get-item:last-child { border-bottom: none; padding-bottom: 0; }
         .get-icon {
@@ -211,40 +177,25 @@
         .get-item h4 { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
         .get-item p { font-size: 13px; color: var(--text-mid); line-height: 1.55; margin-bottom: 0; }
 
-        /* CTA bottom */
         .cta-bottom {
-            background: var(--bg-dark);
-            border-radius: 10px;
-            padding: 48px;
-            text-align: center;
-            margin-top: 56px;
+            background: var(--bg-dark); border-radius: 10px;
+            padding: 48px; text-align: center; margin-top: 56px;
         }
         .cta-bottom h3 {
-            font-family: var(--font-display);
-            font-size: 1.6rem; font-weight: 500;
+            font-family: var(--font-display); font-size: 1.6rem; font-weight: 500;
             color: white; margin-bottom: 12px;
         }
-        .cta-bottom p {
-            font-size: 15px; color: rgba(255,255,255,0.5);
-            margin-bottom: 32px; line-height: 1.7;
-        }
-        .cta-price {
-            font-family: var(--font-display);
-            font-size: 2rem; color: white;
-            margin-bottom: 20px;
-        }
+        .cta-bottom p { font-size: 15px; color: rgba(255,255,255,0.5); margin-bottom: 32px; line-height: 1.7; }
+        .cta-price { font-family: var(--font-display); font-size: 2rem; color: white; margin-bottom: 20px; }
         .buy-btn-large {
             display: inline-flex; align-items: center; gap: 10px;
-            padding: 18px 48px;
-            background: var(--accent); color: white;
+            padding: 18px 48px; background: var(--accent); color: white;
             border-radius: 4px; font-size: 16px; font-weight: 600;
             transition: background 0.2s, transform 0.15s;
         }
         .buy-btn-large:hover { background: var(--accent-dark); transform: translateY(-1px); }
-        .cta-note {
-            font-size: 12px; color: rgba(255,255,255,0.3);
-            margin-top: 16px; line-height: 1.6;
-        }
+        .cta-note { font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 16px; line-height: 1.6; }
+        .cta-note a { color: rgba(255,255,255,0.45); }
 
         footer {
             background: var(--bg-dark); padding: 36px 48px;
@@ -256,7 +207,8 @@
 
         @media (max-width: 768px) {
             nav { padding: 0 20px; }
-            .report-hero { grid-template-columns: 1fr; gap: 40px; padding: 48px 20px; }
+            .report-hero { grid-template-columns: 1fr; gap: 32px; padding: 48px 20px; min-height: unset; }
+            .hero-graphic { height: 240px; }
             .report-body { padding: 48px 20px 60px; }
             .findings-grid { grid-template-columns: 1fr; }
             .stats-row { grid-template-columns: 1fr; }
@@ -281,7 +233,7 @@
     </nav>
 
     <div class="report-hero">
-        <div class="report-hero-left">
+        <div>
             <div class="report-eyebrow">Strategic Analysis Report</div>
             <h1>The Diversification Trap</h1>
             <p class="report-subtitle">Why Critical Minerals Agreements Won't Solve Your Supply Chain Problem</p>
@@ -296,9 +248,9 @@
                 <svg viewBox="0 0 24 24" width="18" height="18" stroke="white" fill="none" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
                 Buy Report — $25
             </a>
-            <p class="buy-note">Instant PDF download via Stripe secure checkout.<br>Questions? contact@marketaccess-x.com</p>
+            <p class="buy-note">Instant PDF download via Stripe secure checkout.<br>Questions? <a href="mailto:contact@marketaccess-x.com">contact@marketaccess-x.com</a></p>
         </div>
-        <div class="report-hero-right">
+        <div>
             <div class="hero-graphic">
                 <img src="../assets/hero_cm_report.jpg" alt="Open pit mine aerial view">
             </div>
@@ -391,7 +343,7 @@
             <a href="https://buy.stripe.com/bJedR8cx64PlbcWblD63K00" target="_blank" rel="noopener" class="buy-btn-large">
                 Buy Report — $25
             </a>
-            <p class="cta-note">Payment processed securely by Stripe. PDF delivered immediately after purchase.<br>Questions about your purchase? contact@marketaccess-x.com</p>
+            <p class="cta-note">Payment processed securely by Stripe. PDF delivered immediately after purchase.<br>Questions? <a href="mailto:contact@marketaccess-x.com">contact@marketaccess-x.com</a></p>
         </div>
 
     </div>
