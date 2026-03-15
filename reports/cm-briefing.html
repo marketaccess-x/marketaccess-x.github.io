@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Diversification Trap | Market Access X</title>
+    <meta name="description" content="Why critical minerals agreements won't solve your supply chain problem. A strategic intelligence report by Market Access X.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg:          #f2f4f8;
+            --bg-dark:     #1c2333;
+            --text:        #2c3444;
+            --text-mid:    #4a5568;
+            --text-light:  #7a8599;
+            --accent:      #2a6e9e;
+            --accent-pale: #d4e6f3;
+            --accent-dark: #1a4f75;
+            --border:      rgba(44, 52, 68, 0.1);
+            --border-mid:  rgba(44, 52, 68, 0.18);
+            --green:       #27735a;
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body:    'DM Sans', system-ui, sans-serif;
+            --font-mono:    'DM Mono', monospace;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.6; }
+        a { color: inherit; text-decoration: none; }
+        img { display: block; max-width: 100%; }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 48px; height: 64px;
+            background: rgba(242, 244, 248, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-logo { display: flex; align-items: center; gap: 2px; }
+        .nav-logo-mark { width: 52px; height: 52px; border-radius: 6px; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 0; }
+        .nav-logo-mark img { width: 52px; height: 52px; object-fit: contain; }
+        .nav-logo-text { display: flex; flex-direction: column; line-height: 1.6; }
+        .nav-logo-text strong { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--text); }
+        .nav-logo-text span { font-size: 10px; color: var(--text-light); letter-spacing: 0.08em; text-transform: uppercase; }
+        .nav-back { font-size: 13px; font-weight: 500; color: var(--text-mid); transition: color 0.2s; }
+        .nav-back:hover { color: var(--accent); }
+
+        /* HERO */
+        .report-hero {
+            margin-top: 64px;
+            background: var(--bg-dark);
+            padding: 72px 48px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .report-hero-left {}
+        .report-eyebrow {
+            font-family: var(--font-mono);
+            font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+            color: #7ab8db; margin-bottom: 16px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .report-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: #7ab8db; }
+        .report-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            font-weight: 500; color: white; line-height: 1.15;
+            margin-bottom: 12px;
+        }
+        .report-subtitle {
+            font-family: var(--font-display);
+            font-size: 1.1rem; font-style: italic;
+            color: rgba(255,255,255,0.55); margin-bottom: 28px; line-height: 1.5;
+        }
+        .report-meta {
+            display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 36px;
+        }
+        .report-meta-item {
+            font-family: var(--font-mono); font-size: 11px;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+        }
+        .report-meta-item span { color: rgba(255,255,255,0.75); }
+        .report-price {
+            font-family: var(--font-display);
+            font-size: 2.2rem; font-weight: 400; color: white;
+            margin-bottom: 20px;
+        }
+        .report-price sup { font-size: 1rem; vertical-align: super; }
+        .buy-btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 16px 32px;
+            background: var(--accent);
+            color: white; border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 15px; font-weight: 600;
+            letter-spacing: 0.02em;
+            transition: background 0.2s, transform 0.15s;
+            margin-bottom: 14px;
+            width: 100%;
+            justify-content: center;
+        }
+        .buy-btn:hover { background: var(--accent-dark); transform: translateY(-1px); }
+        .buy-note {
+            font-size: 12px; color: rgba(255,255,255,0.35);
+            text-align: center; line-height: 1.6;
+        }
+        .report-hero-right {}
+        .hero-graphic {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .hero-graphic img { width: 100%; display: block; }
+
+        /* BODY */
+        .report-body {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 80px 48px 100px;
+        }
+
+        .report-section { margin-bottom: 56px; }
+        .report-section h2 {
+            font-family: var(--font-display);
+            font-size: 1.5rem; font-weight: 500;
+            color: var(--text); margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+        .report-section p {
+            font-size: 16px; line-height: 1.8;
+            color: var(--text-mid); margin-bottom: 16px;
+        }
+        .report-section p strong { color: var(--text); font-weight: 600; }
+
+        /* Key findings preview */
+        .findings-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 8px;
+        }
+        .finding-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px 24px;
+        }
+        .finding-num {
+            font-family: var(--font-mono);
+            font-size: 11px; letter-spacing: 0.08em;
+            text-transform: uppercase; color: var(--accent);
+            margin-bottom: 8px;
+        }
+        .finding-card p {
+            font-size: 14px; line-height: 1.65;
+            color: var(--text-mid); margin-bottom: 0;
+        }
+
+        /* Stats row */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 32px 0;
+        }
+        .stat-card {
+            background: var(--bg-dark);
+            border-radius: 8px;
+            padding: 24px;
+            text-align: center;
+        }
+        .stat-num {
+            font-family: var(--font-display);
+            font-size: 2.2rem; font-weight: 400;
+            color: #7ab8db; line-height: 1;
+            margin-bottom: 8px;
+        }
+        .stat-label {
+            font-size: 12px; color: rgba(255,255,255,0.45);
+            line-height: 1.5;
+        }
+
+        /* What you get */
+        .what-you-get {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 32px 36px;
+            margin-top: 8px;
+        }
+        .get-item {
+            display: flex; gap: 16px; align-items: flex-start;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .get-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .get-icon {
+            width: 28px; height: 28px; border-radius: 50%;
+            background: var(--accent-pale);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0; margin-top: 2px;
+        }
+        .get-icon svg { width: 14px; height: 14px; stroke: var(--accent); fill: none; stroke-width: 2; }
+        .get-item h4 { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+        .get-item p { font-size: 13px; color: var(--text-mid); line-height: 1.55; margin-bottom: 0; }
+
+        /* CTA bottom */
+        .cta-bottom {
+            background: var(--bg-dark);
+            border-radius: 10px;
+            padding: 48px;
+            text-align: center;
+            margin-top: 56px;
+        }
+        .cta-bottom h3 {
+            font-family: var(--font-display);
+            font-size: 1.6rem; font-weight: 500;
+            color: white; margin-bottom: 12px;
+        }
+        .cta-bottom p {
+            font-size: 15px; color: rgba(255,255,255,0.5);
+            margin-bottom: 32px; line-height: 1.7;
+        }
+        .cta-price {
+            font-family: var(--font-display);
+            font-size: 2rem; color: white;
+            margin-bottom: 20px;
+        }
+        .buy-btn-large {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 18px 48px;
+            background: var(--accent); color: white;
+            border-radius: 4px; font-size: 16px; font-weight: 600;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .buy-btn-large:hover { background: var(--accent-dark); transform: translateY(-1px); }
+        .cta-note {
+            font-size: 12px; color: rgba(255,255,255,0.3);
+            margin-top: 16px; line-height: 1.6;
+        }
+
+        footer {
+            background: var(--bg-dark); padding: 36px 48px;
+            display: flex; align-items: center; justify-content: space-between;
+            color: rgba(255,255,255,0.35); font-size: 12px;
+        }
+        footer a { color: rgba(255,255,255,0.35); margin-left: 20px; transition: color 0.2s; }
+        footer a:hover { color: rgba(255,255,255,0.7); }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 20px; }
+            .report-hero { grid-template-columns: 1fr; gap: 40px; padding: 48px 20px; }
+            .report-body { padding: 48px 20px 60px; }
+            .findings-grid { grid-template-columns: 1fr; }
+            .stats-row { grid-template-columns: 1fr; }
+            .cta-bottom { padding: 32px 20px; }
+            footer { flex-direction: column; gap: 12px; padding: 24px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html" class="nav-logo">
+            <div class="nav-logo-mark">
+                <img src="../assets/Symbol.png" alt="Market Access X logo">
+            </div>
+            <div class="nav-logo-text">
+                <strong>Market Access X</strong>
+                <span>Where policy risk meets operational reality</span>
+            </div>
+        </a>
+        <a href="../index.html#strategic-analysis" class="nav-back">← Strategic Analysis</a>
+    </nav>
+
+    <div class="report-hero">
+        <div class="report-hero-left">
+            <div class="report-eyebrow">Strategic Analysis Report</div>
+            <h1>The Diversification Trap</h1>
+            <p class="report-subtitle">Why Critical Minerals Agreements Won't Solve Your Supply Chain Problem</p>
+            <div class="report-meta">
+                <div class="report-meta-item">Published <span>March 2026</span></div>
+                <div class="report-meta-item">Length <span>7 pages</span></div>
+                <div class="report-meta-item">Format <span>PDF</span></div>
+                <div class="report-meta-item">By <span>Market Access X</span></div>
+            </div>
+            <div class="report-price"><sup>$</sup>25</div>
+            <a href="https://buy.stripe.com/bJedR8cx64PlbcWblD63K00" target="_blank" rel="noopener" class="buy-btn">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="white" fill="none" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                Buy Report — $25
+            </a>
+            <p class="buy-note">Instant PDF download via Stripe secure checkout.<br>Questions? contact@marketaccess-x.com</p>
+        </div>
+        <div class="report-hero-right">
+            <div class="hero-graphic">
+                <img src="../assets/cm-report-hero.svg" alt="China processing dominance data visualization">
+            </div>
+        </div>
+    </div>
+
+    <div class="report-body">
+
+        <div class="report-section">
+            <h2>The analytical problem this report solves</h2>
+            <p>Washington has signed more critical minerals agreements in the past three years than in the preceding three decades. The February 2026 Critical Minerals Ministerial — 54 countries, 21 bilateral frameworks, the launch of FORGE as the MSP's successor, and a $12 billion US stockpiling initiative — is the most visible escalation yet.</p>
+            <p>The agreements are real. So is the gap between what they announce and what they can actually deliver. <strong>That gap is where supply chain risk actually concentrates.</strong> This report maps it precisely — and tells you what to do about it.</p>
+        </div>
+
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-num">65%</div>
+                <div class="stat-label">Lithium chemical processing through China</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">85%+</div>
+                <div class="stat-label">Global rare earth separation capacity in China</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">2030s</div>
+                <div class="stat-label">Realistic timeline for material processing substitution</div>
+            </div>
+        </div>
+
+        <div class="report-section">
+            <h2>Key findings</h2>
+            <div class="findings-grid">
+                <div class="finding-card">
+                    <div class="finding-num">Finding 01</div>
+                    <p>Diplomatic velocity is real. Processing substitution is not. The current generation of agreements does not touch the midstream stages where China's leverage actually concentrates.</p>
+                </div>
+                <div class="finding-card">
+                    <div class="finding-num">Finding 02</div>
+                    <p>The implementation gap is structural, not incidental. Building processing ecosystems that rival China's requires decades of capital, engineering, and accumulated process knowledge.</p>
+                </div>
+                <div class="finding-card">
+                    <div class="finding-num">Finding 03</div>
+                    <p>The most underestimated risk is a strategic price war — Chinese state-linked producers expanding output at below-cost prices timed to coincide with allied project commissioning.</p>
+                </div>
+                <div class="finding-card">
+                    <div class="finding-num">Finding 04</div>
+                    <p>Demand-side governance shifts — procurement rules, traceability requirements, subsidy eligibility — may prove more durable than supply-side agreements and are already in motion.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="report-section">
+            <h2>What you get</h2>
+            <div class="what-you-get">
+                <div class="get-item">
+                    <div class="get-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7 4H4a2 2 0 00-2 2v14a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2h-3"/></svg></div>
+                    <div>
+                        <h4>Executive summary</h4>
+                        <p>Five key findings distilled for time-poor decision-makers — the essential picture in under two minutes.</p>
+                    </div>
+                </div>
+                <div class="get-item">
+                    <div class="get-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+                    <div>
+                        <h4>Three-horizon implications</h4>
+                        <p>Near-term (0–18 months), medium-term (18 months–5 years), and long-term (5+ years) trajectory assessment — what's locked in versus genuinely uncertain.</p>
+                    </div>
+                </div>
+                <div class="get-item">
+                    <div class="get-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+                    <div>
+                        <h4>Six actionable takeaways</h4>
+                        <p>Concrete actions for procurement, government affairs, and strategy functions — not general orientations, but specific steps with clear logic behind each one.</p>
+                    </div>
+                </div>
+                <div class="get-item">
+                    <div class="get-icon"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+                    <div>
+                        <h4>Six indicators to watch</h4>
+                        <p>The specific signals — regulatory filings, commissioning dates, SOE capital discipline — that will tell you whether the trajectory is shifting and in which direction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-bottom">
+            <h3>Get the full analysis</h3>
+            <p>7 pages. No filler. Every paragraph earns its place.<br>Instant PDF download via Stripe secure checkout.</p>
+            <div class="cta-price"><sup style="font-size:1rem;vertical-align:super;">$</sup>25</div>
+            <a href="https://buy.stripe.com/bJedR8cx64PlbcWblD63K00" target="_blank" rel="noopener" class="buy-btn-large">
+                Buy Report — $25
+            </a>
+            <p class="cta-note">Payment processed securely by Stripe. PDF delivered immediately after purchase.<br>Questions about your purchase? contact@marketaccess-x.com</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <span>© 2026 Market Access X. All rights reserved.</span>
+        <div>
+            <a href="../index.html">Home</a>
+            <a href="../articles/">Market Insights</a>
+            <a href="mailto:contact@marketaccess-x.com">Contact</a>
+        </div>
+    </footer>
+
+</body>
+</html>

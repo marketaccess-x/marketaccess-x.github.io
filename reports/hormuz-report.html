@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 48-Hour Lesson | Market Access X</title>
+    <meta name="description" content="What Iran's failed closure tells you about chokepoint risk in your supply chain. A strategic intelligence report by Market Access X.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg:          #f2f4f8;
+            --bg-dark:     #1c2333;
+            --text:        #2c3444;
+            --text-mid:    #4a5568;
+            --text-light:  #7a8599;
+            --accent:      #2a6e9e;
+            --accent-pale: #d4e6f3;
+            --accent-dark: #1a4f75;
+            --border:      rgba(44, 52, 68, 0.1);
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body:    'DM Sans', system-ui, sans-serif;
+            --font-mono:    'DM Mono', monospace;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.6; }
+        a { color: inherit; text-decoration: none; }
+        img { display: block; max-width: 100%; }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 48px; height: 64px;
+            background: rgba(242, 244, 248, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-logo { display: flex; align-items: center; gap: 2px; }
+        .nav-logo-mark { width: 52px; height: 52px; border-radius: 6px; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 0; }
+        .nav-logo-mark img { width: 52px; height: 52px; object-fit: contain; }
+        .nav-logo-text { display: flex; flex-direction: column; line-height: 1.6; }
+        .nav-logo-text strong { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--text); }
+        .nav-logo-text span { font-size: 10px; color: var(--text-light); letter-spacing: 0.08em; text-transform: uppercase; }
+        .nav-back { font-size: 13px; font-weight: 500; color: var(--text-mid); transition: color 0.2s; }
+        .nav-back:hover { color: var(--accent); }
+
+        .report-hero {
+            margin-top: 64px;
+            background: var(--bg-dark);
+            padding: 72px 48px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .report-eyebrow {
+            font-family: var(--font-mono);
+            font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+            color: #7ab8db; margin-bottom: 16px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .report-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: #7ab8db; }
+        .report-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            font-weight: 500; color: white; line-height: 1.15;
+            margin-bottom: 12px;
+        }
+        .report-subtitle {
+            font-family: var(--font-display);
+            font-size: 1.1rem; font-style: italic;
+            color: rgba(255,255,255,0.55); margin-bottom: 28px; line-height: 1.5;
+        }
+        .report-meta {
+            display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 36px;
+        }
+        .report-meta-item {
+            font-family: var(--font-mono); font-size: 11px;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+        }
+        .report-meta-item span { color: rgba(255,255,255,0.75); }
+
+        .coming-soon-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(122, 184, 219, 0.15);
+            border: 1px solid rgba(122, 184, 219, 0.3);
+            color: #7ab8db; border-radius: 4px;
+            padding: 12px 24px;
+            font-family: var(--font-mono);
+            font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .notify-text { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.6; }
+        .notify-text a { color: #7ab8db; }
+
+        .placeholder-graphic {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px; height: 280px;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center; gap: 12px;
+        }
+        .placeholder-graphic span {
+            font-family: var(--font-mono); font-size: 11px;
+            letter-spacing: 0.1em; text-transform: uppercase;
+            color: rgba(255,255,255,0.2);
+        }
+
+        .report-body { max-width: 860px; margin: 0 auto; padding: 80px 48px 100px; }
+        .report-section { margin-bottom: 56px; }
+        .report-section h2 {
+            font-family: var(--font-display);
+            font-size: 1.5rem; font-weight: 500;
+            color: var(--text); margin-bottom: 20px;
+            padding-bottom: 12px; border-bottom: 1px solid var(--border);
+        }
+        .report-section p { font-size: 16px; line-height: 1.8; color: var(--text-mid); margin-bottom: 16px; }
+        .report-section p strong { color: var(--text); font-weight: 600; }
+
+        .notify-form-wrap {
+            background: white; border: 1px solid var(--border);
+            border-radius: 8px; padding: 36px;
+        }
+        .notify-form-wrap h3 {
+            font-family: var(--font-display); font-size: 1.2rem;
+            font-weight: 500; color: var(--text); margin-bottom: 8px;
+        }
+        .notify-form-wrap p { font-size: 14px; color: var(--text-mid); margin-bottom: 20px; }
+        .notify-form { display: flex; gap: 0; }
+        .notify-form input {
+            flex: 1; padding: 12px 18px;
+            border: 1px solid var(--border); border-right: none;
+            border-radius: 4px 0 0 4px;
+            font-family: var(--font-body); font-size: 14px;
+            outline: none; background: var(--bg);
+        }
+        .notify-form button {
+            padding: 12px 24px;
+            background: var(--accent); color: white;
+            border: none; border-radius: 0 4px 4px 0;
+            font-family: var(--font-body); font-size: 13px;
+            font-weight: 600; cursor: pointer;
+            transition: background 0.2s; white-space: nowrap;
+        }
+        .notify-form button:hover { background: var(--accent-dark); }
+
+        footer {
+            background: var(--bg-dark); padding: 36px 48px;
+            display: flex; align-items: center; justify-content: space-between;
+            color: rgba(255,255,255,0.35); font-size: 12px;
+        }
+        footer a { color: rgba(255,255,255,0.35); margin-left: 20px; transition: color 0.2s; }
+        footer a:hover { color: rgba(255,255,255,0.7); }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 20px; }
+            .report-hero { grid-template-columns: 1fr; gap: 40px; padding: 48px 20px; }
+            .report-body { padding: 48px 20px 60px; }
+            .notify-form { flex-direction: column; }
+            .notify-form input { border-right: 1px solid var(--border); border-radius: 4px; margin-bottom: 8px; }
+            .notify-form button { border-radius: 4px; }
+            footer { flex-direction: column; gap: 12px; padding: 24px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html" class="nav-logo">
+            <div class="nav-logo-mark">
+                <img src="../assets/Symbol.png" alt="Market Access X logo">
+            </div>
+            <div class="nav-logo-text">
+                <strong>Market Access X</strong>
+                <span>Where policy risk meets operational reality</span>
+            </div>
+        </a>
+        <a href="../index.html#strategic-analysis" class="nav-back">← Strategic Analysis</a>
+    </nav>
+
+    <div class="report-hero">
+        <div>
+            <div class="report-eyebrow">Strategic Analysis Report</div>
+            <h1>The 48-Hour Lesson</h1>
+            <p class="report-subtitle">What Iran's Failed Closure Tells You About Chokepoint Risk in Your Supply Chain</p>
+            <div class="report-meta">
+                <div class="report-meta-item">Publishing <span>Q2 2026</span></div>
+                <div class="report-meta-item">Format <span>PDF</span></div>
+                <div class="report-meta-item">Price <span>$25</span></div>
+            </div>
+            <div class="coming-soon-badge">Coming Soon</div>
+            <p class="notify-text">Notify me when published → <a href="mailto:contact@marketaccess-x.com?subject=Notify me: Hormuz report">contact@marketaccess-x.com</a></p>
+        </div>
+        <div>
+            <div class="placeholder-graphic">
+                <span>Data visualization</span>
+                <span>coming soon</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="report-body">
+        <div class="report-section">
+            <h2>What this report will cover</h2>
+            <p>Iran's Revolutionary Guard Corps broadcast a closure of the Strait of Hormuz. Within 48 hours, a senior Iranian official reversed course. The threat that analysts had spent decades dreading came and went before most cargo had time to reroute.</p>
+            <p><strong>The lesson isn't that chokepoints don't matter. It's that they matter most before they're used.</strong> This report examines the structural logic of chokepoint leverage — how it builds, how it degrades, and what that means for your supply chain risk assessment.</p>
+        </div>
+
+        <div class="report-section">
+            <h2>Get notified when this report publishes</h2>
+            <div class="notify-form-wrap">
+                <h3>Be first to know</h3>
+                <p>Enter your email and we'll notify you the moment this report is available.</p>
+                <form class="notify-form" onsubmit="handleNotify(event)">
+                    <input type="email" placeholder="your@email.com" required>
+                    <button type="submit">Notify me</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="report-section">
+            <h2>Available now</h2>
+            <p>While you wait, the first Market Access X strategic analysis report is available now — examining why critical minerals agreements don't solve the processing-stage supply chain problem that actually drives your exposure.</p>
+            <a href="cm-briefing.html" style="display:inline-flex;align-items:center;gap:8px;margin-top:8px;padding:13px 24px;background:var(--accent);color:white;border-radius:4px;font-size:14px;font-weight:600;transition:background 0.2s;" onmouseover="this.style.background='var(--accent-dark)'" onmouseout="this.style.background='var(--accent)'">
+                Read The Diversification Trap — $25 →
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <span>© 2026 Market Access X. All rights reserved.</span>
+        <div>
+            <a href="../index.html">Home</a>
+            <a href="../articles/">Market Insights</a>
+            <a href="mailto:contact@marketaccess-x.com">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        function handleNotify(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            btn.textContent = 'Noted ✓';
+            btn.style.background = '#27735a';
+            e.target.querySelector('input').disabled = true;
+            btn.disabled = true;
+        }
+    </script>
+
+</body>
+</html>
