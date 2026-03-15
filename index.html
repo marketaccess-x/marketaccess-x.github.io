@@ -870,6 +870,30 @@
                 linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
             background-size: 20px 20px;
         }
+        /* ─── MOBILE FLOATING CTA ─── */
+.mobile-cta {
+    display: none;
+}
+@media (max-width: 768px) {
+    .mobile-cta {
+        display: block;
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 999;
+        background: var(--accent);
+        color: white;
+        padding: 14px 36px;
+        border-radius: 50px;
+        font-family: var(--font-body);
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        box-shadow: 0 4px 20px rgba(42, 110, 158, 0.45);
+        white-space: nowrap;
+    }
+}
     </style>
 </head>
 <body>
@@ -1211,3 +1235,4 @@
     </script>
 </body>
 </html>
+<a href="https://calendly.com/simon-lacey-marketaccess-x/30min" target="_blank" rel="noopener" class="mobile-cta">Book a Call</a>
