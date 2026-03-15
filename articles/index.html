@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Insights | Market Access X</title>
+    <meta name="description" content="Trade policy and supply chain intelligence — rigorous analysis at the intersection of geopolitics, regulatory risk, and operational reality.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg:          #f2f4f8;
+            --bg-dark:     #1c2333;
+            --text:        #2c3444;
+            --text-mid:    #4a5568;
+            --text-light:  #7a8599;
+            --accent:      #2a6e9e;
+            --accent-pale: #d4e6f3;
+            --accent-dark: #1a4f75;
+            --border:      rgba(44, 52, 68, 0.1);
+            --border-mid:  rgba(44, 52, 68, 0.18);
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body:    'DM Sans', system-ui, sans-serif;
+            --font-mono:    'DM Mono', monospace;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.6; }
+        a { color: inherit; text-decoration: none; }
+        img { display: block; max-width: 100%; }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 48px; height: 64px;
+            background: rgba(242, 244, 248, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-logo { display: flex; align-items: center; gap: 2px; }
+        .nav-logo-mark { width: 52px; height: 52px; border-radius: 6px; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 0; }
+        .nav-logo-mark img { width: 52px; height: 52px; object-fit: contain; }
+        .nav-logo-text { display: flex; flex-direction: column; line-height: 1.6; }
+        .nav-logo-text strong { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--text); }
+        .nav-logo-text span { font-size: 10px; color: var(--text-light); letter-spacing: 0.08em; text-transform: uppercase; }
+        .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+        .nav-links a { font-size: 13px; font-weight: 500; color: var(--text-mid); letter-spacing: 0.03em; transition: color 0.2s; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; right: 0; height: 1.5px; background: var(--accent); transform: scaleX(0); transition: transform 0.2s; }
+        .nav-links a:hover { color: var(--accent); }
+        .nav-links a:hover::after { transform: scaleX(1); }
+        .nav-cta { padding: 8px 20px; background: var(--accent); color: white !important; border-radius: 4px; font-size: 13px !important; font-weight: 500 !important; transition: background 0.2s !important; }
+        .nav-cta:hover { background: var(--accent-dark) !important; }
+        .nav-cta::after { display: none !important; }
+
+        /* PAGE HEADER */
+        .page-header {
+            margin-top: 64px;
+            background: var(--bg-dark);
+            padding: 80px 48px;
+        }
+        .page-header-eyebrow {
+            font-family: var(--font-mono);
+            font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+            color: rgba(255,255,255,0.45); margin-bottom: 16px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .page-header-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--accent); }
+        .page-header h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 500; color: white; margin-bottom: 16px;
+        }
+        .page-header p {
+            font-size: 16px; color: rgba(255,255,255,0.5);
+            max-width: 560px; line-height: 1.7;
+        }
+
+        /* ARTICLES GRID */
+        .articles-wrap {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 72px 48px 100px;
+        }
+        .articles-count {
+            font-family: var(--font-mono);
+            font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+            color: var(--text-light); margin-bottom: 40px;
+        }
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        /* ARTICLE CARD */
+        .article-card {
+            background: white;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: box-shadow 0.2s, border-color 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .article-card:hover {
+            box-shadow: 0 6px 30px rgba(44,52,68,0.1);
+            border-color: var(--border-mid);
+        }
+        .article-card-thumb {
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #1a2f4a 0%, #2a4d75 100%);
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .article-card-thumb img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+        }
+        .article-card-thumb .thumb-label {
+            position: absolute; bottom: 14px; left: 14px;
+            font-family: var(--font-mono); font-size: 10px;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.75);
+            padding: 4px 10px; border-radius: 3px; backdrop-filter: blur(4px);
+        }
+        .article-card-body {
+            padding: 22px 22px 28px;
+            display: flex; flex-direction: column; flex: 1;
+        }
+        .article-sector {
+            font-family: var(--font-mono); font-size: 10px;
+            letter-spacing: 0.1em; text-transform: uppercase;
+            color: var(--accent); margin-bottom: 10px;
+        }
+        .article-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.1rem; font-weight: 500;
+            line-height: 1.35; color: var(--text); margin-bottom: 10px;
+        }
+        .article-card p {
+            font-size: 13.5px; color: var(--text-mid);
+            line-height: 1.65; flex: 1;
+        }
+        .article-card-meta {
+            display: flex; align-items: center;
+            justify-content: space-between;
+            margin-top: 20px; padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+        .article-date { font-size: 11px; color: var(--text-light); font-family: var(--font-mono); }
+        .article-read-link { font-size: 12px; font-weight: 500; color: var(--accent); transition: gap 0.2s; }
+
+        /* SCROLL REVEAL */
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+        .reveal.in-view { opacity: 1; transform: none; }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        /* FOOTER */
+        footer {
+            background: var(--bg-dark);
+            padding: 36px 48px;
+            display: flex; align-items: center; justify-content: space-between;
+            color: rgba(255,255,255,0.35); font-size: 12px;
+        }
+        footer a { color: rgba(255,255,255,0.35); margin-left: 20px; transition: color 0.2s; }
+        footer a:hover { color: rgba(255,255,255,0.7); }
+
+        /* MOBILE FLOATING CTA */
+        .mobile-cta { display: none; }
+        @media (max-width: 768px) {
+            nav { padding: 0 20px; }
+            .nav-links { display: none; }
+            .page-header { padding: 48px 20px; }
+            .articles-wrap { padding: 48px 20px 60px; }
+            .articles-grid { grid-template-columns: 1fr; }
+            footer { padding: 24px 20px; flex-direction: column; gap: 12px; text-align: center; }
+            .mobile-cta {
+                display: block; position: fixed; bottom: 24px; left: 50%;
+                transform: translateX(-50%); z-index: 999;
+                background: var(--accent); color: white;
+                padding: 14px 36px; border-radius: 50px;
+                font-family: var(--font-body); font-size: 15px; font-weight: 600;
+                letter-spacing: 0.02em;
+                box-shadow: 0 4px 20px rgba(42, 110, 158, 0.45);
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html" class="nav-logo">
+            <div class="nav-logo-mark">
+                <img src="../assets/Symbol.png" alt="Market Access X logo">
+            </div>
+            <div class="nav-logo-text">
+                <strong>Market Access X</strong>
+                <span>Where policy risk meets operational reality</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="../index.html#supply-chain">Supply Chain Mapping</a></li>
+            <li><a href="../index.html#strategic-analysis">Strategic Analysis</a></li>
+            <li><a href="../index.html#market-insights">Market Insights</a></li>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="https://calendly.com/simon-lacey-marketaccess-x/30min" target="_blank" class="nav-cta">Book a Call</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-header">
+        <div class="page-header-eyebrow">Market Insights</div>
+        <h1>Policy risk meets<br>operational reality</h1>
+        <p>Analysis at the intersection of trade policy, geopolitics, and industrial supply chains — where regulatory shifts create operational exposure for downstream manufacturers.</p>
+    </div>
+
+    <div class="articles-wrap">
+        <div class="articles-count">4 articles — updated weekly</div>
+
+        <div class="articles-grid">
+
+            <!-- Hormuz -->
+            <article class="article-card reveal">
+                <a href="hormuz.html" style="display:contents;">
+                    <div class="article-card-thumb">
+                        <img src="../assets/Hormuz_Hero.jpg" alt="Strait of Hormuz">
+                        <span class="thumb-label">Chokepoints · Trade Routes</span>
+                    </div>
+                    <div class="article-card-body">
+                        <div class="article-sector">Chokepoints · Geopolitics</div>
+                        <h3>Hormuz Shows Us Again How Choke Points Degrade Once Used</h3>
+                        <p>Iran's attempt to close the Strait of Hormuz lasted 48 hours, but it provides another valuable lesson in the time-limited efficacy of exploiting choke points.</p>
+                        <div class="article-card-meta">
+                            <span class="article-date">02 March 2026</span>
+                            <span class="article-read-link">Read →</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Anthropic -->
+            <article class="article-card reveal reveal-delay-1">
+                <a href="anthropic.html" style="display:contents;">
+                    <div class="article-card-thumb">
+                        <img src="../assets/Anthropic_Hero.webp" alt="Dario Amodei at WEF" style="object-position: center top;">
+                        <span class="thumb-label">AI Policy</span>
+                    </div>
+                    <div class="article-card-body">
+                        <div class="article-sector">AI Policy · Supply Chain Risk</div>
+                        <h3>Anthropic and the Weaponization of Supply Chain Risk</h3>
+                        <p>Anthropic's unprecedented designation as a supply chain risk is legally dubious and sets a dangerous precedent for US companies with their own government.</p>
+                        <div class="article-card-meta">
+                            <span class="article-date">29 February 2026</span>
+                            <span class="article-read-link">Read →</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- WuXi -->
+            <article class="article-card reveal reveal-delay-2">
+                <a href="wuxi.html" style="display:contents;">
+                    <div class="article-card-thumb">
+                        <img src="../assets/Wuxi_Hero.jpg" alt="Pharmaceutical manufacturing">
+                        <span class="thumb-label">Pharmaceuticals</span>
+                    </div>
+                    <div class="article-card-body">
+                        <div class="article-sector">Pharmaceuticals · BIOSECURE Act</div>
+                        <h3>WuXi AppTec: A Global Firm Navigating Historical Ruptures</h3>
+                        <p>How global firms can maintain agency when regulatory corridors narrow — by repositioning toward markets that remain open.</p>
+                        <div class="article-card-meta">
+                            <span class="article-date">12 February 2026</span>
+                            <span class="article-read-link">Read →</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Lynas -->
+            <article class="article-card reveal reveal-delay-3">
+                <a href="lynas.html" style="display:contents;">
+                    <div class="article-card-thumb">
+                        <img src="../assets/Lynas_Hero.webp" alt="Howard Lutnick" style="object-position: center top;">
+                        <span class="thumb-label">Critical Minerals</span>
+                    </div>
+                    <div class="article-card-body">
+                        <div class="article-sector">Critical Minerals · Rare Earths</div>
+                        <h3>Lynas Rare Earths: Why Policy Uncertainty Is the Least of Its Problems</h3>
+                        <p>U.S. policy favoritism toward domestic producers is real. But that's not Lynas's biggest problem.</p>
+                        <div class="article-card-meta">
+                            <span class="article-date">03 February 2026</span>
+                            <span class="article-read-link">Read →</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+        </div>
+    </div>
+
+    <footer>
+        <span>© 2026 Market Access X. All rights reserved.</span>
+        <div>
+            <a href="../index.html">Home</a>
+            <a href="https://www.linkedin.com/in/simonlacey70/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:contact@marketaccess-x.com">contact@marketaccess-x.com</a>
+        </div>
+    </footer>
+
+    <a href="https://calendly.com/simon-lacey-marketaccess-x/30min" target="_blank" rel="noopener" class="mobile-cta">Book a Call</a>
+
+    <script>
+        const revealEls = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('in-view');
+                    observer.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
