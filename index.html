@@ -629,13 +629,13 @@
             box-shadow: 0 6px 30px rgba(44,52,68,0.1);
             border-color: var(--border-mid);
         }
-        .article-card-thumb {
-            aspect-ratio: 16/9;
-            background: linear-gradient(135deg, #1a2f4a 0%, #2a4d75 100%);
-            position: relative;
-            overflow: hidden;
-            flex-shrink: 0;
-        }
+.article-card-thumb {
+    height: 200px;
+    background: linear-gradient(135deg, #1a2f4a 0%, #2a4d75 100%);
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
         .article-card-thumb .thumb-label {
             position: absolute;
             bottom: 14px; left: 14px;
@@ -1124,7 +1124,7 @@
             <article class="article-card featured reveal">
                 <a href="articles/hormuz.html" style="display:contents;">
                 <div class="article-card-thumb" style="aspect-ratio: 16/7;">
-                    <img src="assets/Hormuz_Hero.jpg" alt="Strait of Hormuz" style="width:100%;height:100%;object-fit:cover;">
+                    <img src="assets/Hormuz_Hero.jpg" alt="Strait of Hormuz" style="width:100%;height:100%;object-fit:cover;object-position:center 60%;">
                     <span class="thumb-label">Chokepoints · Trade Routes</span>
                 </div>
                 <div class="article-card-body">
