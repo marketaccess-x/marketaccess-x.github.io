@@ -45,25 +45,13 @@
         .nav-back { font-size: 13px; font-weight: 500; color: var(--text-mid); display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
         .nav-back:hover { color: var(--accent); }
 
-        .article-hero {
-            margin-top: 64px;
-            height: 480px;
-            position: relative;
-            overflow: hidden;
-        }
-        .article-hero img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            object-position: 60% 25%;
-        }
+        .article-hero { margin-top: 64px; height: 480px; position: relative; overflow: hidden; }
+        .article-hero img { width: 100%; height: 100%; object-fit: cover; object-position: 60% 25%; }
         .article-hero-overlay {
             position: absolute; inset: 0;
             background: linear-gradient(to bottom, rgba(15,22,38,0.3) 0%, rgba(15,22,38,0.80) 100%);
         }
-        .article-hero-content {
-            position: absolute; bottom: 0; left: 0; right: 0;
-            padding: 48px; max-width: 860px;
-        }
+        .article-hero-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 48px; max-width: 860px; }
         .article-eyebrow {
             font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em;
             text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 14px;
@@ -90,25 +78,21 @@
             border: 1px solid rgba(42,110,158,0.2);
         }
         .article-updated {
-            font-family: var(--font-mono); font-size: 11px;
-            color: var(--text-light); letter-spacing: 0.05em;
-            background: rgba(42,110,158,0.06);
-            border: 1px solid rgba(42,110,158,0.15);
-            border-radius: 3px; padding: 3px 10px;
+            font-family: var(--font-mono); font-size: 11px; color: var(--text-light);
+            letter-spacing: 0.05em; background: rgba(42,110,158,0.06);
+            border: 1px solid rgba(42,110,158,0.15); border-radius: 3px; padding: 3px 10px;
         }
         .article-deck {
             font-family: var(--font-display); font-size: 1.2rem; font-weight: 400;
             font-style: italic; color: var(--text-mid); line-height: 1.6;
-            margin-bottom: 40px; padding-left: 20px;
-            border-left: 3px solid var(--accent);
+            margin-bottom: 40px; padding-left: 20px; border-left: 3px solid var(--accent);
         }
         .article-body p { font-size: 17px; line-height: 1.8; color: var(--text-mid); margin-bottom: 24px; }
         .article-body p strong { color: var(--text); font-weight: 600; }
         .article-body blockquote {
             margin: 36px 0; padding: 20px 28px;
             border-left: 3px solid var(--accent);
-            background: rgba(42,110,158,0.04);
-            border-radius: 0 6px 6px 0;
+            background: rgba(42,110,158,0.04); border-radius: 0 6px 6px 0;
         }
         .article-body blockquote p {
             font-family: var(--font-display); font-size: 1.1rem;
@@ -179,7 +163,7 @@
         <div class="article-deck">Iran's attempt to close the Strait of Hormuz has achieved short-term disruption. The long-term cost is the permanent downgrading of its most powerful strategic asset.</div>
 
         <div class="article-body">
-            <p>On February 28, following joint US-Israeli strikes that killed Supreme Leader Ali Khamenei, Iran's Revolutionary Guard broadcast a simple message to vessels in the Persian Gulf: no ship was permitted to transit the Strait of Hormuz. Two weeks later, the strait remains functionally closed. Brent crude is fluctuating strongly around the $100 a barrel mark. Major carriers have rerouted around the Cape of Good Hope. Iran has demonstrated, against all prior expectations, that it can impose this disruption without a surface fleet — mines, shore-based missiles, and the credible threat of drone attack have proven sufficient to empty one of the world's most important energy corridor.</p>
+            <p>On February 28, following joint US-Israeli strikes that killed Supreme Leader Ali Khamenei, Iran's Revolutionary Guard broadcast a simple message to vessels in the Persian Gulf: no ship was permitted to transit the Strait of Hormuz. Two weeks later, the strait remains functionally closed. Brent crude is fluctuating strongly around the $100 a barrel mark. Major carriers have rerouted around the Cape of Good Hope. Iran has demonstrated, against all prior expectations, that it can impose this disruption without a surface fleet — mines, shore-based missiles, and the credible threat of drone attack have proven sufficient to empty one of the world's most important energy corridors.</p>
 
             <p>Iran has won the opening round. But supply chain strategists should resist the instinct to update their risk models around what Iran has just demonstrated. The more important question is what Iran has just permanently surrendered.</p>
 
@@ -196,6 +180,12 @@
             <p><strong>For the supply chain strategist, the actionable takeaway is this:</strong> the moment a chokepoint is activated against you, your most important decision is not how to route around it today — it is how aggressively to fund the substitution that makes it irrelevant tomorrow. Governments and companies that treat disruption purely as a logistics problem to be solved in the near term consistently find themselves exposed to the same leverage again. Those that treat it as a capital allocation signal — a price signal powerful enough to justify investments that were previously uneconomic — emerge structurally stronger.</p>
 
             <p>Iran may hold Hormuz for weeks or months. It will not hold the investment thesis for Gulf energy diversification. That thesis is already written.</p>
+
+            <div style="margin-top: 36px; padding: 24px 28px; background: rgba(42,110,158,0.06); border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0;">
+                <p style="font-size: 15px; color: var(--text); margin-bottom: 8px;"><strong>Go deeper on this analysis</strong></p>
+                <p style="font-size: 14px; color: var(--text-mid); margin-bottom: 16px;">The strategic report <em>The Chokepoint That Moved the World</em> maps the full cascade — energy, fertilizer, petrochemicals, and the financial contagion spreading across three continents — and tells you what to do about it before the next phase of the crisis arrives.</p>
+                <a href="../reports/hormuz-crisis.html" style="display:inline-flex;align-items:center;gap:8px;padding:11px 22px;background:var(--accent);color:white;border-radius:4px;font-size:13px;font-weight:600;text-decoration:none;">Read the full report — $25 →</a>
+            </div>
         </div>
     </div>
 
@@ -210,11 +200,6 @@
             <a href="../index.html">Home</a>
             <a href="../index.html#market-insights">Market Insights</a>
             <a href="../legal.html">Legal &amp; Privacy</a>
-            <div style="margin-top: 36px; padding: 24px 28px; background: rgba(42,110,158,0.06); border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0;">
-    <p style="font-size: 15px; color: var(--text); margin-bottom: 8px;"><strong>Go deeper on this analysis</strong></p>
-    <p style="font-size: 14px; color: var(--text-mid); margin-bottom: 16px;">The strategic report <em>The Chokepoint That Moved the World</em> maps the full cascade — energy, fertilizer, petrochemicals, and the financial contagion spreading across three continents — and tells you what to do about it before the next phase of the crisis arrives.</p>
-    <a href="../reports/hormuz-crisis.html" style="display:inline-flex;align-items:center;gap:8px;padding:11px 22px;background:var(--accent);color:white;border-radius:4px;font-size:13px;font-weight:600;text-decoration:none;">Read the full report — $25 →</a>
-</div>
         </div>
     </footer>
 
