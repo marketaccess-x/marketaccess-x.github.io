@@ -880,7 +880,7 @@
         .reveal-delay-3 { transition-delay: 0.3s; }
         .reveal-delay-4 { transition-delay: 0.4s; }
 
-        /* ─── RESPONSIVE ─── */
+    /* ─── RESPONSIVE ─── */
         @media (max-width: 1024px) {
             .articles-grid { grid-template-columns: 1fr 1fr; }
             .analysis-grid { grid-template-columns: 1fr; gap: 0; }
@@ -904,8 +904,8 @@
             .footer-top { grid-template-columns: 1fr 1fr; gap: 30px; }
             .footer-brand { grid-column: span 2; }
             #about { padding: 60px 20px; }
+            .tool-panels-grid { grid-template-columns: 1fr !important; }
         }
-
         /* Thumb pattern decorations */
         .thumb-geo {
             position: absolute;
@@ -1012,48 +1012,85 @@
         </div>
     </div>
 
-    <!-- ════ SUPPLY CHAIN MAPPING ════ -->
+<!-- ════ SUPPLY CHAIN MAPPING ════ -->
 <section id="supply-chain">
-    <!-- Text header full width -->
-    <div style="max-width: 800px; margin-bottom: 48px;">
-        <div class="section-eyebrow reveal">Supply Chain Mapping</div>
+    <div style="max-width: 800px; margin-bottom: 56px;">
+        <div class="section-eyebrow reveal">Supply Chain Mapping &amp; Policy Intelligence</div>
         <h2 class="reveal reveal-delay-1">The physical geography<br>of strategic dependence</h2>
-        <p class="section-lead reveal reveal-delay-2">Interactive visualizations mapping commodity flows from extraction to end-use manufacturing, overlaid with the trade policy measures reshaping those routes. Each atlas tracks where material originates, where it's processed, and which policy instruments — export controls, subsidy conditions, local content requirements, investment screening — apply at each node.</p>
+        <p class="section-lead reveal reveal-delay-2">Interactive tools mapping commodity flows from extraction to end-use manufacturing, overlaid with the trade policy measures reshaping those routes — and the expiry cliffs that will determine whether those measures hold.</p>
     </div>
 
-    <!-- Map dominant, full width -->
-    <div class="map-preview reveal reveal-delay-1" style="margin-bottom: 24px;">
-        <div class="map-preview-header">
-            <span class="map-preview-title">REE Supply Chain Atlas — Live Preview</span>
-            <div class="map-preview-dots">
-                <span style="background:#ff5f56;"></span>
-                <span style="background:#ffbd2e;"></span>
-                <span style="background:#27c93f;"></span>
-            </div>
-        </div>
-        <a href="https://marketaccess-x.github.io/rare-earth-supply-chain/" target="_blank" rel="noopener">
-            <img src="assets/ree-preview.png" alt="Rare Earth Elements Supply Chain Map" style="width:100%; display:block;">
-        </a>
-        <div class="map-preview-footer">
-            <span>Click to open the interactive map</span>
-            <a href="https://marketaccess-x.github.io/rare-earth-supply-chain/" target="_blank" rel="noopener">Open full screen →</a>
-        </div>
-    </div>
+    <div class="tool-panels-grid reveal reveal-delay-1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px;">
 
-    <!-- Card below as launch button -->
-    <a href="https://marketaccess-x.github.io/rare-earth-supply-chain/" target="_blank" rel="noopener" class="tool-card reveal" style="max-width: 600px;">
-        <div class="tool-card-icon">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M3 12h3M18 12h3M12 3v3M12 18v3"/><path d="M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>
-        </div>
-        <div class="tool-card-body">
-            <div class="tool-card-title">Rare Earth Elements — Supply Chain Atlas</div>
-            <div class="tool-card-desc">Interactive 3D globe mapping REE extraction, processing, and end-use manufacturing flows. Highlights China's 85%+ refining dominance and Western diversification efforts.</div>
-            <div class="tool-card-meta">
-                <span class="tag tag-live">Live</span>
-                <span class="tag tag-minerals">Critical Minerals</span>
+        <!-- REE Atlas -->
+        <div style="display: flex; flex-direction: column; gap: 0;">
+            <div class="map-preview" style="margin-bottom: 16px;">
+                <div class="map-preview-header">
+                    <span class="map-preview-title">REE Supply Chain Atlas</span>
+                    <div class="map-preview-dots">
+                        <span style="background:#ff5f56;"></span>
+                        <span style="background:#ffbd2e;"></span>
+                        <span style="background:#27c93f;"></span>
+                    </div>
+                </div>
+                <a href="https://marketaccess-x.github.io/rare-earth-supply-chain/" target="_blank" rel="noopener">
+                    <img src="assets/ree-preview.png" alt="Rare Earth Elements Supply Chain Map" style="width:100%; display:block; aspect-ratio: 16/10; object-fit: cover; object-position: center top;">
+                </a>
+                <div class="map-preview-footer">
+                    <span>Interactive 3D globe — scenario modeller</span>
+                    <a href="https://marketaccess-x.github.io/rare-earth-supply-chain/" target="_blank" rel="noopener">Open full screen →</a>
+                </div>
             </div>
+            <a href="https://marketaccess-x.github.io/rare-earth-supply-chain/" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-card-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M3 12h3M18 12h3M12 3v3M12 18v3"/><path d="M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>
+                </div>
+                <div class="tool-card-body">
+                    <div class="tool-card-title">Rare Earth Elements — Supply Chain Atlas</div>
+                    <div class="tool-card-desc">Interactive 3D globe mapping REE extraction, processing, and end-use manufacturing flows. Highlights China's 85%+ refining dominance and Western diversification efforts across five policy scenarios.</div>
+                    <div class="tool-card-meta">
+                        <span class="tag tag-live">Live</span>
+                        <span class="tag tag-minerals">Critical Minerals</span>
+                    </div>
+                </div>
+            </a>
         </div>
-    </a>
+
+        <!-- Policy Timeline -->
+        <div style="display: flex; flex-direction: column; gap: 0;">
+            <div class="map-preview" style="margin-bottom: 16px;">
+                <div class="map-preview-header">
+                    <span class="map-preview-title">US–China Policy Expiry Timeline</span>
+                    <div class="map-preview-dots">
+                        <span style="background:#ff5f56;"></span>
+                        <span style="background:#ffbd2e;"></span>
+                        <span style="background:#27c93f;"></span>
+                    </div>
+                </div>
+                <a href="policy-timeline.html" target="_blank" rel="noopener">
+                    <img src="assets/timeline-preview.png" alt="US–China Policy Expiry Timeline" style="width:100%; display:block; aspect-ratio: 16/10; object-fit: cover; object-position: center top;">
+                </a>
+                <div class="map-preview-footer">
+                    <span>Seven instruments — one 17-day window</span>
+                    <a href="policy-timeline.html" target="_blank" rel="noopener">Open full screen →</a>
+                </div>
+            </div>
+            <a href="policy-timeline.html" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-card-icon">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5M16 4v5"/><path d="M7 14h2M11 14h2M15 14h2M7 17h2M11 17h2"/></svg>
+                </div>
+                <div class="tool-card-body">
+                    <div class="tool-card-title">US–China Policy Expiry Timeline</div>
+                    <div class="tool-card-desc">Seven trade policy instruments, three diplomatic scenarios, five sector filters. Model how the November 2026 cliff — where three instruments expire in a 17-day window — affects your sector's exposure.</div>
+                    <div class="tool-card-meta">
+                        <span class="tag tag-live">Live</span>
+                        <span class="tag tag-soon">Trade Policy</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </div>
 </section>
 
     <!-- ════ STRATEGIC ANALYSIS ════ -->
