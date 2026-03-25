@@ -839,7 +839,7 @@
     <button onclick="document.getElementById('gdpr-banner').style.display='none';localStorage.setItem('gdpr-acknowledged','1');" style="flex-shrink:0;padding:9px 20px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;color:rgba(255,255,255,0.7);font-family:var(--font-body);font-size:13px;cursor:pointer;transition:background 0.2s;">Got it</button>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
     // Nav scroll shadow
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
@@ -1183,4 +1183,17 @@
 
     function setSector(s) {
         sector = s;
-        document.querySelectorAll('.t-sector-btn').
+        document.querySelectorAll('.t-sector-btn').forEach(b => b.classList.toggle('active', b.dataset.sec === s));
+        updateRows();
+        updateTableRows();
+        updateRisk();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => { init(); updateBars(); updateRows(); });
+    } else {
+        init(); updateBars(); updateRows();
+    }
+</script>
+</body>
+</html>
