@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>After Busan | Market Access X</title>
+    <meta name="description" content="What a delayed Xi-Trump summit means for trade, critical minerals, and chips. A strategic intelligence report by Market Access X.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg:          #f2f4f8;
+            --bg-dark:     #1c2333;
+            --text:        #2c3444;
+            --text-mid:    #4a5568;
+            --text-light:  #7a8599;
+            --accent:      #2a6e9e;
+            --accent-pale: #d4e6f3;
+            --accent-dark: #1a4f75;
+            --border:      rgba(44, 52, 68, 0.1);
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body:    'DM Sans', system-ui, sans-serif;
+            --font-mono:    'DM Mono', monospace;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.6; }
+        a { color: inherit; text-decoration: none; }
+        img { display: block; max-width: 100%; }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 48px; height: 64px;
+            background: rgba(242, 244, 248, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-logo { display: flex; align-items: center; gap: 2px; }
+        .nav-logo-mark { width: 52px; height: 52px; border-radius: 6px; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 0; }
+        .nav-logo-mark img { width: 52px; height: 52px; object-fit: contain; }
+        .nav-logo-text { display: flex; flex-direction: column; line-height: 1.6; }
+        .nav-logo-text strong { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--text); }
+        .nav-logo-text span { font-size: 10px; color: var(--text-light); letter-spacing: 0.08em; text-transform: uppercase; }
+        .nav-back { font-size: 13px; font-weight: 500; color: var(--text-mid); transition: color 0.2s; }
+        .nav-back:hover { color: var(--accent); }
+
+        /* HERO */
+        .report-hero {
+            margin-top: 64px;
+            background: var(--bg-dark);
+            padding: 64px 48px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            min-height: 520px;
+        }
+        .report-eyebrow {
+            font-family: var(--font-mono);
+            font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+            color: #7ab8db; margin-bottom: 16px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .report-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: #7ab8db; }
+        .report-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            font-weight: 500; color: white; line-height: 1.15;
+            margin-bottom: 12px;
+        }
+        .report-subtitle {
+            font-family: var(--font-display);
+            font-size: 1.05rem; font-style: italic;
+            color: rgba(255,255,255,0.55); margin-bottom: 24px; line-height: 1.5;
+        }
+        .report-meta {
+            display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 28px;
+        }
+        .report-meta-item {
+            font-family: var(--font-mono); font-size: 11px;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+        }
+        .report-meta-item span { color: rgba(255,255,255,0.75); }
+        .report-price {
+            font-family: var(--font-display);
+            font-size: 2rem; font-weight: 400; color: white;
+            margin-bottom: 16px;
+        }
+        .report-price sup { font-size: 1rem; vertical-align: super; }
+        .buy-btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 15px 32px; background: var(--accent);
+            color: white; border-radius: 4px;
+            font-family: var(--font-body); font-size: 15px; font-weight: 600;
+            letter-spacing: 0.02em; transition: background 0.2s, transform 0.15s;
+            margin-bottom: 12px; width: 100%; justify-content: center;
+        }
+        .buy-btn:hover { background: var(--accent-dark); transform: translateY(-1px); }
+        .buy-note { font-size: 12px; color: rgba(255,255,255,0.35); text-align: center; line-height: 1.6; }
+        .buy-note a { color: rgba(255,255,255,0.5); }
+
+        .hero-graphic {
+            border-radius: 8px; overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.08);
+            height: 380px;
+        }
+        .hero-graphic img {
+            width: 100%; height: 100%;
+            object-fit: cover; object-position: center 50%;
+            display: block;
+        }
+
+        /* BODY */
+        .report-body {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 72px 48px 100px;
+        }
+
+        .report-section { margin-bottom: 56px; }
+        .report-section h2 {
+            font-family: var(--font-display);
+            font-size: 1.5rem; font-weight: 500; color: var(--text);
+            margin-bottom: 20px; padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+        .report-section p { font-size: 16px; line-height: 1.8; color: var(--text-mid); margin-bottom: 16px; }
+        .report-section p:last-child { margin-bottom: 0; }
+        .report-section p strong { color: var(--text); font-weight: 600; }
+
+        /* STATS */
+        .stats-row {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 16px; margin: 32px 0;
+        }
+        .stat-card {
+            background: var(--bg-dark); border-radius: 8px;
+            padding: 24px; text-align: center;
+        }
+        .stat-num {
+            font-family: var(--font-display); font-size: 2rem; font-weight: 400;
+            color: #7ab8db; line-height: 1; margin-bottom: 8px;
+        }
+        .stat-label { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.5; }
+
+        /* FINDINGS */
+        .findings-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 16px; margin-top: 8px;
+        }
+        .finding-card {
+            background: white; border: 1px solid var(--border);
+            border-radius: 8px; padding: 20px 24px;
+        }
+        .finding-num {
+            font-family: var(--font-mono); font-size: 11px;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            color: var(--accent); margin-bottom: 8px;
+        }
+        .finding-card p { font-size: 14px; line-height: 1.65; color: var(--text-mid); margin-bottom: 0; }
+
+        /* ALERT BOX */
+        .alert-box {
+            background: white; border: 1px solid var(--border);
+            border-left: 4px solid #e65100;
+            border-radius: 0 8px 8px 0;
+            padding: 20px 24px; margin: 32px 0;
+        }
+        .alert-label {
+            font-family: var(--font-mono); font-size: 11px;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            color: #e65100; margin-bottom: 8px;
+        }
+        .alert-box p { font-size: 14px; line-height: 1.65; color: var(--text-mid); margin-bottom: 0; }
+
+        /* WHAT YOU GET */
+        .what-you-get {
+            background: white; border: 1px solid var(--border);
+            border-radius: 8px; padding: 32px 36px; margin-top: 8px;
+        }
+        .get-item {
+            display: flex; gap: 16px; align-items: flex-start;
+            padding: 14px 0; border-bottom: 1px solid var(--border);
+        }
+        .get-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .get-icon {
+            width: 28px; height: 28px; border-radius: 50%;
+            background: var(--accent-pale);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0; margin-top: 2px;
+        }
+        .get-icon svg { width: 14px; height: 14px; stroke: var(--accent); fill: none; stroke-width: 2; }
+        .get-item h4 { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+        .get-item p { font-size: 13px; color: var(--text-mid); line-height: 1.55; margin-bottom: 0; }
+
+        /* CTA BOTTOM */
+        .cta-bottom {
+            background: var(--bg-dark); border-radius: 10px;
+            padding: 48px; text-align: center; margin-top: 56px;
+        }
+        .cta-bottom h3 {
+            font-family: var(--font-display); font-size: 1.6rem; font-weight: 500;
+            color: white; margin-bottom: 12px;
+        }
+        .cta-bottom p { font-size: 15px; color: rgba(255,255,255,0.5); margin-bottom: 32px; line-height: 1.7; }
+        .cta-price { font-family: var(--font-display); font-size: 2rem; color: white; margin-bottom: 20px; }
+        .buy-btn-large {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 18px 48px; background: var(--accent); color: white;
+            border-radius: 4px; font-size: 16px; font-weight: 600;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .buy-btn-large:hover { background: var(--accent-dark); transform: translateY(-1px); }
+        .cta-note { font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 16px; line-height: 1.6; }
+        .cta-note a { color: rgba(255,255,255,0.45); }
+
+        /* FOOTER */
+        footer {
+            background: var(--bg-dark); padding: 36px 48px;
+            display: flex; align-items: center; justify-content: space-between;
+            color: rgba(255,255,255,0.35); font-size: 12px;
+        }
+        footer a { color: rgba(255,255,255,0.35); margin-left: 20px; transition: color 0.2s; }
+        footer a:hover { color: rgba(255,255,255,0.7); }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav { padding: 0 20px; }
+            .report-hero { grid-template-columns: 1fr; gap: 32px; padding: 48px 20px; min-height: unset; }
+            .hero-graphic { height: 240px; }
+            .report-body { padding: 48px 20px 60px; }
+            .findings-grid { grid-template-columns: 1fr; }
+            .stats-row { grid-template-columns: 1fr 1fr; }
+            .cta-bottom { padding: 32px 20px; }
+            footer { flex-direction: column; gap: 12px; padding: 24px 20px; }
+        }
+        @media (max-width: 480px) {
+            .stats-row { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html" class="nav-logo">
+            <div class="nav-logo-mark">
+                <img src="../assets/Symbol.png" alt="Market Access X logo">
+            </div>
+            <div class="nav-logo-text">
+                <strong>Market Access X</strong>
+                <span>Where policy risk meets operational reality</span>
+            </div>
+        </a>
+        <a href="../index.html#strategic-analysis" class="nav-back">← Strategic Analysis</a>
+    </nav>
+
+    <div class="report-hero">
+        <div>
+            <div class="report-eyebrow">Strategic Analysis Report</div>
+            <h1>After Busan</h1>
+            <p class="report-subtitle">What a Delayed Xi-Trump Summit Means for Trade, Critical Minerals, and Chips</p>
+            <div class="report-meta">
+                <div class="report-meta-item">Published <span>March 2026</span></div>
+                <div class="report-meta-item">Length <span>6 pages</span></div>
+                <div class="report-meta-item">Format <span>PDF</span></div>
+                <div class="report-meta-item">By <span>Market Access X</span></div>
+            </div>
+            <div class="report-price"><sup>$</sup>25</div>
+            <a href="#" class="buy-btn">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="white" fill="none" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                Buy Report — $25
+            </a>
+            <p class="buy-note">Instant PDF download via Stripe secure checkout.<br>Questions? <a href="mailto:simon.lacey@marketaccess-x.com">simon.lacey@marketaccess-x.com</a></p>
+        </div>
+        <div>
+            <div class="hero-graphic">
+                <img src="../assets/After_Busan_Hero.webp" alt="Beijing skyline with diplomatic context">
+            </div>
+        </div>
+    </div>
+
+    <div class="report-body">
+
+        <div class="report-section">
+            <h2>The analytical problem this report solves</h2>
+            <p>The Geneva truce (May 2025), the Stockholm extension (August 2025), the Busan agreement (October 2025) — three chapters of the same negotiation, each buying time that neither side knew how to spend. The visit to Beijing that was meant to extend it has been delayed by an Iran war that neither side anticipated, but is now scheduled for mid-May.</p>
+            <p>The dominant policy narrative presents these as a sequence of diplomatic achievements. <strong>This report makes the case that they are a sequence of temporary suspensions built on a legal framework the US Supreme Court partially demolished in February 2026.</strong> Every concession is revocable. Every expiry date is approaching. The November cliff — when the Busan tariff suspension, the rare earth control pause, and the dual-use ban suspension all converge in a 17-day window — is the most consequential risk event on the bilateral calendar, and most organisations have not begun to model it.</p>
+        </div>
+
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-num">~32%</div>
+                <div class="stat-label">Effective US tariff rate on Chinese goods post-IEEPA ruling</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">Jul 24</div>
+                <div class="stat-label">Section 122 tariff statutory expiry — first cliff of 2026</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">Nov 10</div>
+                <div class="stat-label">Busan tariff suspension and REE control pause expire</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">94%</div>
+                <div class="stat-label">China's share of global sintered permanent magnet production</div>
+            </div>
+        </div>
+
+        <div class="report-section">
+            <h2>Key findings</h2>
+            <div class="findings-grid">
+                <div class="finding-card">
+                    <div class="finding-num">Finding 01</div>
+                    <p>The Busan framework is one year, fragile, and structurally incomplete. The two sides' readouts diverge on scope. No joint communiqué was issued. The White House overstated China's rare earth concessions; MOFCOM's language was considerably more limited.</p>
+                </div>
+                <div class="finding-card">
+                    <div class="finding-num">Finding 02</div>
+                    <p>The Supreme Court's February 2026 IEEPA ruling voided the legal basis for the tariff architecture negotiated at Busan. The replacement Section 122 tariffs expire after 150 days. New Section 301 authorities will not be in place until late 2026 at earliest.</p>
+                </div>
+                <div class="finding-card">
+                    <div class="finding-num">Finding 03</div>
+                    <p>The upcoming summit's deliverables will be commercial, not structural. Agricultural purchases, Boeing orders, and energy trade are achievable. Tariff reductions, semiconductor controls, and TikTok are not on the table. A CSIS survey of 79 former US officials found zero who believed both sides would fully keep Busan commitments.</p>
+                </div>
+                <div class="finding-card">
+                    <div class="finding-num">Finding 04</div>
+                    <p>China's mineral export control architecture is permanent and expanding regardless of diplomatic temperature. The April 2025 heavy rare earth controls and February 2025 tungsten and tellurium controls were never suspended. Busan paused only the most recent escalatory additions.</p>
+                </div>
+                <div class="finding-card">
+                    <div class="finding-num">Finding 05</div>
+                    <p>The November 2026 cliff is the single most important risk event on the bilateral calendar. Busan tariff suspensions, REE control pauses, and the dual-use ban suspension all expire in a 17-day window. Sectors with no contingency plan face acute disruption with limited notice.</p>
+                </div>
+                <div class="finding-card">
+                    <div class="finding-num">Finding 06</div>
+                    <p>China has more leverage entering this summit than any previous bilateral engagement. The IEEPA ruling weakened the US tariff threat, the Iran war distracted Washington's preparation, and China's mineral whitelist system has evolved into a permanent architecture of state-managed commodity access.</p>
+                </div>
+            </div>
+
+            <div class="alert-box">
+                <div class="alert-label">⚠ Non-obvious risk</div>
+                <p>The April 2025 controls on seven heavy rare earth elements — terbium, dysprosium, yttrium, scandium, lutetium, samarium, and gadolinium — were never part of the Busan suspension and remain fully in force. Exports to US military end-users are completely blocked. An F-35 requires approximately 900 pounds of rare earth magnets. A Virginia-class submarine requires 9,200 pounds. Most defence procurement risk assessments are modelling a suspended control environment that does not exist for these materials.</p>
+            </div>
+        </div>
+
+        <div class="report-section">
+            <h2>What you get</h2>
+            <div class="what-you-get">
+                <div class="get-item">
+                    <div class="get-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7 4H4a2 2 0 00-2 2v14a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2h-3"/></svg></div>
+                    <div>
+                        <h4>Executive summary and key findings</h4>
+                        <p>Six key findings distilled for time-poor decision-makers — the essential picture in under two minutes, with the Busan framework's structural gaps stated plainly.</p>
+                    </div>
+                </div>
+                <div class="get-item">
+                    <div class="get-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+                    <div>
+                        <h4>The mineral control architecture — layer by layer</h4>
+                        <p>A definitive breakdown of which Chinese export controls are suspended, which were never suspended, what each covers, and which sectors are exposed at each expiry date. This is the analysis that most compliance teams are missing.</p>
+                    </div>
+                </div>
+                <div class="get-item">
+                    <div class="get-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+                    <div>
+                        <h4>The internal conflict matrix</h4>
+                        <p>How Treasury, Commerce, USTR, and DoD diverge on each issue — and how MOFCOM, NDRC, and the PLA diverge on the Chinese side. Understanding who is blocking what tells you more about summit outcomes than any readout will.</p>
+                    </div>
+                </div>
+                <div class="get-item">
+                    <div class="get-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+                    <div>
+                        <h4>Three planning parameters for downstream manufacturers</h4>
+                        <p>Concrete actions for procurement, government affairs, and risk functions — built around the three critical expiry dates of July 24, November 10, and November 27, 2026.</p>
+                    </div>
+                </div>
+                <div class="get-item">
+                    <div class="get-icon"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+                    <div>
+                        <h4>Analyst consensus — and where it is wrong</h4>
+                        <p>What CSIS, PIIE, Rhodium Group, Eurasia Group, and the Atlantic Council actually expect from the summit — and the specific points where the consensus underestimates structural risk.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="report-section">
+            <h2>Who this report is for</h2>
+            <p>This report is written for professionals in government affairs, trade compliance, and corporate risk functions at organisations with downstream exposure to the US-China trade relationship — whether through direct supply chain dependency on Chinese-origin critical minerals, semiconductor inputs, or indirect exposure through automotive, defence, energy, or industrial manufacturing.</p>
+            <p>It is not a geopolitics primer. It does not recount the diplomatic history. It translates the policy mechanics — the legal framework, the expiry architecture, the internal faction dynamics — into the supply chain and compliance language that decision-makers actually use. It is written for both Western firms managing China exposure and Asian firms navigating US restrictions.</p>
+        </div>
+
+        <div class="cta-bottom">
+            <h3>Get the full analysis</h3>
+            <p>6 pages. No filler. Every paragraph earns its place.<br>Instant PDF download via Stripe secure checkout.</p>
+            <div class="cta-price"><sup style="font-size:1rem;vertical-align:super;">$</sup>25</div>
+            <a href="#" class="buy-btn-large">
+                Buy Report — $25
+            </a>
+            <p class="cta-note">Payment processed securely by Stripe. PDF delivered immediately after purchase.<br>Questions? <a href="mailto:simon.lacey@marketaccess-x.com">simon.lacey@marketaccess-x.com</a></p>
+        </div>
+
+    </div>
+
+    <footer>
+        <span>© 2026 Market Access X. All rights reserved.</span>
+        <div>
+            <a href="../index.html">Home</a>
+            <a href="../index.html#strategic-analysis">Reports</a>
+            <a href="mailto:simon.lacey@marketaccess-x.com">Contact</a>
+        </div>
+    </footer>
+
+</body>
+</html>
