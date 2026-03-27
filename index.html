@@ -892,6 +892,7 @@
             .section-split { grid-template-columns: 1fr; gap: 40px; }
             .section-split.reversed { direction: ltr; }
             .stat-bar { padding: 0 20px; }
+.stat-bar > div { grid-template-columns: repeat(2, 1fr) !important; }
             .stat-bar-inner { grid-template-columns: repeat(2, 1fr); }
             .about-inner { grid-template-columns: 1fr; gap: 40px; }
             .articles-grid { grid-template-columns: 1fr; }
@@ -988,27 +989,52 @@
         </div>
     </section>
 
-    <!-- ════ STAT BAR ════ -->
-    <div class="stat-bar">
-        <div class="stat-bar-inner">
-            <div class="stat-item reveal">
-                <div class="stat-num"><span>65</span>%</div>
-                <div class="stat-label">Lithium processing through China</div>
+    <!-- ════ COVERAGE TILES ════ -->
+<div class="stat-bar">
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(255,255,255,0.06);">
+
+        <a href="#supply-chain" style="padding: 28px 0; border-right: 1px solid rgba(255,255,255,0.06); text-decoration: none; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.03)'" onmouseout="this.style.background='transparent'">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #7ab8db; flex-shrink: 0;"></div>
+                <span style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35);">Critical Minerals</span>
             </div>
-            <div class="stat-item reveal reveal-delay-1">
-                <div class="stat-num"><span>90</span>%+</div>
-                <div class="stat-label">Rare earth refining capacity</div>
+            <div style="font-family: var(--font-display); font-size: 15px; font-weight: 500; color: #fff; line-height: 1.25; margin-bottom: 8px;">Where exposure actually lives</div>
+            <div style="font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.55;">Lithium, REE, and cobalt dependencies — mapped to the processing chokepoints that determine real risk.</div>
+            <span style="display: inline-block; margin-top: 12px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; background: rgba(122,184,219,0.1); color: #7ab8db; border: 1px solid rgba(122,184,219,0.2);">Briefing available</span>
+        </a>
+
+        <a href="#strategic-analysis" style="padding: 28px 0 28px 32px; border-right: 1px solid rgba(255,255,255,0.06); text-decoration: none; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.03)'" onmouseout="this.style.background='transparent'">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #ff8a65; flex-shrink: 0;"></div>
+                <span style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35);">Energy Infrastructure</span>
             </div>
-            <div class="stat-item reveal reveal-delay-2">
-                <div class="stat-num"><span>3</span></div>
-                <div class="stat-label">Critical mineral chokepoints mapped</div>
+            <div style="font-family: var(--font-display); font-size: 15px; font-weight: 500; color: #fff; line-height: 1.25; margin-bottom: 8px;">Chokepoints that move markets</div>
+            <div style="font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.55;">Strait of Hormuz, Ras Laffan, and LNG corridors — where physical geography becomes policy leverage.</div>
+            <span style="display: inline-block; margin-top: 12px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; background: rgba(122,184,219,0.1); color: #7ab8db; border: 1px solid rgba(122,184,219,0.2);">2 briefings available</span>
+        </a>
+
+        <a href="#market-insights" style="padding: 28px 0 28px 32px; border-right: 1px solid rgba(255,255,255,0.06); text-decoration: none; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.03)'" onmouseout="this.style.background='transparent'">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #81c784; flex-shrink: 0;"></div>
+                <span style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35);">Pharmaceuticals</span>
             </div>
-            <div class="stat-item reveal reveal-delay-3">
-                <div class="stat-num"><span>2027</span></div>
-                <div class="stat-label">IRA full-phase critical mineral threshold</div>
+            <div style="font-family: var(--font-display); font-size: 15px; font-weight: 500; color: #fff; line-height: 1.25; margin-bottom: 8px;">Regulatory corridors narrowing</div>
+            <div style="font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.55;">BIOSECURE Act designation pathways, WuXi repositioning, and CRO supply chain restructuring.</div>
+            <span style="display: inline-block; margin-top: 12px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; background: rgba(39,115,90,0.15); color: #5abf99; border: 1px solid rgba(39,115,90,0.25);">Free analysis</span>
+        </a>
+
+        <a href="#strategic-analysis" style="padding: 28px 0 28px 32px; text-decoration: none; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.03)'" onmouseout="this.style.background='transparent'">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+                <div style="width: 8px; height: 8px; border-radius: 50%; background: #ce93d8; flex-shrink: 0;"></div>
+                <span style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35);">Technology</span>
             </div>
-        </div>
+            <div style="font-family: var(--font-display); font-size: 15px; font-weight: 500; color: #fff; line-height: 1.25; margin-bottom: 8px;">The precedent weapon</div>
+            <div style="font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.55;">AI chip controls, Pentagon designation logic, and how Anthropic became a case study in geopolitical risk.</div>
+            <span style="display: inline-block; margin-top: 12px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; background: rgba(122,184,219,0.1); color: #7ab8db; border: 1px solid rgba(122,184,219,0.2);">Briefing available</span>
+        </a>
+
     </div>
+</div>
 
 <!-- ════ SUPPLY CHAIN MAPPING ════ -->
 <section id="supply-chain">
