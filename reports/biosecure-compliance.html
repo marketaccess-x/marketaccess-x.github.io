@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Compliance Countdown | Market Access X</title>
+    <meta name="description" content="The BIOSECURE Act is law. Two designation tracks. Three regulatory clocks. WuXi AppTec is not yet designated — that gap is a planning window, not a reprieve.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg:          #f2f4f8;
+            --bg-dark:     #1c2333;
+            --text:        #2c3444;
+            --text-mid:    #4a5568;
+            --text-light:  #7a8599;
+            --accent:      #2a6e9e;
+            --accent-pale: #d4e6f3;
+            --accent-dark: #1a4f75;
+            --border:      rgba(44, 52, 68, 0.1);
+            --green:       #27735a;
+            --orange:      #b85c2a;
+            --orange-pale: #fef6f0;
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body:    'DM Sans', system-ui, sans-serif;
+            --font-mono:    'DM Mono', monospace;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.6; }
+        a { color: inherit; text-decoration: none; }
+        img { display: block; max-width: 100%; }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 48px; height: 64px;
+            background: rgba(242, 244, 248, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-logo { display: flex; align-items: center; gap: 2px; }
+        .nav-logo-mark { width: 52px; height: 52px; border-radius: 6px; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 0; }
+        .nav-logo-mark img { width: 52px; height: 52px; object-fit: contain; }
+        .nav-logo-text { display: flex; flex-direction: column; line-height: 1.6; }
+        .nav-logo-text strong { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--text); }
+        .nav-logo-text span { font-size: 10px; color: var(--text-light); letter-spacing: 0.08em; text-transform: uppercase; }
+        .nav-back { font-size: 13px; font-weight: 500; color: var(--text-mid); transition: color 0.2s; }
+        .nav-back:hover { color: var(--accent); }
+
+        .report-hero {
+            margin-top: 64px; background: var(--bg-dark);
+            padding: 64px 48px;
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 60px; align-items: center; min-height: 520px;
+        }
+        .report-eyebrow {
+            font-family: var(--font-mono); font-size: 11px;
+            letter-spacing: 0.12em; text-transform: uppercase;
+            color: #7ab8db; margin-bottom: 16px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .report-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: #7ab8db; }
+        .report-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            font-weight: 500; color: white; line-height: 1.15; margin-bottom: 12px;
+        }
+        .report-subtitle {
+            font-family: var(--font-display); font-size: 1.05rem; font-style: italic;
+            color: rgba(255,255,255,0.55); margin-bottom: 24px; line-height: 1.5;
+        }
+        .report-meta { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 28px; }
+        .report-meta-item {
+            font-family: var(--font-mono); font-size: 11px;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+        }
+        .report-meta-item span { color: rgba(255,255,255,0.75); }
+        .report-price {
+            font-family: var(--font-display); font-size: 2rem;
+            font-weight: 400; color: white; margin-bottom: 16px;
+        }
+        .report-price sup { font-size: 1rem; vertical-align: super; }
+        .buy-btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 15px 32px; background: var(--accent); color: white;
+            border-radius: 4px; font-family: var(--font-body);
+            font-size: 15px; font-weight: 600; letter-spacing: 0.02em;
+            transition: background 0.2s, transform 0.15s;
+            margin-bottom: 12px; width: 100%; justify-content: center;
+        }
+        .buy-btn:hover { background: var(--accent-dark); transform: translateY(-1px); }
+        .buy-note { font-size: 12px; color: rgba(255,255,255,0.35); text-align: center; line-height: 1.6; }
+        .buy-note a { color: rgba(255,255,255,0.5); }
+
+        .hero-graphic {
+            border-radius: 8px; overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.08); height: 380px;
+        }
+        .hero-graphic img {
+            width: 100%; height: 100%;
+            object-fit: cover; object-position: center 50%; display: block;
+        }
+
+        .report-body { max-width: 900px; margin: 0 auto; padding: 72px 48px 100px; }
+        .report-section { margin-bottom: 56px; }
+        .report-section h2 {
+            font-family: var(--font-display); font-size: 1.5rem; font-weight: 500;
+            color: var(--text); margin-bottom: 20px; padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+        .report-section p { font-size: 16px; line-height: 1.8; color: var(--text-mid); margin-bottom: 16px; }
+        .report-section p strong { color: var(--text); font-weight: 600; }
+
+        .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 32px 0; }
+        .stat-card { background: var(--bg-dark); border-radius: 8px; padding: 24px; text-align: center; }
+        .stat-num {
+            font-family: var(--font-display); font-size: 2.2rem; font-weight: 400;
+            color: #7ab8db; line-height: 1; margin-bottom: 8px;
+        }
+        .stat-num.orange { color: #e8956a; }
+        .stat-label { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.5; }
+
+        .findings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+        .finding-card { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 20px 24px; }
+        .finding-num {
+            font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em;
+            text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+        }
+        .finding-card p { font-size: 14px; line-height: 1.65; color: var(--text-mid); margin-bottom: 0; }
+
+        .what-you-get { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 32px 36px; margin-top: 8px; }
+        .get-item { display: flex; gap: 16px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid var(--border); }
+        .get-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .get-icon {
+            width: 28px; height: 28px; border-radius: 50%; background: var(--accent-pale);
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;
+        }
+        .get-icon svg { width: 14px; height: 14px; stroke: var(--accent); fill: none; stroke-width: 2; }
+        .get-item h4 { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+        .get-item p { font-size: 13px; color: var(--text-mid); line-height: 1.55; margin-bottom: 0; }
+
+        .clock-callout {
+            background: rgba(42, 110, 158, 0.06); border: 1px solid rgba(42, 110, 158, 0.2);
+            border-left: 4px solid var(--accent); border-radius: 0 6px 6px 0;
+            padding: 20px 24px; margin-bottom: 40px;
+        }
+        .clock-callout-label {
+            font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em;
+            text-transform: uppercase; color: var(--accent); margin-bottom: 6px;
+        }
+        .clock-callout p {
+            font-size: 14px; line-height: 1.65; color: var(--text-mid); margin-bottom: 0;
+        }
+        .clock-callout p strong { color: var(--text); }
+
+        .cta-bottom { background: var(--bg-dark); border-radius: 10px; padding: 48px; text-align: center; margin-top: 56px; }
+        .cta-bottom h3 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 500; color: white; margin-bottom: 12px; }
+        .cta-bottom p { font-size: 15px; color: rgba(255,255,255,0.5); margin-bottom: 32px; line-height: 1.7; }
+        .cta-price { font-family: var(--font-display); font-size: 2rem; color: white; margin-bottom: 20px; }
+        .buy-btn-large {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 18px 48px; background: var(--accent); color: white;
+            border-radius: 4px; font-size: 16px; font-weight: 600;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .buy-btn-large:hover { background: var(--accent-dark); transform: translateY(-1px); }
+        .cta-note { font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 16px; line-height: 1.6; }
+        .cta-note a { color: rgba(255,255,255,0.45); }
+
+        footer {
+            background: var(--bg-dark); padding: 36px 48px;
+            display: flex; align-items: center; justify-content: space-between;
+            color: rgba(255,255,255,0.35); font-size: 12px;
+        }
+        footer a { color: rgba(255,255,255,0.35); margin-left: 20px; transition: color 0.2s; }
+        footer a:hover { color: rgba(255,255,255,0.7); }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 20px; }
+            .report-hero { grid-template-columns: 1fr; gap: 32px; padding: 48px 20px; min-height: unset; }
+            .hero-graphic { height: 240px; }
+            .report-body { padding: 48px 20px 60px; }
+            .findings-grid { grid-template-columns: 1fr; }
+            .stats-row { grid-template-columns: 1fr; }
+            .cta-bottom { padding: 32px 20px; }
+            footer { flex-direction: column; gap: 12px; padding: 24px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html" class="nav-logo">
+            <div class="nav-logo-mark">
+                <img src="../assets/Symbol.png" alt="Market Access X logo">
+            </div>
+            <div class="nav-logo-text">
+                <strong>Market Access X</strong>
+                <span>Where policy risk meets operational reality</span>
+            </div>
+        </a>
+        <a href="../index.html#strategic-analysis" class="nav-back">&#8592; Strategic Analysis</a>
+    </nav>
+
+    <div class="report-hero">
+        <div>
+            <div class="report-eyebrow">Strategic Analysis Report</div>
+            <h1>The Compliance Countdown</h1>
+            <p class="report-subtitle">Two Designation Tracks, Three Regulatory Clocks, and What Western Pharma Must Do Before They Expire</p>
+            <div class="report-meta">
+                <div class="report-meta-item">Published <span>April 2026</span></div>
+                <div class="report-meta-item">Length <span>14 pages</span></div>
+                <div class="report-meta-item">Format <span>PDF</span></div>
+                <div class="report-meta-item">By <span>Market Access X</span></div>
+            </div>
+            <div class="report-price"><sup>$</sup>25</div>
+            <a href="https://buy.stripe.com/00w5kCaoY2Hdch0gFX63K05" target="_blank" rel="noopener" class="buy-btn">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="white" fill="none" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                Buy Report &#8212; $25
+            </a>
+            <p class="buy-note">Instant PDF download via Stripe secure checkout.<br>Questions? <a href="mailto:contact@marketaccess-x.com">contact@marketaccess-x.com</a></p>
+        </div>
+        <div>
+            <div class="hero-graphic">
+                <img src="../assets/WuxiApptec_Report_Hero.jpg" alt="Laboratory cell culture plate against genomic sequencing background">
+            </div>
+        </div>
+    </div>
+
+    <div class="report-body">
+
+        <div class="clock-callout">
+            <div class="clock-callout-label">&#9201; Three clocks are running</div>
+            <p><strong>The BIOSECURE Act became law on December 18, 2025.</strong> It names no companies. Instead, it creates two separate regulatory tracks that determine which Chinese biotechnology firms become prohibited counterparties for federal contracts and grants, and when that prohibition takes effect. WuXi AppTec is not yet designated under either track. That gap is not a reprieve. It is a planning window &#8212; and as of April 2, 2026, a third clock started running independently.</p>
+        </div>
+
+        <div class="report-section">
+            <h2>The analytical problem this report solves</h2>
+            <p>Most coverage of the BIOSECURE Act treats it as a binary: either the prohibition has bitten, or it hasn&#8217;t. That framing is wrong and it is causing companies to mismanage their compliance timelines. The Act creates two designation tracks with different speeds, different procedural protections, and different FAR trigger timelines. Which track a firm is on determines its planning window. Which track your supply chain exposure runs through determines yours.</p>
+            <p>WuXi AppTec &#8212; the world&#8217;s largest CRDMO and a counterparty to an estimated 30% of FDA-approved biologics in development &#8212; is not yet designated. It was briefly added to the DoD 1260H list in February 2026 and withdrawn within one hour. It remains on OMB time. <strong>That distinction is the difference between a 60-day compliance window and a multi-year repositioning window &#8212; and most affected companies have not mapped which one applies to them.</strong></p>
+        </div>
+
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-num">Dec 2026</div>
+                <div class="stat-label">OMB initial BCC list due &#8212; the first concrete designation trigger</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num orange">68%</div>
+                <div class="stat-label">WuXi AppTec U.S. revenue share in 2025 &#8212; rising, not falling</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">~2033</div>
+                <div class="stat-label">Maximum grandfathered contract end-date &#8212; but the interpretation is contested</div>
+            </div>
+        </div>
+
+        <div class="report-section">
+            <h2>Key findings</h2>
+            <div class="findings-grid">
+                <div class="finding-card">
+                    <div class="finding-num">Finding 01</div>
+                    <p>The BIOSECURE Act is law &#8212; but its prohibitions are not yet in effect. FAR revision is required before any prohibition bites. The OMB initial BCC list is due December 18, 2026. FAR revision follows no earlier than mid-2028.</p>
+                </div>
+                <div class="finding-card">
+                    <div class="finding-num">Finding 02</div>
+                    <p>The dual-track designation mechanism is the key analytical variable. The DoD 1260H track is fast, opaque, and carries no pre-designation notice rights. The OMB track is slower, procedural, and gives affected firms a 90-day response window. WuXi is on OMB time.</p>
+                </div>
+                <div class="finding-card">
+                    <div class="finding-num">Finding 03</div>
+                    <p>WuXi&#8217;s repositioning is a geographic hedge, not a clean break. Non-China capacity in Singapore, Delaware, Ireland, and Switzerland is being built in parallel with accelerating U.S. revenue growth. The hedge is real but the dependency is deepening simultaneously.</p>
+                </div>
+                <div class="finding-card">
+                    <div class="finding-num">Finding 04</div>
+                    <p>The downstream contractor cascade is the most underappreciated provision. Section 851(a)(2) bars federal contractors from using BCC services in performing a federal contract &#8212; sweeping in subcontractors, sub-tier suppliers, and grant recipients who never contracted with WuXi directly.</p>
+                </div>
+                <div class="finding-card">
+                    <div class="finding-num">Finding 05</div>
+                    <p>A third clock started April 2, 2026. President Trump&#8217;s Section 232 executive order imposes 100% tariffs on imported patented pharmaceuticals and APIs, effective July 31 for large companies. This regime operates independently of BIOSECURE, moves faster, and creates overlapping commercial pressure on the same restructuring decisions.</p>
+                </div>
+                <div class="finding-card">
+                    <div class="finding-num">Finding 06</div>
+                    <p>No legal challenges to the enacted BIOSECURE Act have been filed. The shift from naming specific companies to an executive-branch designation process resolved the bill-of-attainder constitutional vulnerability that attracted industry opposition to earlier drafts. Litigation risk has not disappeared &#8212; it has migrated to the designation phase.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="report-section">
+            <h2>What you get</h2>
+            <div class="what-you-get">
+                <div class="get-item">
+                    <div class="get-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7 4H4a2 2 0 00-2 2v14a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2h-3"/></svg></div>
+                    <div>
+                        <h4>Dual-track designation mechanism decoded</h4>
+                        <p>A full analysis of how the DoD 1260H track and the OMB criteria-based track operate &#8212; different speeds, different procedural protections, different FAR trigger timelines &#8212; and why the track your exposure runs through determines your planning window.</p>
+                    </div>
+                </div>
+                <div class="get-item">
+                    <div class="get-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+                    <div>
+                        <h4>Three-clock compliance timeline</h4>
+                        <p>The BIOSECURE OMB track, the BIOSECURE 1260H track, and the Section 232 pharmaceutical tariff regime mapped against each other &#8212; with the specific dates, triggers, and decision points that determine when each clock runs out.</p>
+                    </div>
+                </div>
+                <div class="get-item">
+                    <div class="get-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+                    <div>
+                        <h4>Six concrete actionable takeaways</h4>
+                        <p>Specific compliance actions calibrated to where your exposure sits: federal prime contractor, subcontractor, grant recipient, or commercial-only relationship. Including why CDMO transitions must begin before the prohibition is formally effective.</p>
+                    </div>
+                </div>
+                <div class="get-item">
+                    <div class="get-icon"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+                    <div>
+                        <h4>Forward-looking intelligence triggers</h4>
+                        <p>The specific signals that will determine how the designation process unfolds &#8212; the OMB December 2026 BCC list, the FAR revision comment window, the contested grandfathering interpretation, and WuXi&#8217;s quarterly revenue disclosures as a leading indicator of repositioning progress.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-bottom">
+            <h3>Get the full analysis</h3>
+            <p>14 pages. No filler. Every paragraph earns its place.<br>Instant PDF download via Stripe secure checkout.</p>
+            <div class="cta-price"><sup style="font-size:1rem;vertical-align:super;">$</sup>25</div>
+            <a href="https://buy.stripe.com/00w5kCaoY2Hdch0gFX63K05" target="_blank" rel="noopener" class="buy-btn-large">Buy Report &#8212; $25</a>
+            <p class="cta-note">Payment processed securely by Stripe. PDF delivered immediately after purchase.<br>Questions? <a href="mailto:contact@marketaccess-x.com">contact@marketaccess-x.com</a></p>
+        </div>
+
+    </div>
+
+    <footer>
+        <span>&#169; 2026 Market Access X. All rights reserved.</span>
+        <div>
+            <a href="../index.html">Home</a>
+            <a href="../index.html#strategic-analysis">Reports</a>
+            <a href="mailto:contact@marketaccess-x.com">Contact</a>
+        </div>
+    </footer>
+
+</body>
+</html>
