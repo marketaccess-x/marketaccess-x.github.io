@@ -191,7 +191,7 @@
         .email-strip {
             background: #f2f4f8;
             border-top: 1px solid rgba(44,52,68,0.08);
-            padding: 48px;
+            padding: 40px 48px;
             text-align: center;
         }
         .email-strip p {
@@ -200,7 +200,16 @@
             margin-bottom: 16px;
             letter-spacing: 0.02em;
         }
-        .email-strip .ml-embedded { display: inline-block; max-width: 480px; width: 100%; }
+        .email-strip-inner {
+            max-width: 360px;
+            margin: 0 auto;
+        }
+        .email-strip .ml-embedded { display: block; width: 100%; }
+        .email-strip .ml-embedded .ml-form-embedWrapper {
+            max-width: 360px !important;
+            min-width: 0 !important;
+            width: 100% !important;
+        }
 
         footer {
             background: var(--bg-dark); padding: 36px 48px;
@@ -366,7 +375,9 @@
 
     <div class="email-strip">
         <p>New reports and market intelligence — direct to your inbox.</p>
-        <div class="ml-embedded" data-form="2iGnLO"></div>
+        <div class="email-strip-inner">
+            <div class="ml-embedded" data-form="2iGnLO"></div>
+        </div>
     </div>
 
     <footer>
