@@ -1,7 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 938 938" width="938" height="938">
-  <circle cx="469" cy="469" r="469" fill="#e4eaf2"/>
-  <g transform="translate(0.000000,938.000000) scale(0.100000,-0.100000)"
-fill="#0d1526" stroke="none">
+  <style>
+    .bg { fill: #e4eaf2; }
+    .mark { color: #0d1526; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: transparent; }
+      .mark { color: #ffffff; }
+    }
+  </style>
+  <circle class="bg" cx="469" cy="469" r="469"/>
+  <g class="mark">
+    <g transform="translate(0.000000,938.000000) scale(0.100000,-0.100000)"
+fill="currentColor" stroke="none">
 <path d="M4666 8800 c-91 -29 -136 -153 -83 -230 49 -72 54 -74 300 -81 367
 -12 680 -70 1068 -199 436 -145 835 -362 1210 -659 123 -98 406 -377 523 -516
 482 -572 782 -1276 862 -2024 18 -171 20 -560 4 -731 -64 -684 -315 -1339
@@ -42,4 +51,5 @@ fill="#0d1526" stroke="none">
 181 1303 471 284 224 544 560 680 878 129 302 184 599 174 938 -11 388 -115
 736 -322 1077 -305 502 -830 874 -1419 1004 -180 40 -471 65 -530 46z"/>
 </g>
+  </g>
 </svg>
