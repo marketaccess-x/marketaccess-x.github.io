@@ -1249,4 +1249,12 @@
         updateRisk();
     }
 
-    if (document.readyState =
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => { init(); updateBars(); updateRows(); });
+    } else {
+        init(); updateBars(); updateRows();
+    }
+</script>
+
+</body>
+</html>
