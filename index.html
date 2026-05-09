@@ -750,7 +750,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 80px;
-            align-items: center;
+            align-items: start;
         }
         .about-text h2 { margin-bottom: 16px; }
         .about-text p {
@@ -791,6 +791,71 @@
             color: var(--text-mid);
             line-height: 1.6;
         }
+
+        /* ─── ABOUT AUTHOR BYLINE ─── */
+        .about-author {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-top: 32px;
+            padding-top: 28px;
+            border-top: 1px solid var(--border);
+        }
+        .about-author-photo {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            background: var(--bg-mid);
+            position: relative;
+        }
+        .about-author-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .about-author-photo-fallback {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 500;
+            color: var(--text-mid);
+            background: var(--bg-mid);
+            letter-spacing: 0.02em;
+        }
+        .about-author-text {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            min-width: 0;
+        }
+        .about-author-name {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+        .about-author-creds {
+            font-size: 12px;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+        .about-author-link {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-top: 6px;
+            transition: color 0.2s;
+            align-self: flex-start;
+        }
+        .about-author-link:hover { color: var(--accent-dark); }
 
 /* ─── NEWSLETTER ─── */
 .newsletter-strip {
@@ -984,7 +1049,7 @@
             <li><a href="#supply-chain">Supply Chain Mapping</a></li>
             <li><a href="#strategic-analysis">Strategic Analysis</a></li>
             <li><a href="#market-insights">Market Insights</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="about.html">About</a></li>
          <li><a href="/cdn-cgi/l/email-protection#ea8985849e8b899eaa878b98818f9e8b89898f9999c792c4898587" class="nav-cta">Get in Touch</a></li>
         </ul>
     </nav>
@@ -1788,7 +1853,7 @@
                     <h3>Anthropic and the Weaponization of Supply Chain Risk</h3>
                     <p>Anthropic's unprecedented designation as a supply chain risk is legally dubious and sets a dangerous precedent for US companies with their own government.</p>
                     <div class="article-card-meta">
-                        <span class="article-date">29 February 2026</span>
+                        <span class="article-date">28 February 2026</span>
                         <a href="articles/anthropic.html" class="article-read-link">Read →</a>
                     </div>
                 </div>
@@ -1842,6 +1907,17 @@
                 <h2>Intelligence built for decision-makers, not analysts</h2>
                 <p>Market Access X sits at the intersection of geopolitics, supply chains, and trade policy — going deeper than commodity analysts and broader than sector specialists, to deliver intelligence that is rigorous without being inaccessible.</p>
                 <p>Coverage follows the chokepoints, not the calendar — wherever regulatory pressure, export controls, or shifting industrial geography are creating supply chain exposure that decision-makers need to understand and act on.</p>
+                <div class="about-author">
+                    <div class="about-author-photo">
+                        <img src="assets/simon-lacey.jpg" alt="Simon Lacey" onerror="this.style.display='none';">
+                        <div class="about-author-photo-fallback">SL</div>
+                    </div>
+                    <div class="about-author-text">
+                        <div class="about-author-name">Simon Lacey, Founder</div>
+                        <div class="about-author-creds">Huawei VP Global Government Affairs · World Economic Forum · University of Adelaide · World Bank</div>
+                        <a href="about.html" class="about-author-link">About Simon →</a>
+                    </div>
+                </div>
             </div>
             <div class="about-pillars reveal reveal-delay-1">
                 <div class="pillar">
@@ -1906,7 +1982,7 @@
             <div class="footer-col">
                 <h4>Platform</h4>
                 <ul>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="legal.html">Legal &amp; Privacy</a></li>
                 </ul>
             </div>
