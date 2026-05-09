@@ -901,6 +901,7 @@
             .articles-grid { grid-template-columns: 1fr 1fr; }
             .analysis-grid { grid-template-columns: 1fr; gap: 0; }
             .analysis-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+            .tool-panels-grid { grid-template-columns: 1fr 1fr !important; }
         }
         @media (max-width: 768px) {
             nav { padding: 0 20px; }
@@ -1062,7 +1063,7 @@
         <p class="section-lead reveal reveal-delay-2">Visualizations and scenario modellers built alongside the platform's analysis. Map where structural dependencies concentrate. Model how policy instruments expire. More tools added as coverage expands.</p>
     </div>
 
-    <div class="tool-panels-grid reveal reveal-delay-1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px;">
+    <div class="tool-panels-grid reveal reveal-delay-1" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px;">
 
         <!-- REE Atlas -->
         <div style="display: flex; flex-direction: column; gap: 0;">
@@ -1090,6 +1091,40 @@
                 <div class="tool-card-body">
                     <div class="tool-card-title">Rare Earth Elements — Supply Chain Atlas</div>
                     <div class="tool-card-desc">Interactive 3D globe mapping REE extraction, processing, and end-use manufacturing flows. Highlights China's 85%+ refining dominance and Western diversification efforts across five policy scenarios.</div>
+                    <div class="tool-card-meta">
+                        <span class="tag tag-live">Live</span>
+                        <span class="tag tag-minerals">Critical Minerals</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Lithium Atlas -->
+        <div style="display: flex; flex-direction: column; gap: 0;">
+            <div class="map-preview" style="margin-bottom: 16px;">
+                <div class="map-preview-header">
+                    <span class="map-preview-title">Lithium Supply Chain Atlas</span>
+                    <div class="map-preview-dots">
+                        <span style="background:#ff5f56;"></span>
+                        <span style="background:#ffbd2e;"></span>
+                        <span style="background:#27c93f;"></span>
+                    </div>
+                </div>
+                <a href="https://marketaccess-x.com/lithium-supply-chain-atlas/" target="_blank" rel="noopener">
+                    <img src="assets/Lithium_Supply_Chain_Atlas_Hero.png" alt="Lithium Supply Chain Atlas" style="width:100%; display:block; aspect-ratio: 16/10; object-fit: cover; object-position: center top;">
+                </a>
+                <div class="map-preview-footer">
+                    <span>Interactive 3D globe — policy overlay modeller</span>
+                    <a href="https://marketaccess-x.com/lithium-supply-chain-atlas/" target="_blank" rel="noopener">Open full screen →</a>
+                </div>
+            </div>
+            <a href="https://marketaccess-x.com/lithium-supply-chain-atlas/" target="_blank" rel="noopener" class="tool-card">
+                <div class="tool-card-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M3 12h3M18 12h3M12 3v3M12 18v3"/><path d="M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>
+                </div>
+                <div class="tool-card-body">
+                    <div class="tool-card-title">Lithium — Supply Chain Atlas</div>
+                    <div class="tool-card-desc">Interactive 3D globe mapping lithium mining, refining, and cell manufacturing flows with stackable regulatory overlays — US PFE Regime, EU CRMA, host-state controls, and Chinese ownership exposure.</div>
                     <div class="tool-card-meta">
                         <span class="tag tag-live">Live</span>
                         <span class="tag tag-minerals">Critical Minerals</span>
