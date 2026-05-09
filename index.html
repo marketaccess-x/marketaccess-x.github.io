@@ -2031,7 +2031,7 @@
         }
 
         // ── GDPR banner ──
-        (function() {
+        document.addEventListener('DOMContentLoaded', function() {
             const banner = document.getElementById('gdpr-banner');
             if (!banner) return;
             if (localStorage.getItem('gdpr-acknowledged') === '1') {
@@ -2040,12 +2040,12 @@
             }
             const closeBtn = document.getElementById('gdpr-close');
             if (closeBtn) {
-                closeBtn.addEventListener('click', () => {
+                closeBtn.addEventListener('click', function() {
                     banner.style.display = 'none';
                     localStorage.setItem('gdpr-acknowledged', '1');
                 });
             }
-        })();
+        });
     </script>
 
     <!-- GDPR Notice -->
