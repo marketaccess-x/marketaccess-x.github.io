@@ -182,6 +182,39 @@
         footer a { color: rgba(255,255,255,0.35); margin-left: 20px; transition: color 0.2s; }
         footer a:hover { color: rgba(255,255,255,0.7); }
 
+        /* NEWSLETTER */
+        .newsletter-strip {
+            background: var(--accent);
+            padding: 60px 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .newsletter-strip .ml-embedded { width: 100%; max-width: 560px; }
+        .newsletter-strip .ml-embedded .ml-form-embedWrapper {
+            background: transparent !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+        }
+        .newsletter-strip .ml-embedded h4 {
+            font-family: 'Playfair Display', Georgia, serif !important;
+            color: white !important;
+        }
+        .newsletter-strip .ml-embedded p,
+        .newsletter-strip .ml-embedded label { color: rgba(255,255,255,0.75) !important; }
+        .newsletter-strip .ml-embedded .ml-form-fieldRow input {
+            background: rgba(255,255,255,0.12) !important;
+            border: 1px solid rgba(255,255,255,0.2) !important;
+            color: white !important;
+            border-radius: 4px !important;
+        }
+        .newsletter-strip .ml-embedded .ml-form-embedSubmit button {
+            background: var(--bg-dark) !important;
+            color: white !important;
+            font-family: 'DM Sans', system-ui, sans-serif !important;
+            border-radius: 4px !important;
+        }
+
         /* MOBILE FLOATING CTA */
         .mobile-cta { display: none; }
         @media (max-width: 768px) {
@@ -190,6 +223,7 @@
             .page-header { padding: 48px 20px; }
             .articles-wrap { padding: 48px 20px 60px; }
             .articles-grid { grid-template-columns: 1fr; }
+            .newsletter-strip { flex-direction: column; padding: 40px 20px; }
             footer { padding: 24px 20px; flex-direction: column; gap: 12px; text-align: center; }
             .mobile-cta {
                 display: block; position: fixed; bottom: 24px; left: 50%;
@@ -227,7 +261,7 @@
             <li><a href="../index.html#strategic-analysis">Strategic Analysis</a></li>
             <li><a href="../index.html#market-insights">Market Insights</a></li>
             <li><a href="../index.html#about">About</a></li>
-            <li><a href="https://calendly.com/simon-lacey-marketaccess-x/30min" target="_blank" class="nav-cta">Book a Call</a></li>
+            <li><a href="mailto:contact@marketaccess-x.com" class="nav-cta">Get in Touch</a></li>
         </ul>
     </nav>
 
@@ -415,6 +449,11 @@
         </div>
     </div>
 
+    <!-- NEWSLETTER -->
+    <div class="newsletter-strip">
+        <div class="ml-embedded" data-form="2iGnLO"></div>
+    </div>
+
     <footer>
         <span>© 2026 Market Access X. All rights reserved.</span>
         <div>
@@ -423,8 +462,6 @@
             <a href="mailto:contact@marketaccess-x.com">contact@marketaccess-x.com</a>
         </div>
     </footer>
-
-    <a href="https://calendly.com/simon-lacey-marketaccess-x/30min" target="_blank" rel="noopener" class="mobile-cta">Book a Call</a>
 
     <script>
         const revealEls = document.querySelectorAll('.reveal');
