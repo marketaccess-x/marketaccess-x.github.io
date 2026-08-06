@@ -220,6 +220,7 @@
         @media (max-width: 768px) {
             nav { padding: 0 20px; }
             .nav-links { display: none; }
+            .nav-toggle { display: flex; }
             .page-header { padding: 48px 20px; }
             .articles-wrap { padding: 48px 20px 60px; }
             .articles-grid { grid-template-columns: 1fr; }
@@ -236,6 +237,56 @@
                 white-space: nowrap;
             }
         }
+    
+        /* MOBILE NAV */
+        .nav-toggle {
+            display: none;
+            background: none; border: 0; cursor: pointer;
+            width: 44px; height: 44px; padding: 10px;
+            flex-direction: column; justify-content: space-between;
+        }
+        .nav-toggle span {
+            display: block; height: 2px; width: 100%;
+            background: var(--text); border-radius: 2px;
+            transition: transform 0.25s, opacity 0.2s;
+        }
+        .mobile-menu {
+            position: fixed; inset: 0; z-index: 1000;
+            background: var(--bg-dark);
+            transform: translateX(100%);
+            transition: transform 0.28s ease;
+            display: flex; flex-direction: column;
+            padding: 24px 28px 40px;
+            overflow-y: auto;
+            visibility: hidden;
+        }
+        .mobile-menu.open { transform: translateX(0); visibility: visible; }
+        .mobile-menu-close {
+            align-self: flex-end;
+            background: none; border: 0; cursor: pointer;
+            color: rgba(255,255,255,0.6);
+            font-size: 30px; line-height: 1;
+            width: 44px; height: 44px;
+        }
+        .mobile-menu-links { display: flex; flex-direction: column; gap: 4px; margin-top: 24px; }
+        .mobile-menu-links a {
+            font-family: var(--font-display);
+            font-size: 22px; font-weight: 500;
+            color: white; padding: 14px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.09);
+        }
+        .mobile-menu-contact { margin-top: auto; padding-top: 36px; }
+        .mobile-menu-contact-label {
+            font-family: var(--font-mono);
+            font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+            color: rgba(255,255,255,0.4); margin-bottom: 12px;
+        }
+        .mobile-menu-contact a {
+            display: block; font-size: 15px;
+            color: rgba(255,255,255,0.85); padding: 8px 0;
+        }
+        body.menu-open { overflow: hidden; }
+
     </style>
 <!-- Privacy-friendly analytics by Plausible -->
 <script async src="https://plausible.io/js/pa-ZVYSyBFUXb2PULyebMZu1.js"></script>
@@ -263,7 +314,21 @@
             <li><a href="../index.html#about">About</a></li>
             <li><a href="../about.html#contact" class="nav-cta">Get in Touch</a></li>
         </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
+
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <button class="mobile-menu-close" id="menuClose" aria-label="Close menu">&times;</button>
+        <nav class="mobile-menu-links" id="mobileMenuLinks"></nav>
+        <div class="mobile-menu-contact">
+            <div class="mobile-menu-contact-label">Contact</div>
+            <a href="mailto:contact@marketaccess-x.com">contact@marketaccess-x.com</a>
+            <a href="https://www.linkedin.com/in/simonlacey70/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+    </div>
+
 
     <div class="page-header">
         <div class="page-header-eyebrow">Market Insights</div>
@@ -474,6 +539,39 @@
             });
         }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
         revealEls.forEach(el => observer.observe(el));
+    </script>
+
+
+    <script>
+        (function () {
+            var toggle = document.getElementById('navToggle');
+            var panel  = document.getElementById('mobileMenu');
+            var close  = document.getElementById('menuClose');
+            var target = document.getElementById('mobileMenuLinks');
+            if (!toggle || !panel || !target) return;
+
+            // Clone the desktop nav links so paths stay correct on every page
+            document.querySelectorAll('.nav-links > li > a').forEach(function (a) {
+                var c = a.cloneNode(true);
+                c.className = '';
+                target.appendChild(c);
+            });
+
+            function setOpen(open) {
+                panel.classList.toggle('open', open);
+                panel.setAttribute('aria-hidden', open ? 'false' : 'true');
+                toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                document.body.classList.toggle('menu-open', open);
+            }
+            toggle.addEventListener('click', function () { setOpen(true); });
+            close.addEventListener('click', function () { setOpen(false); });
+            target.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') setOpen(false);
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') setOpen(false);
+            });
+        })();
     </script>
 
 </body>
