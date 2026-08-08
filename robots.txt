@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /download/
+Disallow: /assets/*.pdf$
+
+Sitemap: https://marketaccess-x.com/sitemap.xml
