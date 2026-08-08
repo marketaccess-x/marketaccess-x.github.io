@@ -1,5 +1,35 @@
-User-agent: *
-Disallow: /download/
-Disallow: /assets/*.pdf$
+# marketaccess-x.com
 
-Sitemap: https://marketaccess-x.com/sitemap.xml
+# --- AI and data-collection crawlers ---
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: CloudflareBrowserRenderingCrawler
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+# --- All other crawlers ---
+User-agent: *
+Content-Signal: search=yes,ai-train=no,use=reference
+Disallow: /download/
+Disallow: /assets/*.pdf
