@@ -385,7 +385,10 @@ footer b{color:var(--dim);font-weight:400}
       on the evidenced ground that neither hosts battery or electrified-powertrain manufacturing, and were
       not searched to protocol.</p>
       <h5>Precision</h5>
-      <p>Coordinates are municipality centroids, not plant locations. Announced values are converted to euro
+      <p>Coordinates are municipality centroids, not plant locations. Markers are not nudged apart to
+      avoid overlap, because that displaces them across borders; co-located sites overlap at rest, carry
+      a count in the town label, and separate as you zoom. Two coastal sites, Kotka and Gebze, plot
+      marginally offshore at 0.6 km and 5.9 km because the basemap coastline is simplified. Announced values are converted to euro
       and labelled as converted. The Industrial Accelerator Act is a proposal, not law, and every reading
       against it is an assessment of a text that remains subject to amendment.</p>
     </div>
@@ -494,11 +497,10 @@ SITES.forEach(d=>{
   const c=parseFloat(d.cap)||0, mx=capBy.get(d.ty)||1;
   d.r = c>0 ? 4.5+7.5*Math.sqrt(c/mx) : 4.5;      // scaled WITHIN stage, never across
 });
-d3.forceSimulation(SITES).alpha(.9)
-  .force("x",d3.forceX(d=>d.x0).strength(.9))
-  .force("y",d3.forceY(d=>d.y0).strength(.9))
-  .force("c",d3.forceCollide(d=>d.r+1.3).strength(.8))
-  .stop().tick(200);
+// No collision layout. Nudging markers apart moved plants across national borders: Nyiregyhaza and
+// Fot rendered inside Slovakia, up to 78 km from their true positions. On a map whose claim is
+// evidentiary accuracy that is not a trade worth making, so markers sit where the sites are.
+// Co-located sites overlap at rest, carry a count in the town label, and separate on zoom.
 
 function colOf(d){
   if(view==="status") return STATUS[d.st].c;
