@@ -334,6 +334,12 @@ footer b{color:var(--dim);font-weight:400}
       <p>A status is assigned only where a specific evidentiary test is met. Where none is met the value is
       unverified, never the announced status. Operating statuses require evidence within 24 months. Hollow
       circles carry no evidence of physical activity. A third of the pipeline sits in that territory.</p>
+      <h5>What the duty reaches, and what it does not</h5>
+      <p>The countervailing duty is on new battery electric vehicles imported from China. It does not
+      reach cells, materials, components, research or headquarters, so those sites carry no duty and no
+      vote position. Global Trade Alert records no anti-dumping, countervailing or safeguard measure on
+      lithium-ion accumulators from any origin since 2020. For a vehicle plant the rate shown is what its
+      group faces on vehicles exported from China, not a cost the plant pays.</p>
       <h5>The vote layer is reported, not verified</h5>
       <p>No official record of individual member state positions on 4 October 2024 was ever published. The
       breakdown here traces to contemporaneous diplomatic reporting, corroborated across two independent
@@ -372,6 +378,7 @@ const CTRY={"AUT":{"v":"abstain","vm":"Federal Ministry of Labour and Economy (B
 const CAPEUR={"AUT-01":null,"BEL-01":200,"DEU-01":1800,"DEU-02":2000,"DEU-03":2000,"DEU-04":null,"DEU-05":null,"ESP-01":100,"ESP-02":4100,"ESP-03":1000,"FIN-01":800,"FIN-02":200,"FIN-03":1300,"FRA-01":null,"FRA-02":1500,"FRA-03":1300,"GBR-01":null,"GBR-02":526,"GBR-03":null,"GBR-04":null,"GBR-05":null,"HRV-01":null,"HUN-01":59,"HUN-02":7340,"HUN-03":1307,"HUN-04":1430,"HUN-05":4000,"HUN-06":null,"HUN-07":1300,"HUN-08":100,"HUN-09":null,"HUN-10":null,"HUN-11":162,"ITA-01":70,"ITA-02":null,"NLD-01":null,"NLD-02":null,"NLD-03":null,"NLD-04":null,"POL-01":45,"POL-02":null,"POL-03":41,"POL-04":50,"POL-05":216,"POL-06":598,"PRT-01":2067,"ROU-01":null,"SVK-01":1234,"SWE-01":null,"SWE-02":61,"SWE-03":null,"SWE-04":2610,"SWE-05":null,"TUR-01":920,"TUR-02":920,"TUR-03":780,"TUR-04":null};
 
 const EUM={"AUT":"true","BEL":"true","BGR":"true","CHE":"false","CZE":"true","DEU":"true","DNK":"true","ESP":"true","EST":"true","FIN":"true","FRA":"true","GBR":"false","GRC":"true","HRV":"true","HUN":"true","IRL":"true","ITA":"true","LTU":"true","LUX":"true","LVA":"true","NLD":"true","NOR":"false","POL":"true","PRT":"true","ROU":"true","SVK":"true","SVN":"true","SWE":"true","TUR":"false"};
+const CVD={"AUT-01":{"r":20.7,"b":"all other cooperating companies","n":"XPeng, the marque built here under contract"},"BEL-01":{"r":18.8,"b":"Geely Group","n":"named in the regulation"},"ESP-01":{"r":20.7,"b":"all other cooperating companies","n":"cooperating but not sampled"},"GBR-03":{"r":18.8,"b":"Geely Group","n":"named in the regulation"},"HUN-05":{"r":17.0,"b":"BYD Group","n":"named in the regulation"},"ITA-01":{"r":20.7,"b":"all other cooperating companies","n":"Chery, whose vehicles are assembled here under licence"},"SWE-01":{"r":18.8,"b":"Geely Group","n":"named in the regulation"},"TUR-01":{"r":17.0,"b":"BYD Group","n":"named in the regulation"},"TUR-02":{"r":20.7,"b":"all other cooperating companies","n":"cooperating but not sampled"}};
 const STATUS = {
   full_operation:              {l:"In production",            c:"#2FA8CE", g:"live"},
   partial_operation:           {l:"Partly in production",     c:"#7ACFE0", g:"live"},
@@ -781,14 +788,45 @@ function showReg(d){
         + `<div class="foot">Approval requires a workforce at least half EU in every case, plus three conditions from an exhaustive list of five.</div>`;
   }
 
+  // The countervailing duty is on new battery electric vehicles imported from China. It does not
+  // reach cells, materials, components, research or headquarters, so the first block is written
+  // against the site type rather than applied uniformly.
+  const VEH = d.ty==="vehicle_assembly" || d.ty2==="vehicle_assembly";
+  const cv = CVD[d.id];
+  let duty;
+  if (VEH && cv) {
+    duty = gate("\u25CF","#E58141",
+        `<b>${cv.r.toFixed(1)} percent</b> countervailing duty, plus the standard 10 percent, on new battery electric `+
+        `vehicles this group exports from China into the Union (${cv.n}). It is not a cost this plant pays. `+
+        `It is the cost the plant exists to avoid.`)
+      + gate("\u25CF",v[1],`Host state <b>${v[0].toLowerCase()}</b>${c.v!=="not_applicable"?" on 4 October 2024, as reported. No official per-state record was published.":"."}`);
+  } else if (VEH) {
+    duty = gate("?","#94A4BC","No Chinese exporting producer covered by the duty is associated with this site.")
+      + gate("\u25CF",v[1],`Host state <b>${v[0].toLowerCase()}</b>${c.v!=="not_applicable"?" on 4 October 2024, as reported.":"."}`);
+  } else if (d.ty==="rd_center" || d.ty==="european_hq") {
+    duty = gate("\u2014","#94A4BC",
+      "No trade measure reaches a research or headquarters function. The instruments that bear on this site are screening and, where it applies, the proposed conditions below.");
+  } else {
+    duty = gate("\u2014","#94A4BC",
+      "<b>No trade remedy reaches this product.</b> The duty covers finished battery electric vehicles, not cells, "+
+      "materials or components, and Global Trade Alert records no anti-dumping, countervailing or safeguard measure "+
+      "on lithium-ion accumulators from any origin since 2020.")
+      + gate("\u25CB","#E3BE3F",
+      "What applies instead is conditional: eligibility for national and Union support, and the screening decision below. "+
+      "For this class of site the conditions are the only instrument, because there was never a border cost.");
+  }
+  const dutyHead = VEH ? "The duty decision"
+    : (d.ty==="rd_center"||d.ty==="european_hq") ? "Trade measures reaching this site"
+    : "Trade measures reaching this product";
+
   d3.select("#regbox").html(`
     <h4>The regulatory position</h4>
     <p class="rsub">${d.pl}, ${d.t}</p>
 
-    <div class="grp">The duty decision</div>
-    ${gate("\u25CF",v[1],`<b>${v[0]}</b>${c.v!=="not_applicable"?" on 4 October 2024, as reported. No official per-state record was published.":""}`)}
+    <div class="grp">${dutyHead}</div>
+    ${duty}
     ${c.rem&&c.rem!=="not_applicable"?gate("\u25CB","#94A4BC",c.rem):""}
-    ${c.vm&&c.vm!=="not_applicable"?`<div class="kv"><span class="k">Trade defence</span><span class="v">${c.vm}</span></div>`:""}
+    ${VEH&&c.vm&&c.vm!=="not_applicable"?`<div class="kv"><span class="k">Trade defence</span><span class="v">${c.vm}</span></div>`:""}
 
     <div class="grp">National screening, in force</div>
     ${nat}
