@@ -108,7 +108,7 @@ h1 em{font-style:normal;color:var(--teal-lt)}
 .zbtns button#zreset{width:auto;padding:0 11px;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
 .zbtns button:hover{border-color:var(--teal);color:var(--paper)}
 .zbtns button:focus-visible{outline:2px solid var(--teal-lt);outline-offset:2px}
-.mapbox{touch-action:none}
+.mapbox{touch-action:pan-y}
 .mlegend{position:absolute;bottom:16px;right:16px;background:rgba(13,21,38,.86);border:1px solid var(--line);
   border-radius:4px;padding:12px 15px;backdrop-filter:blur(6px);font-size:.74rem;color:var(--dim);max-width:230px}
 .mlegend h4{font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--mute);
@@ -199,6 +199,48 @@ footer b{color:var(--dim);font-weight:400}
 @media(max-width:1000px){.grid{grid-template-columns:1fr}
   .rail{position:static;max-height:none;overflow:visible;padding-right:0}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ---------- narrow screens ---------- */
+@media(max-width:820px){
+  /* a finger drag must scroll the page, not pan the map trapped in place */
+  .wrap{padding:16px 14px 44px}
+  h1{font-size:1.5rem}
+  .sub{font-size:.86rem}
+  header{flex-direction:column;align-items:flex-start;gap:12px}
+  .stamp{text-align:left}
+
+  /* the pipeline bar stays, it carries the argument */
+  .pipe{height:34px}
+  .seg span{font-size:.72rem}
+  .pipe-key{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;font-size:.72rem;margin-bottom:18px}
+  .pipe-head{flex-direction:column;align-items:flex-start;gap:6px}
+  .pipe-note{font-size:.78rem;line-height:1.4}
+
+  /* controls come out of the map and sit above it */
+  .mapbox{padding-top:0;border:none;background:none;overflow-x:auto;overflow-y:hidden;
+          -webkit-overflow-scrolling:touch;touch-action:pan-x pan-y}
+  #map{width:900px;height:630px;max-width:none;flex:none;
+       border:1px solid var(--line);border-radius:5px;
+       background:linear-gradient(178deg,var(--panel) 0%,var(--ink) 100%)}
+  .mapscroll{font-size:.7rem;color:var(--mute);letter-spacing:.06em;margin:8px 0 0}
+  .views{position:static;flex-direction:row;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+  .vbtn{flex:1 1 auto;text-align:center;padding:9px 10px;font-size:.76rem;backdrop-filter:none}
+  .nav{position:static;flex-direction:row;align-items:center;gap:8px;margin-bottom:10px}
+  #picker{flex:1 1 auto;min-width:0;backdrop-filter:none}
+  .zbtns button{backdrop-filter:none}
+
+  /* legend moves below the map instead of covering a third of it */
+  .mlegend{position:static;max-width:none;margin-top:10px;backdrop-filter:none}
+  .mlegend .row{display:inline-flex;margin:4px 14px 4px 0}
+  .mlegend .lnote{margin-top:6px;padding-top:6px}
+
+  .panel,.regbox{padding:14px}
+  .pnote{max-height:none}
+  .chainbox{padding:14px;max-height:none}
+  .method .mbody{grid-template-columns:1fr}
+  .promo{padding:16px}
+  .tab{font-size:.86rem;padding:8px 10px}
+}
 </style>
 </head>
 <body>
@@ -245,6 +287,7 @@ footer b{color:var(--dim);font-weight:400}
     <svg id="map" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet" role="img"
          aria-label="Map of Chinese-owned automotive and battery sites in Europe"></svg>
     <div class="mlegend" id="mlegend"></div>
+    <p class="mapscroll" id="mapscroll" hidden>Drag sideways to move across the map. Pinch to zoom.</p>
   </div>
 
   <div class="chainbox" id="pane-chain" role="tabpanel" aria-labelledby="tab-chain" hidden>
@@ -360,6 +403,7 @@ const TYPE = {
   european_hq:        {l:"Headquarters",       c:"#A2B4C9"}
 };
 const LIVE=new Set(["full_operation","partial_operation"]);
+const MOB=window.matchMedia("(max-width:820px)").matches;
 const W=1000,H=700;
 let view="status", hidden=new Set(), sel=null, K=1;
 
@@ -495,6 +539,11 @@ function clearPanel(){ d3.select("#panel").html(EMPTY); clearReg(); }
 /* ---------- navigation ---------- */
 const zoom=d3.zoom().scaleExtent([1,14])
   .translateExtent([[0,0],[W,H]]).extent([[0,0],[W,H]])
+  .filter(ev=>{
+    // on a phone a single-finger drag must scroll the page, so only pinch reaches the map
+    if(MOB && ev.touches) return ev.touches.length>1;
+    return (!ev.ctrlKey||ev.type==="wheel") && !ev.button;
+  })
   .on("zoom",ev=>{ gZoom.attr("transform",ev.transform); rescale(ev.transform.k); });
 svg.call(zoom).on("dblclick.zoom",null);
 
@@ -768,6 +817,12 @@ function setTab(which){
 d3.select("#tab-map").on("click",()=>setTab("map"));
 d3.select("#tab-chain").on("click",()=>setTab("chain"));
 clearReg();
+
+if(MOB){
+  d3.select("#mapscroll").attr("hidden",null);
+  const box=document.querySelector(".mapbox");
+  if(box) box.scrollLeft = 900*0.22;   // open on the dense middle rather than the Atlantic
+}
 
 /* ---------- record panel ---------- */
 function show(d){
