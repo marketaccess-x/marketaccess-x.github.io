@@ -435,6 +435,52 @@
         }
 
         /* Map preview panel */
+
+        /* featured tool */
+        .ft {
+            display: grid;
+            grid-template-columns: 1.35fr 1fr;
+            gap: 34px;
+            align-items: stretch;
+            margin-bottom: 52px;
+            padding-bottom: 52px;
+            border-bottom: 1px solid var(--border);
+        }
+        .ft-body { display: flex; flex-direction: column; justify-content: center; }
+        .ft-tags { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+        .ft-title {
+            font-family: var(--font-display);
+            font-size: 32px;
+            line-height: 1.18;
+            color: var(--text);
+            margin-bottom: 14px;
+            font-weight: 500;
+        }
+        .ft-sub { font-size: 16px; line-height: 1.65; color: var(--text-mid); margin-bottom: 18px; }
+        .ft-stats {
+            display: flex; gap: 30px; margin-bottom: 22px;
+            padding: 16px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+        }
+        .ft-stat-n {
+            font-family: var(--font-display); font-size: 26px; line-height: 1;
+            color: var(--accent-dark); margin-bottom: 5px;
+        }
+        .ft-stat-l {
+            font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em;
+            text-transform: uppercase; color: var(--text-light); line-height: 1.4;
+        }
+        .ft-cta {
+            display: inline-flex; align-items: center; gap: 8px; align-self: flex-start;
+            background: var(--accent); color: #fff; text-decoration: none;
+            font-size: 14px; padding: 12px 22px; border-radius: 4px; transition: background .18s;
+        }
+        .ft-cta:hover { background: var(--accent-dark); }
+        @media (max-width: 900px) {
+            .ft { grid-template-columns: 1fr; gap: 24px; }
+            .ft-title { font-size: 26px; }
+            .ft-stats { gap: 22px; }
+        }
+
         .map-preview {
                 border-radius: 10px;
             overflow: hidden;
@@ -1163,6 +1209,59 @@
         <div class="section-eyebrow reveal">Supply Chain Mapping &amp; Policy Intelligence</div>
         <h2 class="reveal reveal-delay-1">Interactive Intelligence Tools</h2>
         <p class="section-lead reveal reveal-delay-2">Visualizations and scenario modellers built alongside the platform's analysis. Map where structural dependencies concentrate. Model how policy instruments expire. More tools added as coverage expands.</p>
+    </div>
+
+
+    <!-- Featured: Chinese BEV and battery footprint -->
+    <div class="ft reveal reveal-delay-1">
+        <div class="map-preview">
+            <div class="map-preview-header">
+                <span class="map-preview-title">Chinese BEV &amp; Battery Footprint in Europe</span>
+                <div class="map-preview-dots">
+                    <span style="background:#ff5f56;"></span>
+                    <span style="background:#ffbd2e;"></span>
+                    <span style="background:#27c93f;"></span>
+                </div>
+            </div>
+            <a href="tools/chinese-bev-europe/" target="_blank" rel="noopener">
+                <img src="assets/bev-europe-preview.png" alt="Map of Chinese-owned automotive and battery sites across Europe"
+                     style="width:100%; display:block; aspect-ratio: 16/10; object-fit: cover; object-position: center top;">
+            </a>
+            <div class="map-preview-footer">
+                <span>57 sites, 31 territories, with the regime each one sits under</span>
+                <a href="tools/chinese-bev-europe/" target="_blank" rel="noopener">Open full screen &rarr;</a>
+            </div>
+        </div>
+
+        <div class="ft-body">
+            <div class="ft-tags">
+                <span class="tag tag-live">Live</span>
+                <span class="tag tag-soon">Trade Policy</span>
+                <span class="tag tag-minerals">New &middot; August 2026</span>
+            </div>
+            <h3 class="ft-title">Chinese BEV and battery footprint in Europe</h3>
+            <p class="ft-sub">Every site in 31 territories where a Chinese-parented firm holds equity or supplies
+            the manufacturing technology, mapped against the regulatory regime each one actually sits under.
+            Status is assigned against an evidentiary test, not against the announcement, which is why a third
+            of the pipeline turns out not to be in production at all.</p>
+            <div class="ft-stats">
+                <div>
+                    <div class="ft-stat-n">57</div>
+                    <div class="ft-stat-l">Sites<br>mapped</div>
+                </div>
+                <div>
+                    <div class="ft-stat-n">36</div>
+                    <div class="ft-stat-l">Not in<br>production</div>
+                </div>
+                <div>
+                    <div class="ft-stat-n">31</div>
+                    <div class="ft-stat-l">Territories<br>searched</div>
+                </div>
+            </div>
+            <a href="tools/chinese-bev-europe/" target="_blank" rel="noopener" class="ft-cta">
+                Open the map &rarr;
+            </a>
+        </div>
     </div>
 
     <div class="tool-panels-grid reveal reveal-delay-1" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px;">
