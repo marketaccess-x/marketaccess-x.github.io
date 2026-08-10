@@ -30,7 +30,11 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--ink);color:var(--paper);
   font-family:Calibri,"Segoe UI",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1500px;margin:0 auto;padding:28px 24px 60px}
+.wrap{max-width:1500px;margin:0 auto;padding:22px 24px 60px}
+.backlink{display:inline-block;color:var(--mute);text-decoration:none;font-size:.78rem;
+  letter-spacing:.06em;margin-bottom:16px;transition:color .15s}
+.backlink:hover{color:var(--teal-lt)}
+.backlink:focus-visible{outline:2px solid var(--teal-lt);outline-offset:3px;border-radius:2px}
 header{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:22px;
   display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
 h1{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:1.9rem;letter-spacing:-.01em;line-height:1.15}
@@ -199,6 +203,7 @@ footer b{color:var(--dim);font-weight:400}
 </head>
 <body>
 <div class="wrap">
+<a class="backlink" href="https://marketaccess-x.com">&#8592; Market Access X</a>
 <header>
   <div>
     <h1>Chinese <em>BEV and battery</em> footprint in Europe</h1>
