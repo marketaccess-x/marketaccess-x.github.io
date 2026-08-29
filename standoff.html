@@ -84,8 +84,8 @@ h1{font-family:var(--disp);font-weight:700;font-size:clamp(28px,4.2vw,44px);line
 .card{background:var(--paper);padding:20px 20px 18px;position:relative;display:flex;flex-direction:column;gap:11px;animation:pop .34s ease backwards}
 @keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .c-top{display:flex;align-items:flex-start;gap:11px}
-.badge{flex:0 0 auto;display:flex;gap:4px}
-.mono-badge{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--navy);color:var(--navy);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:.02em;background:rgba(32,56,100,.05)}
+.badge{flex:0 0 auto;display:flex;gap:5px;flex-wrap:wrap;max-width:172px}
+.mono-badge{min-width:34px;height:26px;padding:0 9px;border-radius:13px;border:1.5px solid var(--navy);color:var(--navy);display:inline-flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:.03em;background:rgba(32,56,100,.05);white-space:nowrap;line-height:1}
 .c-head{flex:1;min-width:0}
 .c-name{font-family:var(--disp);font-size:16.5px;font-weight:600;color:var(--navy);line-height:1.25}
 .c-ref{font-family:var(--mono);font-size:10.5px;color:var(--ink-light);margin-top:4px;letter-spacing:.02em}
@@ -344,8 +344,17 @@ const DATA = {
 
 const AGENCY = {
   BIS:'BIS', USTR:'USTR', DOC:'DOC', EOP:'EOP',
-  MOFCOM:'MOF\u00b7COM', GACC:'GACC', MOT:'MOT', SC:'STATE\nCOUNCIL',
+  MOFCOM:'MOFCOM', GACC:'GACC', MOT:'MOT', SC:'STATE COUNCIL',
   SAMR:'SAMR', MOST:'MOST', MOF:'MOF', SCTC:'SCTC'
+};
+const AGENCY_FULL = {
+  BIS:'Bureau of Industry and Security', USTR:'Office of the US Trade Representative',
+  DOC:'Department of Commerce', EOP:'Executive Office of the President',
+  MOFCOM:'Ministry of Commerce', GACC:'General Administration of Customs',
+  MOT:'Ministry of Transport', SC:'State Council',
+  SAMR:'State Administration for Market Regulation',
+  MOST:'Ministry of Science and Technology', MOF:'Ministry of Finance',
+  SCTC:'State Council Tariff Commission'
 };
 const STATUS = {
   returns:{lbl:'Returns 10 Nov', cls:'s-returns'},
@@ -462,7 +471,7 @@ function drawCards(){
   const items = DATA[side].items.filter(i => filter==='all' || i.st===filter);
   $('cards').innerHTML = items.map((it,idx)=>{
     const s = STATUS[it.st];
-    const badges = it.ag.map(a=>`<div class="mono-badge" title="${a}">${AGENCY[a]||a}</div>`).join('');
+    const badges = it.ag.map(a=>`<span class="mono-badge" title="${AGENCY_FULL[a]||a}">${AGENCY[a]||a}</span>`).join('');
     const tags = it.tags.map(t=>`<span class="tag">${t}</span>`).join('');
     return `<article class="card${it.st==='returns'?' hot':''}" style="animation-delay:${Math.min(idx*38,420)}ms">
       <div class="c-top">
