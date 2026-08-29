@@ -141,6 +141,12 @@ h1{font-family:var(--disp);font-weight:700;font-size:clamp(28px,4.2vw,44px);line
   *{animation:none!important;transition:none!important}
 }
 </style>
+<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-ZVYSyBFUXb2PULyebMZu1.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
 </head>
 <body>
 
@@ -501,10 +507,16 @@ function open(s){
   $('note').textContent = s==='us'
     ? 'The three US instruments that lapse in November were suspended rather than rescinded, so each returns without a new rulemaking. The Affiliates Rule is the one that reaches counterparties by ownership rather than by name.'
     : 'Only the October 2025 expansion was suspended. The April 2025 heavy rare earth controls and the December 2024 dual-use restrictions have run without interruption throughout the truce.';
+  if(window.plausible) plausible('Open register', {props:{side: s==='us' ? 'United States' : 'China'}});
   $('dossier').scrollIntoView({behavior:'smooth', block:'start'});
 }
 
 document.querySelectorAll('.side').forEach(b=> b.onclick = ()=> open(b.dataset.side));
+/* ============ EVENTS ============ */
+document.querySelectorAll('a[href$=".pdf"]').forEach(a=>{
+  a.addEventListener('click', ()=>{ if(window.plausible) plausible('Explainer download'); });
+});
+
 $('switchBtn').onclick = ()=> open(side==='us'?'cn':'us');
 </script>
 </body>
