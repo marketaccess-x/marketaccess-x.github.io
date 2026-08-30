@@ -37,11 +37,10 @@ body{background:var(--ink);color:var(--paper);
 .backlink:focus-visible{outline:2px solid var(--teal-lt);outline-offset:3px;border-radius:2px}
 header{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:22px;
   display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
-header>div:first-child{flex:1 1 640px;min-width:0}
+header>div:first-child{flex:1 1 620px;min-width:0;max-width:82ch}
 h1{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:1.9rem;letter-spacing:-.01em;line-height:1.15}
 h1 em{font-style:normal;color:var(--teal-lt)}
-.sub{color:var(--dim);font-size:.92rem;margin-top:7px;line-height:1.5;max-width:none;columns:2;column-gap:38px;column-fill:balance}
-@media(max-width:900px){.sub{columns:1}}
+.sub{color:var(--dim);font-size:.92rem;margin-top:8px;line-height:1.55;max-width:82ch}
 .stamp{text-align:right;font-size:.72rem;color:var(--mute);letter-spacing:.09em;text-transform:uppercase;line-height:1.9;white-space:nowrap}
 .stamp b{color:var(--dim);font-weight:400}
 
@@ -231,7 +230,7 @@ footer b{color:var(--dim);font-weight:400}
   /* a finger drag must scroll the page, not pan the map trapped in place */
   .wrap{padding:16px 14px 44px}
   h1{font-size:1.5rem}
-  .sub{font-size:.86rem;columns:1}
+  .sub{font-size:.86rem}
   header{flex-direction:column;align-items:flex-start;gap:12px}
   .stamp{text-align:left}
 
