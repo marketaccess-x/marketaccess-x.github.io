@@ -156,9 +156,10 @@
 
         footer {
             background: var(--bg-dark); padding: 36px 48px;
-            text-align: center; color: rgba(255,255,255,0.35); font-size: 12px;
+            display: flex; align-items: center; justify-content: space-between;
+            color: rgba(255,255,255,0.35); font-size: 12px;
         }
-        footer a { color: rgba(255,255,255,0.35); margin: 0 12px; }
+        footer a { color: rgba(255,255,255,0.35); margin-left: 20px; transition: color 0.2s; }
         footer a:hover { color: rgba(255,255,255,0.7); }
 
         @media (max-width: 768px) {
@@ -166,6 +167,7 @@
             .article-hero { height: 340px; }
             .article-hero-content { padding: 24px; }
             .article-wrap { padding: 40px 20px 60px; }
+            footer { flex-direction: column; gap: 12px; padding: 24px 20px; text-align: center; }
         }
     </style>
 <!-- Privacy-friendly analytics by Plausible -->
@@ -184,7 +186,7 @@
             </div>
             <div class="nav-logo-text">
                 <strong>Market Access X</strong>
-                <span>Where insight meets opportunity</span>
+                <span>Where policy risk meets operational reality</span>
             </div>
         </a>
         <a href="../index.html#market-insights" class="nav-back">← Back to Market Insights</a>
@@ -242,12 +244,18 @@
     </div>
 
     <div class="article-footer-nav">
-        <a href="anthropic.html">← Previous: Anthropic and the Weaponization of Supply Chain Risk</a>
+        <a href="anthropic.html">← Previous: Anthropic Falls Victim to the Weaponization of Supply Chain Risk</a>
         <a href="lynas.html">Next: Lynas Rare Earths →</a>
     </div>
 
     <footer>
-        <span>© 2026 Market Access X.</span>
-        <a href="../index.html">Home</a>
-        <a href="../index.html#market-insights">Market Insights</a>
-        <a href="/cdn-cgi/l/email-protection#1774787963767463577a76657c72637674747264643a6f3974787a"
+        <span>© 2026 Market Access X. All rights reserved.</span>
+        <div>
+            <a href="../index.html">Home</a>
+            <a href="../index.html#market-insights">Market Insights</a>
+            <a href="../legal.html">Legal &amp; Privacy</a>
+        </div>
+    </footer>
+
+</body>
+</html>
