@@ -1477,10 +1477,11 @@
           <div class="sa-card-tags">
             <span class="sa-tag">Report</span>
             <span class="sa-tag">Pharmaceuticals</span>
+            <span class="sa-tag sa-tag-new">Updated · October 2026</span>
           </div>
           <h4 class="sa-card-title">The Compliance Countdown</h4>
-          <p class="sa-card-sub">Two Designation Tracks, Three Regulatory Clocks, and What Western Pharma Must Do Before They Expire</p>
-          <p class="sa-card-body">The BIOSECURE Act is law. No companies are named. Designations flow through two executive-branch tracks. WuXi AppTec is not yet designated. That gap is a planning window, not a reprieve.</p>
+          <p class="sa-card-sub">Two Designation Tracks, Four Regulatory Clocks, and What Western Pharma Must Do Before They Expire</p>
+          <p class="sa-card-body">The BIOSECURE Act is law. No companies are named. Designations flow through two executive-branch tracks. WuXi AppTec was added to the DoD 1260H list in June and the listing was enjoined in August, but customers moved within weeks. The window is for planning, not waiting.</p>
           <div class="sa-card-footer">
             <span class="sa-price">$25</span>
             <span class="sa-read-link">Read report →</span>
@@ -1684,11 +1685,11 @@
 .sa-carousel::-webkit-scrollbar { display: none; }
 .sa-card {
   flex: 0 0 calc(33.333% - 12px); min-width: 260px;
-  position: relative; height: 320px;
+  position: relative; min-height: 320px;
   border-radius: 8px; overflow: hidden;
   text-decoration: none;
   border: 1px solid rgba(255,255,255,0.07);
-  transition: border-color 0.3s; display: block;
+  transition: border-color 0.3s; display: flex; flex-direction: column;
 }
 .sa-card:hover { border-color: rgba(79,195,247,0.25); }
 .sa-card:hover .sa-read-link { letter-spacing: 0.06em; }
@@ -1703,7 +1704,7 @@
   background: linear-gradient(to top, rgba(10,15,26,0.98) 0%, rgba(10,15,26,0.7) 50%, rgba(10,15,26,0.25) 100%);
 }
 .sa-card-content {
-  position: absolute; inset: 0;
+  position: relative; flex: 1;
   display: flex; flex-direction: column; justify-content: flex-end;
   padding: 24px;
 }
@@ -1721,8 +1722,6 @@
 .sa-card-body {
   font-size: 12px; color: rgba(255,255,255,0.38);
   line-height: 1.65; margin-bottom: 16px;
-  display: -webkit-box; -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical; overflow: hidden;
 }
 .sa-card-footer { display: flex; align-items: center; gap: 16px; }
 .sa-nav {
@@ -1887,11 +1886,11 @@
 .sa-carousel::-webkit-scrollbar { display: none; }
 .sa-card {
   flex: 0 0 calc(33.333% - 12px); min-width: 260px;
-  position: relative; height: 320px;
+  position: relative; min-height: 320px;
   border-radius: 8px; overflow: hidden;
   text-decoration: none;
   border: 1px solid rgba(255,255,255,0.07);
-  transition: border-color 0.3s; display: block;
+  transition: border-color 0.3s; display: flex; flex-direction: column;
 }
 .sa-card:hover { border-color: rgba(79,195,247,0.25); }
 .sa-card:hover .sa-read-link { letter-spacing: 0.06em; }
@@ -1906,7 +1905,7 @@
   background: linear-gradient(to top, rgba(10,15,26,0.98) 0%, rgba(10,15,26,0.7) 50%, rgba(10,15,26,0.25) 100%);
 }
 .sa-card-content {
-  position: absolute; inset: 0;
+  position: relative; flex: 1;
   display: flex; flex-direction: column; justify-content: flex-end;
   padding: 24px;
 }
@@ -1924,8 +1923,6 @@
 .sa-card-body {
   font-size: 12px; color: rgba(255,255,255,0.38);
   line-height: 1.65; margin-bottom: 16px;
-  display: -webkit-box; -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical; overflow: hidden;
 }
 .sa-card-footer { display: flex; align-items: center; gap: 16px; }
 .sa-nav {
