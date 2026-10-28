@@ -475,6 +475,8 @@
             font-size: 14px; padding: 12px 22px; border-radius: 4px; transition: background .18s;
         }
         .ft-cta:hover { background: var(--accent-dark); }
+        .ft-cta-alt { background: transparent; color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+        .ft-cta-alt:hover { background: var(--accent); color: #fff; }
         @media (max-width: 900px) {
             .ft { grid-template-columns: 1fr; gap: 24px; }
             .ft-title { font-size: 26px; }
@@ -1255,12 +1257,14 @@
                     <div class="ft-stat-l">Clinical trial<br>cities</div>
                 </div>
             </div>
-            <a href="tools/china-life-sciences/" target="_blank" rel="noopener" class="ft-cta">
-                Open the map &rarr;
-            </a>
-            <a href="assets/china-life-sciences-explainer.pdf" target="_blank" rel="noopener" class="ft-cta" style="margin-left:12px; background:transparent; color:inherit; border:1px solid currentColor;">
-                Read the explainer (PDF) &rarr;
-            </a>
+            <div style="display:flex; flex-wrap:wrap; gap:12px; align-items:center;">
+                <a href="tools/china-life-sciences/" target="_blank" rel="noopener" class="ft-cta">
+                    Open the map &rarr;
+                </a>
+                <a href="assets/china-life-sciences-explainer.pdf" target="_blank" rel="noopener" class="ft-cta ft-cta-alt">
+                    Read the explainer (PDF)
+                </a>
+            </div>
         </div>
     </div>
 
