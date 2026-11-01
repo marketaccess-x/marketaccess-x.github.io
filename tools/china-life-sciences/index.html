@@ -544,7 +544,7 @@ d3.select('#ntr').text(TRIALS.length); d3.select('#ntrn').text('9,820');
 const counts=d3.rollup(SITES,v=>v.length,d=>d.top);
 const covered=SITES.filter(d=>['now','list','pend'].includes(d.top)).length;
 d3.select('#pnote-b').text(covered+' of '+SITES.length);
-d3.select('#pnote-t').text('records are subject to, listed under, or within scope of a pending US or Chinese measure. Each record takes the most serious label among the measures that cover it.');
+d3.select('#pnote-t').text('records are subject to, listed under, or within scope of a pending US or Chinese measure.');
 const pipe=d3.select('#pipe').selectAll('div').data(RORD.filter(k=>counts.get(k))).join('div').attr('class','seg')
   .style('flex-grow',k=>counts.get(k)).style('background',k=>RST[k].c).attr('title',k=>RST[k].l).on('click',(e,k)=>toggle(k));
 pipe.append('span').text(k=>counts.get(k));
