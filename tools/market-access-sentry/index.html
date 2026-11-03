@@ -244,24 +244,26 @@ footer a{color:var(--teal-lt)}
   h1{font-size:1.5rem}
   header{flex-direction:column;align-items:flex-start;gap:12px}
   header>div:first-child{flex:none}
-  .stamp{text-align:left}
+  .stamp{text-align:left;white-space:normal}
   .charts{grid-template-columns:1fr}
   .dhead h2{font-size:1.3rem}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
-.promo{display:grid;grid-template-columns:auto 1fr auto;gap:26px;align-items:center;
+.hside{flex:0 1 470px;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.xcard{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;width:100%;
   background:linear-gradient(100deg,var(--panel) 0%,var(--panel2) 100%);
-  border:1px solid var(--line);border-left:3px solid #B85C2A;border-radius:5px;padding:20px 24px;margin:24px 0}
-.pcover{display:block;width:104px;line-height:0}
-.pcover img{width:100%;height:auto;display:block;border-radius:2px;box-shadow:0 6px 20px rgba(0,0,0,.4);transition:transform .25s}
+  border:1px solid var(--line);border-left:3px solid #B85C2A;border-radius:5px;padding:14px 18px}
+.pcover{display:block;width:84px;line-height:0}
+.pcover img{width:100%;height:auto;display:block;border-radius:2px;box-shadow:0 6px 18px rgba(0,0,0,.45);transition:transform .25s}
 .pcover:hover img{transform:translateY(-3px)}
-.promo .lab{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:#D98046;margin-bottom:7px}
-.promo h3{font-family:Georgia,serif;font-weight:400;font-size:1.22rem;line-height:1.25;margin-bottom:8px}
-.promo p{font-size:.86rem;color:var(--dim);line-height:1.55;max-width:66ch}
-.promo .cta{display:inline-block;background:#B85C2A;color:#fff;text-decoration:none;font-size:.82rem;letter-spacing:.03em;padding:11px 20px;border-radius:3px;white-space:nowrap;transition:.15s}
-.promo .cta:hover{background:#D98046}
-.promo .cta:focus-visible{outline:2px solid var(--teal-lt);outline-offset:3px}
-@media(max-width:760px){.promo{grid-template-columns:1fr}.pcover{width:88px}}
+.xcard .lab{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:#D98046;margin-bottom:5px}
+.xcard h3{font-family:Georgia,serif;font-weight:400;font-size:1.05rem;line-height:1.25;margin-bottom:5px}
+.xcard p{font-size:.78rem;color:var(--dim);line-height:1.45;margin-bottom:10px}
+.xcard .cta{display:inline-block;background:#B85C2A;color:#fff;text-decoration:none;font-size:.76rem;letter-spacing:.03em;padding:8px 14px;border-radius:3px;white-space:nowrap;transition:.15s}
+.xcard .cta:hover{background:#D98046}
+.xcard .cta:focus-visible{outline:2px solid var(--teal-lt);outline-offset:3px}
+@media(max-width:1180px){.hside{flex:none;width:100%;max-width:640px;align-items:flex-start}.hside .stamp{text-align:left}}
+@media(max-width:520px){.xcard{grid-template-columns:1fr}.pcover{width:72px}}
 </style>
 </head>
 <body>
@@ -273,8 +275,19 @@ footer a{color:var(--teal-lt)}
     <p class="tag">Monitoring Trade Barriers to China's Exports in the Global South</p>
     <p class="sub">China's export surge has shifted from the wealthier and more mature markets of the United States and Europe to countries in the so-called "Global South". Our Market Access Sentry tracks how policymakers in those markets are responding. For each market and sector it sets the barriers put in place against trade outcomes in the same products. A market counts as closing only when Chinese goods lose ground or are forced to price up, not when measures accumulate on paper.</p>
   </div>
-  <div class="stamp">
-    Measures to <b id="st-meas"></b><br>Trade data to <b id="st-trade"></b><br>Market Access X
+  <div class="hside">
+    <div class="xcard">
+      <a class="pcover" href="https://marketaccess-x.com/assets/market-access-sentry-explainer.pdf" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="https://marketaccess-x.com/assets/market-access-sentry-cover-thumb.webp" alt="" width="480" height="678"></a>
+      <div>
+        <div class="lab">The explainer behind this tracker</div>
+        <h3>Is the Global South Closing to Chinese Exports?</h3>
+        <p>How the Sentry works, how to read it, and what the data show so far. Free PDF, November 2026 edition.</p>
+        <a class="cta" href="https://marketaccess-x.com/assets/market-access-sentry-explainer.pdf" target="_blank" rel="noopener" download>Download the explainer (PDF)</a>
+      </div>
+    </div>
+    <div class="stamp">
+      Measures to <b id="st-meas"></b> · Trade data to <b id="st-trade"></b> · Market Access X
+    </div>
   </div>
 </header>
 
@@ -308,16 +321,6 @@ footer a{color:var(--teal-lt)}
 </section>
 
 <section class="card" id="market" aria-live="polite" style="margin-top:20px"></section>
-
-<section class="promo">
-  <a class="pcover" href="https://marketaccess-x.com/assets/market-access-sentry-explainer.pdf" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="https://marketaccess-x.com/assets/market-access-sentry-cover-thumb.webp" alt="" width="480" height="678" loading="lazy"></a>
-  <div>
-    <div class="lab">The explainer behind this tracker</div>
-    <h3>Is the Global South Closing to Chinese Exports?</h3>
-    <p>How Market Access Sentry tracks the trade barriers going up against China's exports across twelve Global South markets, how to read it, and what the data show so far. Free PDF, November 2026 edition, with policy measures to October 2026 and trade data to May 2026.</p>
-  </div>
-  <a class="cta" href="https://marketaccess-x.com/assets/market-access-sentry-explainer.pdf" target="_blank" rel="noopener" download>Download the explainer (PDF)</a>
-</section>
 
 <details class="method" open><summary>How the status is set</summary><div class="mbody" id="rulesbody"></div></details>
 <details class="method"><summary>Sources, method and caveats</summary><div class="mbody"><div>
